@@ -12,7 +12,7 @@ int check_cycle(listint_t *list)
 
 	if (list == NULL)
 		return (0);
-	while (tort->next != NULL && hare->next->next != NULL)
+	while (tort && hare && hare->next)
 	{
 		tort = tort->next;
 		hare = hare->next->next;
