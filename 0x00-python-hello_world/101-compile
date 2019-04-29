@@ -1,2 +1,6 @@
 #!/usr/bin/python3
-
+import py_compile
+import os
+pyfile = os.environ.get('PYFILE')
+print(pyfile)
+py_compile.compile(pyfile)
