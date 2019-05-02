@@ -2,8 +2,7 @@
 if __name__ == '__main__':
     from calculator_1 import add as add, sub as sub, mul as mul, div as div
     import sys
-    args = sys.argv
-    arg_len = len(sys.argv) - 1
+    args, arg_len = sys.argv, len(sys.argv) - 1
     table = {"+": add, "-": sub, "*": mul, "/": div}
     if arg_len != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
@@ -11,10 +10,6 @@ if __name__ == '__main__':
     if args[2] not in "+-*/":
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-    a = int(args[1])
-    op = args[2]
-    b = int(args[3])
+    a, op, b = int(args[1]), args[2], int(args[3])
     c = table[args[2]](a, b)
     print("{} {} {} = {}".format(a, op, b, c))
-
-
