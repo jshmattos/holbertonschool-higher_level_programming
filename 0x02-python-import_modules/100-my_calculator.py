@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == '__main__':
-    from calculator_1 import add as add, sub as sub, mul as mul, div as div
+    from calculator_1 import add, sub, mul, div
     import sys
     args, arg_len = sys.argv, len(sys.argv) - 1
     table = {"+": add, "-": sub, "*": mul, "/": div}
