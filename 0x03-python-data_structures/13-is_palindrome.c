@@ -7,6 +7,30 @@
  */
 int is_palindrome(listint_t **head)
 {
+	static int arr[50];
+	int i = 0, j = 0;
+	listint_t *current = *head;
+
+	if (!*head)
+		return (1);
+	while (current)
+	{
+		arr[i] = current->n;
+		current = current->next;
+		i++;
+	}
+	i--;
+	while (j < i)
+	{
+		if (arr[j] != arr[i])
+			return (0);
+		j++;
+		i--;
+	}
+	return (1);
+
+}
+/*
 	register int i, len;
 	listint_t *start, *end;
 
@@ -25,8 +49,7 @@ int is_palindrome(listint_t **head)
 		len--;
 	}
 	return (1);
-}
-
+*/
 /**
  * listint_len - returns the number of elements in a
  * linked listint_t list
