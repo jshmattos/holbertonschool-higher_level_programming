@@ -20,7 +20,7 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	i--;
-	while (j < i)
+	while (j <= i)
 	{
 		if (arr[j] != arr[i])
 			return (0);
