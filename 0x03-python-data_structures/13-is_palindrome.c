@@ -10,33 +10,31 @@ int is_palindrome(listint_t **head)
 	listint_t *slow = *head, *fast = *head, *prev = *head;
 	listint_t *second = NULL, *mid = NULL;
 	int res = 0;
-	if (*head == NULL)
+
+	if (!fast || !fast->next)
 		return (1);
-	if (*head)
+	while (fast && fast->next)
 	{
-		while (fast && fast->next)
-		{
-			fast = fast->next->next;
-			prev = slow;
-			slow = slow->next;
-		}
-		if (fast)
-		{
-			mid = slow;
-			slow = slow->next;
-		}
-		second = slow;
-		prev->next = NULL;
-		reverse_linked_list(&second);
-		res = compare_linked_list(*head, second);
-		reverse_linked_list(&second);
-		if (mid)
-		{
-			prev->next = mid;
-			mid->next = second;
-		} else
-			prev->next = second;
+		fast = fast->next->next;
+		prev = slow;
+		slow = slow->next;
 	}
+	if (fast)
+	{
+		mid = slow;
+		slow = slow->next;
+	}
+	second = slow;
+	prev->next = NULL;
+	reverse_linked_list(&second);
+	res = compare_linked_list(*head, second);
+	reverse_linked_list(&second);
+	if (mid)
+	{
+		prev->next = mid;
+		mid->next = second;
+	} else
+		prev->next = second;
 	return (res);
 }
 
