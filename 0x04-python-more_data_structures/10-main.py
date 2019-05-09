@@ -7,4 +7,3 @@ print("Best score: {}".format(best_key))
 
 best_key = best_score(None)
 print("Best score: {}".format(best_key))
-
