@@ -28,10 +28,11 @@ void print_python_bytes(PyObject *p)
 	else
 		bytes++;
 	printf("  first %li bytes: ", bytes);
-	for (i = 0; i < bytes; i++)
+	for (i = 0; i < bytes - 1; i++)
 	{
 		printf("%02hhx ", str[i]);
 	}
+	printf("%02hhx", str[i]);
 	printf("\n");
 }
 
