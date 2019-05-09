@@ -19,6 +19,7 @@ int is_palindrome(listint_t **head)
 		prev = slow;
 		slow = slow->next;
 	}
+	/* if odd, skip middle node */
 	if (fast)
 	{
 		mid = slow;
