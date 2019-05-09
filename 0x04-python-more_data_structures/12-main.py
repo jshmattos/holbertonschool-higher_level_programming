@@ -12,7 +12,7 @@ end = time()
 print(end - start)
 
 start = time()
-roman_number = "VII"
+roman_number = "VVV"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 end = time()
 print(end - start)
