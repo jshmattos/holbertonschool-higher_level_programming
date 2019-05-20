@@ -73,7 +73,7 @@ void print_python_list(PyObject *p)
 	register int i, allocated;
 	ssize_t size;
 	const char *dataType;
-	PyListObject *list = (PyListObject *)p;
+	PyListObject *list;
 
 	printf("[*] Python list info\n");
 	if (!PyList_Check(p))
@@ -82,6 +82,7 @@ void print_python_list(PyObject *p)
 		fflush(stdout);
 		return;
 	}
+	list = (PyListObject *)p;
 	size = PyList_GET_SIZE(p);
 	allocated = list->allocated;
 
