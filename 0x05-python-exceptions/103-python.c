@@ -8,7 +8,7 @@
  */
 void print_python_float(PyObject *p)
 {
-	double d = 0;
+	double d = ((PyFloatObject *)(p))->ob_fval;
 
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
@@ -16,7 +16,6 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	d = PyFloat_AsDouble(p);
 	printf("  value: %.16g", d);
 	if (d == 1 || d == 0)
 		printf(".0");
@@ -70,7 +69,6 @@ void print_python_list(PyObject *p)
 		printf("  [ERROR] Invalid List Object\n");
 		return;
 	}
-	/* can't use */
 	size = PyList_GET_SIZE(p);
 	allocated = list->allocated;
 
