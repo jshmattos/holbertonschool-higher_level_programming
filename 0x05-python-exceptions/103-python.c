@@ -1,21 +1,30 @@
 #include <Python.h>
 #include <object.h>
 
+/**
+ * print_python_float - print some basic infor about Python
+ * float objects
+ * @p: pointer to PyObject p
+ */
 void print_python_float(PyObject *p)
 {
-	float f = 0;
+	double d = 0;
+
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
-	f = PyFloat_AsDouble(p);
-	printf("  value: %1g\n", f);
+	d = PyFloat_AsDouble(p);
+	printf("  value: %g", d);
+	if (d == 1 || d == 0)
+		printf(".0");
+	printf("\n");
 }
 
 /**
- * print_python_bytes - print some basic info about Pyton
+ * print_python_bytes - print some basic info about Python
  * byte objects
  * @p: pointer to PyObject p
  */
