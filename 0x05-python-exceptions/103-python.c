@@ -8,7 +8,7 @@
  */
 void print_python_float(PyObject *p)
 {
-	double d = ((PyFloatObject *)(p))->ob_fval;
+	double d;
 
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
@@ -16,6 +16,7 @@ void print_python_float(PyObject *p)
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
 	}
+	d = ((PyFloatObject *)(p))->ob_fval;
 	printf("  value: %.16g", d);
 	if (d == 1 || d == 0)
 		printf(".0");
