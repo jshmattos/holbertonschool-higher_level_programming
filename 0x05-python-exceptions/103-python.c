@@ -24,7 +24,7 @@ void print_python_float(PyObject *p)
 	}
 	d = ((PyFloatObject *)(p))->ob_fval;
 	printf("  value: %.16g", d);
-	if (d == 1 || d == 0)
+	if (d == -1 || d == 0 || d == 1)
 		printf(".0");
 	printf("\n");
 	fflush(stdout);
