@@ -23,10 +23,7 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	d = ((PyFloatObject *)(p))->ob_fval;
-	printf("  value: %.16g", d);
-	if (d == -1 || d == 0 || d == 1)
-		printf(".0");
-	printf("\n");
+	printf("  value: %.16g\n", d);
 	fflush(stdout);
 }
 
@@ -70,7 +67,8 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	register int i, size, allocated;
+	register int i, allocated;
+	ssize_t size;
 	const char *dataType;
 	PyListObject *list = (PyListObject *)p;
 
