@@ -48,7 +48,8 @@ void print_python_bytes(PyObject *p)
 		fflush(stdout);
 		return;
 	}
-	PyBytes_AsStringAndSize(p, &str, &bytes);
+	str = ((PyBytesObject *)(p))->ob_sval;
+	bytes = PyBytes_Size(p);
 	printf("  size: %li\n", bytes);
 	printf("  trying string: %s\n", str);
 	if (bytes > 10)
