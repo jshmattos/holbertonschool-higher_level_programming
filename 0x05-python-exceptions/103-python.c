@@ -23,7 +23,10 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	d = ((PyFloatObject *)(p))->ob_fval;
-	printf("  value: %.16g\n", d);
+	if ((int)d == d)
+		printf("  value: %.1f\n", d);
+	else
+		printf("  value: %.16g\n", d);
 	fflush(stdout);
 }
 
@@ -82,7 +85,7 @@ void print_python_list(PyObject *p)
 	size = PyList_GET_SIZE(p);
 	allocated = list->allocated;
 
-	printf("[*] Size of the Python List = %i\n", size);
+	printf("[*] Size of the Python List = %li\n", size);
 	printf("[*] Allocated = %i\n", allocated);
 	for (i = 0; i < size; i++)
 	{
