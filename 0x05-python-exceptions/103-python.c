@@ -37,7 +37,7 @@ void print_python_float(PyObject *p)
  */
 void print_python_bytes(PyObject *p)
 {
-	int i, bytes;
+	size_t i, bytes;
 	char *str = NULL;
 
 	printf("[.] bytes object info\n");
@@ -49,13 +49,13 @@ void print_python_bytes(PyObject *p)
 	}
 	str = ((PyBytesObject *)(p))->ob_sval;
 	bytes = PyBytes_Size(p);
-	printf("  size: %d\n", bytes);
+	printf("  size: %ld\n", bytes);
 	printf("  trying string: %s\n", str);
 	if (bytes > 10)
 		bytes = 10;
 	else
 		bytes++;
-	printf("  first %d bytes: ", bytes);
+	printf("  first %ld bytes: ", bytes);
 	for (i = 0; i < bytes - 1; i++)
 		printf("%02hhx ", str[i]);
 	printf("%02hhx", str[i]);
@@ -69,7 +69,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	int i, allocated, size;
+	size_t i, allocated, size;
 	const char *dataType;
 	PyListObject *list;
 
@@ -84,15 +84,15 @@ void print_python_list(PyObject *p)
 	size = PyList_GET_SIZE(p);
 	allocated = list->allocated;
 
-	printf("[*] Size of the Python List = %d\n", size);
-	printf("[*] Allocated = %i\n", allocated);
+	printf("[*] Size of the Python List = %ld\n", size);
+	printf("[*] Allocated = %li\n", allocated);
 	for (i = 0; i < size; i++)
 	{
 		dataType = (list->ob_item[i])->ob_type->tp_name;
-		printf("Element %i: %s\n", i, dataType);
+		printf("Element %li: %s\n", i, dataType);
 		if (strcmp(dataType, "bytes") == 0)
 			print_python_bytes(list->ob_item[i]);
-		if (strcmp(dataType, "float") == 0)
+		else if (strcmp(dataType, "float") == 0)
 			print_python_float(list->ob_item[i]);
 	}
 	fflush(stdout);
