@@ -1,6 +1,6 @@
+#include <Python.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <Python.h>
 #include <object.h>
 #include <listobject.h>
 #include <bytesobject.h>
@@ -15,7 +15,7 @@
 void print_python_float(PyObject *p)
 {
 	double d;
-	char *s;
+	char *s = NULL;
 
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
@@ -51,7 +51,7 @@ void print_python_bytes(PyObject *p)
 	bytes = PyBytes_Size(p);
 	printf("  size: %ld\n", bytes);
 	printf("  trying string: %s\n", str);
-	if (bytes > 10)
+	if (bytes >= 10)
 		bytes = 10;
 	else
 		bytes++;
