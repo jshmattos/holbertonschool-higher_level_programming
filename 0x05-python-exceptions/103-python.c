@@ -13,7 +13,8 @@
  */
 void print_python_float(PyObject *p)
 {
-	double d;
+	double d = ((PyFloatObject *)(p))->ob_fval;
+	char *s;
 
 	printf("[.] float object info\n");
 	if (!PyFloat_Check(p))
@@ -22,11 +23,8 @@ void print_python_float(PyObject *p)
 		fflush(stdout);
 		return;
 	}
-	d = ((PyFloatObject *)(p))->ob_fval;
-	if ((int)d == d)
-		printf("  value: %.1f\n", d);
-	else
-		printf("  value: %.16g\n", d);
+	s = PyOS_double_to_string(d, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+	printf("  value: %s\n", s);
 	fflush(stdout);
 }
 
