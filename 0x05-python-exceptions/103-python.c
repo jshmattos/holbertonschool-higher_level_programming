@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <Python.h>
 #include <object.h>
 #include <listobject.h>
@@ -13,7 +14,7 @@
  */
 void print_python_float(PyObject *p)
 {
-	double d = ((PyFloatObject *)(p))->ob_fval;
+	double d;
 	char *s;
 
 	printf("[.] float object info\n");
@@ -23,6 +24,7 @@ void print_python_float(PyObject *p)
 		fflush(stdout);
 		return;
 	}
+	d = ((PyFloatObject *)(p))->ob_fval;
 	s = PyOS_double_to_string(d, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 	printf("  value: %s\n", s);
 	fflush(stdout);
@@ -67,7 +69,7 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_list(PyObject *p)
 {
-	register int i, allocated, size;
+	int i, allocated, size;
 	const char *dataType;
 	PyListObject *list;
 
