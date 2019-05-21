@@ -27,19 +27,25 @@ class Square():
         self.__size = value
 
     def __eq__(self, other):
+        """Overload equal operator."""
         return self.area() == other.area()
 
     def __ne__(self, other):
+        """Overload not equal operator."""
         return self.area() != other.area()
 
     def __gt__(self, other):
+        """Overload greater than operator."""
         return self.area() > other.area()
 
     def __lt__(self, other):
+        """Overload less than operator."""
         return self.area() < other.area()
 
     def __ge__(self, other):
+        """Overload greater than or equal operator."""
         return self.area() >= other.area()
 
     def __le__(self, other):
+        """Overload less than or equal operator."""
         return self.area() <= other.area()

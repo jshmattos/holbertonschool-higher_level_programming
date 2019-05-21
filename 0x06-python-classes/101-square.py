@@ -33,7 +33,7 @@ class Square():
             print()
             return
         for row in range(self.__position[1]):
-            print()
+            print("")
         for i in range(self.__size):
             for space in range(self.__position[0]):
                 print(" ", end="")
@@ -55,5 +55,5 @@ class Square():
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-    def __str__(self):
-        return str(self.my_print()).replace("None", "")
+    def __repr__(self):
+        return str(self.my_print())
