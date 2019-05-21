@@ -9,7 +9,7 @@ class Node():
         if not isinstance(data, int):
             raise TypeError("data must be an integer")
         self.__data = data
-        if next_node != None or isinstance(next_node, Node):
+        if next_node is not None or isinstance(next_node, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = next_node
 
@@ -33,9 +33,10 @@ class Node():
     @next_node.setter
     def next_node(self, value):
         """Set value of next Node."""
-        #if not isinstance(value, Node) or value != None:
-         #   raise TypeError("next_node must be a Node object")
+        # if not isinstance(value, Node) or value != None:
+        #   raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList():
     """A singly linked list class."""
@@ -48,7 +49,7 @@ class SinglyLinkedList():
         """Inserts a node according to its sorted value."""
         new_node = Node(value)
         # empty list
-        if self.__head == None:
+        if self.__head is None:
             self.__head = new_node
             self.next_node = None
             return
