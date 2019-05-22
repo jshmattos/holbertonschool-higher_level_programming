@@ -40,10 +40,7 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    matrix = [[0 for y in range(len(m_a[0]))] for row in range(len(m_a))]
-
-    for i in range(len(m_a)):
-        for j in range(len(m_b[0])):
-            for k in range(len(m_b)):
-                matrix[i][j] += m_a[i][k] * m_b[k][j]
-    return matrix
+    result = [[sum(a * b for a, b in zip(A_row, B_col))
+                        for B_col in zip(*m_b)]
+                                for A_row in m_a]
+    return result
