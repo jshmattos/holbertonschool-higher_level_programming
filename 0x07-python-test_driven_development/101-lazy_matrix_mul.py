@@ -2,13 +2,17 @@
 
 """
 This module contains the following functions:
-    - matrix_mul
+    - lazy_matrix_mul
 
 """
 
+import numpy as np
 
-def matrix_mul(m_a, m_b):
-    """Multiplies 2 matrices."""
+
+def lazy_matrix_mul(m_a, m_b):
+    """
+    Multiply 2 matrices by using the module NumPy.
+    """
     if not isinstance(m_a, list):
         raise TypeError('m_a must be a list')
     if not isinstance(m_b, list):
@@ -40,10 +44,6 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    matrix = [[0 for y in range(len(m_a[0]))] for row in range(len(m_a))]
-
-    for i in range(len(m_a)):
-        for j in range(len(m_b[0])):
-            for k in range(len(m_b)):
-                matrix[i][j] += m_a[i][k] * m_b[k][j]
-    return matrix
+    x = np.array(m_a)
+    y = np.array(m_b)
+    return np.matmul(x, y)
