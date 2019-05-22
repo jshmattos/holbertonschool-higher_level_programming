@@ -86,6 +86,8 @@ class SinglyLinkedList():
     def __repr__(self):
         string = ""
         curr = self.__head
+        if curr == None:
+            return ""
         while curr is not None:
             string += str(curr.data)
             string += "\n"
