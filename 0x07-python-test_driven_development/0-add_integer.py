@@ -6,6 +6,7 @@ This module contains the following functions:
 
 """
 
+
 def add_integer(a, b=98):
     """
     Return sum of a and b.

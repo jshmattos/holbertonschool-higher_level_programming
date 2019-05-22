@@ -6,6 +6,7 @@ This module contains the following functions:
 
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
     Print "My name is <first name> <last name>".
