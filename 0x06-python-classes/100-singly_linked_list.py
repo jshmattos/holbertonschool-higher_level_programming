@@ -89,7 +89,7 @@ class SinglyLinkedList():
     def __str__(self):
         string = ""
         curr = self.__head
-        if curr == None:
+        if curr is None:
             return ""
         while curr is not None:
             string += str(curr.data)
