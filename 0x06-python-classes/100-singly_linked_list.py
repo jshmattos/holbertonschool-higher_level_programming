@@ -6,12 +6,8 @@ class Node():
 
     def __init__(self, data, next_node=None):
         """Initialize class."""
-        if not isinstance(data, int):
-            raise TypeError("data must be an integer")
-        self.__data = data
-        if next_node is not None or isinstance(next_node, Node):
-            raise TypeError("next_node must be a Node object")
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -33,7 +29,7 @@ class Node():
     @next_node.setter
     def next_node(self, value):
         """Set value of next Node."""
-        # if not isinstance(value, Node) or value != None:
+        # if not isinstance(value, Node):
         #   raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
@@ -44,34 +40,54 @@ class SinglyLinkedList():
     def __init__(self):
         """Initialize class."""
         self.__head = None
+        self.__size = 0
 
     def sorted_insert(self, value):
         """Inserts a node according to its sorted value."""
         new_node = Node(value)
-        # empty list
+        # print("current Node is " + str(new_node.data))
+        # list is empty
         if self.__head is None:
+            # print("list is empty")
+            new_node.next_node = self.__head
             self.__head = new_node
-            self.next_node = None
+            self.__size += 1
             return
+        if value < self.__head.data:
+            # print("need to insert to begin")
+            new_node.next_node = self.__head
+            self.__head = new_node
+            self.__size += 1
+            return
+        curr = self.__head
+        while value >= curr.data:
+            # print("comparing..")
+            # print(str(value) + ", " + str(curr.data))
+            prev = curr
+            if curr.next_node:
+                curr = curr.next_node
+            else:
+                # reached end
+                # print("reached end")
+                curr.next_node = new_node
+                new_node.next_node = None
+                return
+        # print("time to add..")
+        # print("current value is " + str(curr.data))
+        prev.next_node = new_node
+        new_node.next_node = curr
+
+    def print_list(self):
         curr = self.__head
         while curr is not None:
             print(curr.data)
-            if value >= curr.data:
-                curr.next_node = new_node
-                if curr.next_node is not None:
-                    new_node.next_node = curr.next_node
-                else:
-                    curr.next_node = None
-                break
             curr = curr.next_node
-        """
-        current = self.__head
-        new_node.next_node = current
-        self.__head = new_node
-        """
 
-    def print_list(self):
-        current = self.__head
-        while current is not None:
-            print(current.data)
-            current = current.next_node
+    def __repr__(self):
+        string = ""
+        curr = self.__head
+        while curr is not None:
+            string += str(curr.data)
+            string += "\n"
+            curr = curr.next_node
+        return string[:-1]
