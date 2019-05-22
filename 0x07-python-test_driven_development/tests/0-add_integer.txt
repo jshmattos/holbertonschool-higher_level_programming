@@ -40,3 +40,18 @@ Test adding float and integer
 Test adding zero and integer
 >>> add_integer(0, 424.2)
 424
+
+Test for float infinity
+>>> add_integer(2, float("inf"))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+Test for NaN
+>>> add_integer(5, float("nan"))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+Test for no arguments
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
