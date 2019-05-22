@@ -63,6 +63,7 @@ class SinglyLinkedList():
         new_node.next_node = curr
 
     def __str__(self):
+        """String representation of class."""
         string = ""
         curr = self.__head
         while curr:
