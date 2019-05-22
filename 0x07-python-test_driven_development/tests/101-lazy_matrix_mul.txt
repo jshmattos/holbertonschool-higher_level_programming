@@ -13,6 +13,16 @@ array([[ 7, 10],
        [15, 22]])
 
 Test for valid case
+>>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, 6, 1], [7, 8]])
+Traceback (most recent call last):
+TypeError: ufunc 'matmul' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
+
+Test for valid case
+>>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
+
+Test for valid case
 >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
 array([[13, 16]])
 
