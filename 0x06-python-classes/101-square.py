@@ -58,7 +58,7 @@ class Square():
     def __repr__(self):
         string = ""
         if self.__size == 0:
-            return "\n"
+            return ""
         for row in range(self.__position[1]):
             string += "\n"
         for i in range(self.__size):
