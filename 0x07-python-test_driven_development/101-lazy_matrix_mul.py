@@ -12,7 +12,6 @@ import numpy as np
 def lazy_matrix_mul(m_a, m_b):
     """
     Multiply 2 matrices by using the module NumPy.
-    """
     if not isinstance(m_a, list):
         raise TypeError('m_a must be a list')
     if not isinstance(m_b, list):
@@ -43,6 +42,7 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError('each row of m_b must should be of the same size')
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
+    """
 
     x = np.array(m_a)
     y = np.array(m_b)
