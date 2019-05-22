@@ -22,7 +22,7 @@ def matrix_divided(matrix, div):
             if not isinstance(num, (int, float)):
                 raise TypeError(
                     "matrix must be a matrix (list of lists)" +
-                    "of integers/floats")
+                    " of integers/floats")
     len_rows = list(map(lambda x: len(x), [x for x in matrix]))
     if len_rows.count(len_rows[0]) != len(len_rows):
         raise TypeError('Each row of the matrix must have the same size')
