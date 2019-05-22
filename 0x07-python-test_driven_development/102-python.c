@@ -3,6 +3,7 @@
 #include <bytesobject.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * print_python_string - prints Python strings
