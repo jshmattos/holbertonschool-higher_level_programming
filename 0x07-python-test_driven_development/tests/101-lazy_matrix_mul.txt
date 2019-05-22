@@ -13,23 +13,13 @@ array([[ 7, 10],
        [15, 22]])
 
 Test for valid case
->>> lazy_matrix_mul([[5, 6], [7, 8]], [[5, 6, 1], [7, 8]])
-Traceback (most recent call last):
-ValueError: m_a and m_b can't be multiplied
-
-Test for valid case
->>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
-Traceback (most recent call last):
-ValueError: m_a and m_b can't be multiplied
-
-Test for valid case
 >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
 array([[13, 16]])
 
 Test for first argument being a list
 >>> lazy_matrix_mul("[]", [[], []])
 Traceback (most recent call last):
-TypeError: m_a must be a list
+ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
 
 Test for second argument being a list
 >>> lazy_matrix_mul([[], []], "[]")
@@ -77,9 +67,10 @@ Traceback (most recent call last):
 TypeError: each row of m_b must should be of the same size
 
 Test for matrices that cannot be multiplied
+ValueError: m_a and m_b can't be multiplied
 >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
-ValueError: m_a and m_b can't be multiplied
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
 
 Test for missing 1 argument
 >>> lazy_matrix_mul([[1, 2], [3, 4]])
