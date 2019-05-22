@@ -29,8 +29,11 @@ class Node():
     @next_node.setter
     def next_node(self, value):
         """Set value of next Node."""
-        # if not isinstance(value, Node):
-        #   raise TypeError("next_node must be a Node object")
+        if value is None:
+            self.__next_node = value
+            return
+        if not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
@@ -83,7 +86,7 @@ class SinglyLinkedList():
             print(curr.data)
             curr = curr.next_node
 
-    def __repr__(self):
+    def __str__(self):
         string = ""
         curr = self.__head
         if curr == None:
