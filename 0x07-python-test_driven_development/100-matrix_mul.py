@@ -41,6 +41,6 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     result = [[sum(a * b for a, b in zip(A_row, B_col))
-                        for B_col in zip(*m_b)]
-                                for A_row in m_a]
+               for B_col in zip(*m_b)]
+              for A_row in m_a]
     return result
