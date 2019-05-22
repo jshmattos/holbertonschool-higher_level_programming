@@ -56,4 +56,15 @@ class Square():
         self.__position = value
 
     def __repr__(self):
-        return str(self.my_print())
+        string = ""
+        if self.__size == 0:
+            return "\n"
+        for row in range(self.__position[1]):
+            string += "\n"
+        for i in range(self.__size):
+            for space in range(self.__position[0]):
+                string += " "
+            for j in range(self.__size):
+                string += "#"
+            string += "\n"
+        return string[:-1]
