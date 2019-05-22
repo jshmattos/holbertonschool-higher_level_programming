@@ -24,50 +24,48 @@ ValueError: matmul: Input operand 0 does not have enough dimensions (has 0, gufu
 Test for second argument being a list
 >>> lazy_matrix_mul([[], []], "[]")
 Traceback (most recent call last):
-TypeError: m_b must be a list
+ValueError: matmul: Input operand 1 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
 
 Test for first argument not being a list of lists
 >>> lazy_matrix_mul(["a", "b"], [[1, 2], [3, 4]])
 Traceback (most recent call last):
-TypeError: m_a must be a list of lists
+TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
 Test for second argument not being a list of lists
 >>> lazy_matrix_mul([[1, 2], [3, 4]], ["a", "b"])
 Traceback (most recent call last):
-TypeError: m_b must be a list of lists
+TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
 Test for first argument being empty
 >>> lazy_matrix_mul([], [[1, 2], [3, 4]])
 Traceback (most recent call last):
-ValueError: m_a can't be empty
+ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 0)
 
 Test for second argument being empty
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[], []])
-Traceback (most recent call last):
-ValueError: m_b can't be empty
+array([], shape=(2, 0), dtype=float64)
 
 Test for first argument containing non integer elements
 >>> lazy_matrix_mul([["1", 2], [3, 4]], [[5, 6], [7, 8]])
 Traceback (most recent call last):
-TypeError: m_a should contain only integers or floats
+TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
 Test for first argument containing non integer elements
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, "8"]])
 Traceback (most recent call last):
-TypeError: m_b should contain only integers or floats
+TypeError: ufunc 'matmul' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
 
 Test for first argument not being a rectangle
 >>> lazy_matrix_mul([[1, 2], [3, 4, 9]], [[5, 6], [7, 8]])
 Traceback (most recent call last):
-TypeError: each row of m_a must should be of the same size
+TypeError: ufunc 'matmul' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
 
 Test for second argument not being a rectangle
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8, 9]])
 Traceback (most recent call last):
-TypeError: each row of m_b must should be of the same size
+TypeError: ufunc 'matmul' not supported for the input types, and the inputs could not be safely coerced to any supported types according to the casting rule ''safe''
 
 Test for matrices that cannot be multiplied
-ValueError: m_a and m_b can't be multiplied
 >>> lazy_matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
 ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
