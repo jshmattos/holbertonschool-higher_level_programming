@@ -46,8 +46,7 @@ What you should learn from this project:
 
 
 ### [8. CPython #3: Python Strings](./102-python.c)
-* 
-
+* Create a function that prints Python strings.
 
 ---
 
