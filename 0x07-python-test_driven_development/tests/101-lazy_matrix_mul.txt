@@ -16,12 +16,12 @@ Test for valid case
 >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
 array([[13, 16]])
 
-Test for first argument being a list
+Test for first argument not being a list
 >>> lazy_matrix_mul("[]", [[], []])
 Traceback (most recent call last):
 ValueError: Scalar operands are not allowed, use '*' instead
 
-Test for second argument being a list
+Test for second argument not being a list
 >>> lazy_matrix_mul([[], []], "[]")
 Traceback (most recent call last):
 ValueError: Scalar operands are not allowed, use '*' instead
@@ -50,7 +50,7 @@ Test for first argument containing non integer elements
 Traceback (most recent call last):
 TypeError: invalid data type for einsum
 
-Test for first argument containing non integer elements
+Test for second argument containing non integer elements
 >>> lazy_matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, "8"]])
 Traceback (most recent call last):
 TypeError: invalid data type for einsum
