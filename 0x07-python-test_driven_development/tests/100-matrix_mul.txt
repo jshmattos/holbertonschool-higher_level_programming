@@ -15,12 +15,12 @@ Test for valid case
 >>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
 [[13, 16]]
 
-Test for first argument being a list
+Test for first argument not being a list
 >>> matrix_mul("[]", [[], []])
 Traceback (most recent call last):
 TypeError: m_a must be a list
 
-Test for second argument being a list
+Test for second argument not being a list
 >>> matrix_mul([[], []], "[]")
 Traceback (most recent call last):
 TypeError: m_b must be a list
@@ -50,7 +50,7 @@ Test for first argument containing non integer elements
 Traceback (most recent call last):
 TypeError: m_a should contain only integers or floats
 
-Test for first argument containing non integer elements
+Test for second argument containing non integer elements
 >>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, "8"]])
 Traceback (most recent call last):
 TypeError: m_b should contain only integers or floats
