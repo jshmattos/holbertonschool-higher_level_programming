@@ -36,30 +36,30 @@ if __name__ == '__main__':
             no_ext = file.replace(".py", "")
             try:
                 tmp = importlib.import_module(no_ext)
-                if tmp.__doc__ != None:
+                if tmp.__doc__ is not None:
                     print("  Module documentation - Good " + u'\u2713')
                 else:
                     errors += 1
                     print("=============================")
                     print("   Missing module documentation in {}!".format(file))
                     print("=============================")
-            except:
+            except BaseException:
                 pass
             di = no_ext.find('-')
             func = no_ext[di + 1:]
             try:
-                if getattr(tmp, func).__doc__ != None:
+                if getattr(tmp, func).__doc__ is not None:
                     print("  Function documentation - Good " + u'\u2713')
                 else:
                     errors += 1
                     print("=============================")
-                    print("   Missing function documentation in {}!".format(file))
+                    print(
+                        "   Missing function documentation in {}!".format(file))
                     print("=============================")
-            except:
+            except BaseException:
                 pass
             finally:
                 o.close()
                 print()
 
     print("{:d} ERROR(S) FOUND".format(errors))
-
