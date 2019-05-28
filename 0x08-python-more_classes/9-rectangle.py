@@ -73,8 +73,6 @@ class Rectangle:
 
     def __del__(self):
         """Action taken when instance is deleted."""
-        if Rectangle.number_of_instances > 0:
-            Rectangle.number_of_instances -= 1
             print("Bye rectangle...")
 
     @staticmethod
