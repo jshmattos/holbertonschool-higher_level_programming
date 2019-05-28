@@ -73,7 +73,7 @@ class Rectangle:
 
     def __del__(self):
         """Action taken when instance is deleted."""
-            print("Bye rectangle...")
+        print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
