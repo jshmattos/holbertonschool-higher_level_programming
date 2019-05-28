@@ -5,4 +5,3 @@ if '__name__' == '__main__':
 
     if sys.argv != 2:
         print("Usage: nqueens N")
-
