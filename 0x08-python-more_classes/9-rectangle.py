@@ -58,6 +58,8 @@ class Rectangle:
     def __str__(self):
         """Get string representation of rectangle."""
         string = ""
+        if self.__width == 0 or self.__height == 0:
+            return string
         for row in range(self.__height):
             for char in range(self.__width):
                 string += str(getattr(Rectangle, "print_symbol"))
