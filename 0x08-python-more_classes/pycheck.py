@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     files = []
     for file in sorted(os.listdir(os.getcwd())):
-        if '.py' in file and file != 'pycheck.py':
+        if '.py' in file and file != 'pycheck.py' and not file.endswith("main.py"):
             o = open(file)
             first = o.readline()
             print("Checking {}...".format(file))
