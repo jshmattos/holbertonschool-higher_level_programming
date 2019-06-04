@@ -137,23 +137,11 @@ Answer with Yes or No.
 
 
 ### [27. Richard Sim's special #3](./27-answer.txt)
-* >>> id(a)
-139926795932424
->>> a
-[1, 2, 3, 4]
->>> a = a + [5]
->>> id(a)
-
+*
 
 
 ### [28. Richard Sim's special #4](./28-answer.txt)
-* >>> a
-[1, 2, 3]
->>> id (a)
-139926795932424
->>> a += [4]
->>> id(a)
-
+* 
 
 
 ### [29. Python3: Mutable, Immutable... everything is object!](./100-magic_string.py)
