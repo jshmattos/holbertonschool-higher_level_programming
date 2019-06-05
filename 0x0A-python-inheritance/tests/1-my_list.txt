@@ -28,6 +28,6 @@ Test for negative integers
 [-5, 1, 2]
 
 Test for new list
->>> my_list is my_list.print_sorted()
+>>> my_list == my_list.print_sorted()
 [-5, 1, 2]
 False
