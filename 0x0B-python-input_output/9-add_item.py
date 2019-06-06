@@ -17,4 +17,3 @@ if os.path.exists("./add_item.json"):
     new = load_from_json_file("add_item.json")
 
 save_to_json_file(new + args, "add_item.json")
-

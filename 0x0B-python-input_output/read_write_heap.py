@@ -9,9 +9,11 @@ Sources:
 
 import sys
 
+
 def error():
     print("Usage: <pid> <search_string> <replace_string>")
     sys.exit(1)
+
 
 # check usage
 pid = int(sys.argv[1])
@@ -63,7 +65,7 @@ for line in maps_file:
 
     # get start and end of the heap in the virtual memory
     addr = addr.split("-")
-    if len(addr) != 2: # never trust anyone, not even your OS :)
+    if len(addr) != 2:  # never trust anyone, not even your OS :)
         print("[*] Wrong addr format")
         maps_file.close()
         exit(1)
@@ -105,4 +107,3 @@ for line in maps_file:
 
     # there is only one heap in our example
     break
-

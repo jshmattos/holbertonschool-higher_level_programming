@@ -16,7 +16,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """Retrieve a dictionary representation of a Student instance."""
-        if attrs != None:
+        if attrs is not None:
             d = {}
             for k, v in self.__dict__.items():
                 if k in attrs:
@@ -28,4 +28,3 @@ class Student:
     def reload_from_json(self, json):
         """Replace all attributes of the Student instance."""
         self.__dict__ = json
-

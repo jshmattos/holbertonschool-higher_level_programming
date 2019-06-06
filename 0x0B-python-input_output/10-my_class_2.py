@@ -2,13 +2,14 @@
 """ My class module
 """
 
+
 class MyClass:
     """ My class
     """
 
     score = 0
 
-    def __init__(self, name, number = 4):
+    def __init__(self, name, number=4):
         self.__name = name
         self.number = number
         self.is_team_red = (self.number % 2) == 0
@@ -20,5 +21,5 @@ class MyClass:
         self.score -= 1
 
     def __str__(self):
-        return "[MyClass] {} - {:d} => {:d}".format(self.__name, self.number, self.score)
-
+        return "[MyClass] {} - {:d} => {:d}".format(
+            self.__name, self.number, self.score)
