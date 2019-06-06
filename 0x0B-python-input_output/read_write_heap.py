@@ -11,9 +11,8 @@ import sys
 
 
 def error():
-    print("Usage: <pid> <search_string> <replace_string>")
+    sys.stderr.write("Usage: <pid> <search_string> <replace_string>\n")
     sys.exit(1)
-
 
 # check usage
 pid = int(sys.argv[1])
