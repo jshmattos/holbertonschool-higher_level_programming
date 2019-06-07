@@ -29,12 +29,12 @@ if __name__ == '__main__':
     try:
         for line in sys.stdin:
             counter += 1
-            data = line.split()
-            status_code = data[-2]
-            stats[status_code] += 1
-            file_size += int(data[-1])
             if counter % 10 == 0:
                 print_stats(stats, file_size)
+            data = line.split()
+            status_code = data[7]
+            stats[status_code] += 1
+            file_size += int(data[8])
         print_stats(stats, file_size)
     except KeyboardInterrupt:
         print_stats(stats, file_size)
