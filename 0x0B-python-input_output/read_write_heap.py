@@ -15,7 +15,7 @@ if len(sys.argv) != 4:
 
 pid = sys.argv[1]
 search_string = sys.argv[2]
-write_string = sys.argv[3] or '\0'
+write_string = sys.argv[3] + '\0'
 
 # open the maps and mem files of the process
 maps = "/proc/" + pid + "/maps"
