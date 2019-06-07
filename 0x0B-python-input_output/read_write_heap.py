@@ -16,8 +16,6 @@ if len(sys.argv) != 4:
 pid = sys.argv[1]
 search_string = sys.argv[2]
 write_string = sys.argv[3]
-if write_string == "":
-    write_string = "\0"
 
 # open the maps and mem files of the process
 maps = "/proc/" + pid + "/maps"
@@ -87,7 +85,7 @@ try:
         print("[*] Found '{}' at {:x}".format(search_string, i))
 
         # write the new string
-        print("[*] Writing '{}' at {:x}".format(write_string, addr_start + i))
+        print("[*] Writing '{}' at {:x}".format(write_string + "\0", addr_start + i))
         mem_file.seek(addr_start + i)
         mem_file.write(bytes(write_string, "ASCII"))
 
