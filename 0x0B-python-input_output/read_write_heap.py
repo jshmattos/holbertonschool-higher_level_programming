@@ -20,8 +20,6 @@ write_string = sys.argv[3]
 # open the maps and mem files of the process
 maps = "/proc/" + pid + "/maps"
 print("[*] maps: {}".format(maps))
-mem = "/proc/" + pid + "/mem"
-print("[*] mem: {}".format(mem))
 
 # try opening the maps file
 try:
@@ -31,7 +29,7 @@ try:
             if "[heap]" in line:
                 print("[*] Found [heap]:")
 
-            # check if there is read and write permission
+                # check if there is read and write permission
                 if 'r' not in line or 'w' not in line:
                     print("[*] {} does not have read/write permission".format(maps))
                     sys.exit(0)
@@ -66,6 +64,8 @@ except IOError as e:
     sys.exit(1)
 
 # open and read mem
+mem = "/proc/" + pid + "/mem"
+print("[*] mem: {}".format(mem))
 try:
     with open(mem, 'rb+') as mem_file:
         # read heap
@@ -81,9 +81,9 @@ try:
         print("[*] Found '{}' at {:x}".format(search_string, i))
 
         # write the new string
-        print("[*] Writing '{}' at {:x}".format(write_string + '\0', addr_start + i))
+        print("[*] Writing '{}' at {:x}".format(write_string, addr_start + i))
         mem_file.seek(addr_start + i)
-        mem_file.write(bytes(write_string, "ASCII"))
+        mem_file.write(bytes(write_string + '\0', "ASCII"))
 
 except IOError as e:
         print("[ERROR] Can not open file {}:".format(mem_filename))
