@@ -9,7 +9,6 @@ if __name__ == '__main__':
 
     file_size = 0
     stats = {
-        "file_size": 0,
         "200": 0,
         "301": 0,
         "400": 0,
@@ -20,8 +19,8 @@ if __name__ == '__main__':
         "500": 0}
     counter = 0
 
-    def print_stats(stats: dict, size) -> None:
-        print("File size: {}".format(size))
+    def print_stats(stats: dict, file_size: int) -> None:
+        print("File size: {}".format(file_size))
         stat_arr = sorted(stats.keys())
         for num in stat_arr:
             if stats[num] > 0:
@@ -31,12 +30,11 @@ if __name__ == '__main__':
         for line in sys.stdin:
             counter += 1
             data = line.split()
-            status_code = data[7]
+            status_code = data[-2]
             stats[status_code] += 1
-            file_size += int(data[8])
+            file_size += int(data[-1])
             if counter % 10 == 0:
                 print_stats(stats, file_size)
-                counter = 0
         print_stats(stats, file_size)
     except KeyboardInterrupt:
         print_stats(stats, file_size)
