@@ -6,8 +6,6 @@ This is a module for 101.stats.
 
 if __name__ == '__main__':
     import sys
-    import signal
-    from time import sleep
 
     file_size = 0
     stats = {
@@ -38,6 +36,7 @@ if __name__ == '__main__':
             file_size += int(data[8])
             if counter % 10 == 0:
                 print_stats(stats)
+        print_stats(stats)
     except KeyboardInterrupt:
         print_stats(stats)
         raise
