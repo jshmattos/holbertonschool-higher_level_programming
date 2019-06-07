@@ -10,7 +10,7 @@ Sources:
 import sys
 
 if len(sys.argv) != 4:
-    print("Usage: <pid> <search_string> <replace_string>\n")
+    print("Usage: read_write_heap.py pid search_string replace_string")
     sys.exit(1)
 
 pid = sys.argv[1]
@@ -31,7 +31,9 @@ try:
 
                 # check if there is read and write permission
                 if 'r' not in line or 'w' not in line:
-                    print("[*] {} does not have read/write permission".format(maps))
+                    print(
+                        "[*] {} does not have read/write " +
+                        "permission".format(maps))
                     sys.exit(0)
 
                 sline = line.split(' ')
@@ -56,7 +58,9 @@ try:
                     sys.exit(1)
                 addr_start = int(addr[0], 16)
                 addr_end = int(addr[1], 16)
-                print("\tAddr start [{:x}] | end [{:x}]".format(addr_start, addr_end))
+                print(
+                    "\tAddr start [{:x}] | end [{:x}]".format(
+                        addr_start, addr_end))
 
 except IOError as e:
     print("[ERROR] Can not open file {}:".format(maps))
@@ -83,9 +87,9 @@ try:
         # write the new string
         print("[*] Writing '{}' at {:x}".format(write_string, addr_start + i))
         mem_file.seek(addr_start + i)
-        mem_file.write(bytes(write_string + '\0', "ASCII"))
+        mem_file.write(bytes(write_string, "ASCII"))
 
 except IOError as e:
-        print("[ERROR] Can not open file {}:".format(mem_filename))
-        print("        I/O error({}): {}".format(e.errno, e.strerror))
-        sys.exit(1)
+    print("[ERROR] Can not open file {}:".format(mem_filename))
+    print("        I/O error({}): {}".format(e.errno, e.strerror))
+    sys.exit(1)
