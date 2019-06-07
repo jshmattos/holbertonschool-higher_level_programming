@@ -36,7 +36,7 @@ if __name__ == '__main__':
             file_size += int(data[8])
             if counter % 10 == 0:
                 print_stats(stats)
-                counter = 1
+                counter = 0
         print_stats(stats)
     except KeyboardInterrupt:
         print_stats(stats)
