@@ -20,23 +20,25 @@ if __name__ == '__main__':
     counter = 0
 
     def print_stats(stats: dict, file_size: int) -> None:
-        print("File size: {}".format(file_size))
-        stat_arr = sorted(stats.keys())
-        for num in stat_arr:
-            if stats[num] > 0:
-                print(str(num) + ": " + str(stats[num]))
+        print("File size: {:d}".format(file_size))
+        for k, v in sorted(stats.items()):
+            if v:
+                print("{}: {}".format(k, v))
 
     try:
         for line in sys.stdin:
             counter += 1
             data = line.split()
-            status_code = data[7]
-            if status_code in stats:
-                stats[status_code] += 1
             try:
-                file_size += int(data[8])
+                status_code = data[-2]
+                if status_code in stats:
+                    stats[status_code] += 1
             except:
-                continue
+                pass
+            try:
+                file_size += int(data[-1])
+            except:
+                pass
             if counter % 10 == 0:
                 print_stats(stats, file_size)
         print_stats(stats, file_size)
