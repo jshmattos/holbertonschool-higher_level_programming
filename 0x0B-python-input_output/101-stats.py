@@ -25,17 +25,15 @@ def print_stats(stats: dict) -> None:
         if stats[num]:
             print(str(num) + ": " + str(stats[num]))
 
-
-def signal_handler(signum, frame):
+try:
+    for line in sys.stdin:
+        counter += 1
+        data = line.split()
+        status_code = data[7]
+        stats[status_code] += 1
+        file_size += int(data[8])
+        if counter % 10 == 0:
+            print_stats(stats)
+except KeyboardInterrupt:
     print_stats(stats)
-
-
-signal.signal(signal.SIGINT, signal_handler)
-for line in sys.stdin:
-    counter += 1
-    data = line.split()
-    status_code = data[7]
-    stats[status_code] += 1
-    file_size += int(data[8])
-    if counter % 10 == 0:
-        print_stats(stats)
+    raise
