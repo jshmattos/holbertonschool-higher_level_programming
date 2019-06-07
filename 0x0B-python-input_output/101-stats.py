@@ -33,7 +33,10 @@ if __name__ == '__main__':
             data = line.split()
             status_code = data[7]
             stats[status_code] += 1
-            file_size += int(data[8])
+            try:
+                file_size += int(data[8])
+            except (IndexError, ValueError):
+                pass
             if counter % 10 == 0:
                 print_stats(stats)
         print_stats(stats)
