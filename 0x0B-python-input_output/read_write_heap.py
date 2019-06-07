@@ -10,7 +10,7 @@ Sources:
 import sys
 
 if len(sys.argv) != 4:
-    sys.stderr.write("Usage: <pid> <search_string> <replace_string>\n")
+    print("Usage: <pid> <search_string> <replace_string>\n")
     sys.exit(1)
 
 pid = sys.argv[1]
