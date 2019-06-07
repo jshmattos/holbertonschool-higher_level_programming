@@ -7,7 +7,7 @@ This is a module for 101.stats.
 if __name__ == '__main__':
     import sys
 
-    file_size = 0
+    global file_size = 0
     stats = {
         "file_size": 0,
         "200": 0,
@@ -24,7 +24,7 @@ if __name__ == '__main__':
         print("File size: {}".format(file_size))
         stat_arr = sorted(stats.keys())
         for num in stat_arr:
-            if stats[num]:
+            if stats[num] > 0:
                 print(str(num) + ": " + str(stats[num]))
 
     try:
