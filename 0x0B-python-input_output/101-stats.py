@@ -33,7 +33,10 @@ if __name__ == '__main__':
             status_code = data[7]
             if status_code in stats:
                 stats[status_code] += 1
-            file_size += int(data[8])
+            try:
+                file_size += int(data[8])
+            except:
+                continue
             if counter % 10 == 0:
                 print_stats(stats, file_size)
         print_stats(stats, file_size)
