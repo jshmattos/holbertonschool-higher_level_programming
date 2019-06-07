@@ -5,18 +5,12 @@ This is a module for 101.stats.
 """
 
 if __name__ == '__main__':
+
     import sys
 
     file_size = 0
-    stats = {
-        "200": 0,
-        "301": 0,
-        "400": 0,
-        "401": 0,
-        "403": 0,
-        "404": 0,
-        "405": 0,
-        "500": 0}
+    valid_codes = ["200", "301", "400", "401", "403", "404", "405", "500"]
+    stats = {k: 0 for k in valid_codes}
     counter = 0
 
     def print_stats(stats: dict, file_size: int) -> None:
