@@ -85,9 +85,9 @@ try:
         print("[*] Found '{}' at {:x}".format(search_string, i))
 
         # write the new string
-        print("[*] Writing '{}' at {:x}".format(write_string + "\0", addr_start + i))
+        print("[*] Writing '{}' at {:x}".format(write_string, addr_start + i))
         mem_file.seek(addr_start + i)
-        mem_file.write(bytes(write_string, "ASCII"))
+        mem_file.write(bytes(write_string + '\0', "ASCII"))
 
 except IOError as e:
     print("[ERROR] Can not open file {}:".format(mem_filename))
