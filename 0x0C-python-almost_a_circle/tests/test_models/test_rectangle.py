@@ -8,6 +8,7 @@ import sys
 import unittest
 from models.rectangle import Rectangle
 
+
 class RectangleTest(unittest.TestCase):
     """Tests for rectangle class."""
 
@@ -59,7 +60,7 @@ class RectangleTest(unittest.TestCase):
         """Test for attributes being private."""
         r5 = Rectangle(11, 6, 87, 6, 91)
         d = {"_Rectangle__width": 11, "_Rectangle__height": 6,
-                "_Rectangle__x": 87, "_Rectangle__y": 6, "id": 91}
+             "_Rectangle__x": 87, "_Rectangle__y": 6, "id": 91}
         self.assertEqual(r5.__dict__, d)
 
     def test_06_none(self):
@@ -75,7 +76,8 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             r7 = Rectangle()
         self.assertEqual(
-                "__init__() missing 2 required positional arguments: 'width' and 'height'",
+                "__init__() missing 2 required positional arguments:" +
+                ' width' and 'height'",
                 str(x.exception))
 
     def test_08_string_test(self):
@@ -155,17 +157,17 @@ class RectangleTest(unittest.TestCase):
                 "height must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r11 = Rectangle({"a":1, "b":2, "c":3}, 2)
+            r11 = Rectangle({"a": 1, "b": 2, "c": 3}, 2)
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r11 = Rectangle(10, 2, {"a":1})
+            r11 = Rectangle(10, 2, {"a": 1})
         self.assertEqual(
                 "x must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r11 = Rectangle(10, 2, 0, {"hi":None})
+            r11 = Rectangle(10, 2, 0, {"hi": None})
         self.assertEqual(
                 "y must be an integer",
                 str(x.exception))
@@ -360,7 +362,7 @@ class RectangleTest(unittest.TestCase):
         """Test for update with dict."""
         r24 = Rectangle(10, 10, 10, 10, 1)
         with self.assertRaises(Exception) as x:
-            r24.update({"a":1, "b":2, "c":3})
+            r24.update({"a": 1, "b": 2, "c": 3})
         self.assertEqual(
                 "args must be integers",
                 str(x.exception))
@@ -386,15 +388,6 @@ class RectangleTest(unittest.TestCase):
         r27 = Rectangle(1, 2, 3, 4, 5)
         r27.update(weight=25)
         self.assertEqual(hasattr(r27, 'weight'), False)
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     unittest.main()

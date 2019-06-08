@@ -8,6 +8,7 @@ import sys
 import unittest
 from models.square import Square
 
+
 class SquareTest(unittest.TestCase):
     """Tests for square class."""
 
@@ -55,8 +56,8 @@ class SquareTest(unittest.TestCase):
         """Test for attributes being private."""
         r5 = Square(11, 6, 87, 6)
         d = {"_Rectangle__width": 11, "_Rectangle__height": 11,
-                "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6,
-                "_Square__size": 11}
+             "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6,
+             "_Square__size": 11}
         self.assertEqual(r5.__dict__, d)
 
     def test_06_none(self):
@@ -143,17 +144,17 @@ class SquareTest(unittest.TestCase):
                 "x must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r11 = Square({"a":1, "b":2, "c":3}, 2)
+            r11 = Square({"a": 1, "b": 2, "c": 3}, 2)
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r11 = Square(10, 2, {"a":1})
+            r11 = Square(10, 2, {"a": 1})
         self.assertEqual(
                 "y must be an integer",
                 str(x.exception))
-        r11 = Square(10, 2, 0, {"hi":None})
-        self.assertEqual(r11.id, {"hi":None})
+        r11 = Square(10, 2, 0, {"hi": None})
+        self.assertEqual(r11.id, {"hi": None})
 
     def test_1B_bool_test(self):
         """Test for booleans passed in as arguments."""
@@ -327,7 +328,7 @@ class SquareTest(unittest.TestCase):
         """Test for update with dict."""
         r24 = Square(10, 10, 10, 1)
         with self.assertRaises(Exception) as x:
-            r24.update({"a":1, "b":2, "c":3})
+            r24.update({"a": 1, "b": 2, "c": 3})
         self.assertEqual(
                 "args must be integers",
                 str(x.exception))
@@ -366,7 +367,7 @@ class SquareTest(unittest.TestCase):
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r28.size = [1,2]
+            r28.size = [1, 2]
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
@@ -376,7 +377,7 @@ class SquareTest(unittest.TestCase):
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r28.size = {"a":1}
+            r28.size = {"a": 1}
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
@@ -386,7 +387,7 @@ class SquareTest(unittest.TestCase):
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r28.size = {1,2}
+            r28.size = {1, 2}
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))

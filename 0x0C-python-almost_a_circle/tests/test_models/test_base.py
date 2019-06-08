@@ -7,6 +7,7 @@ Unittest for models/base.py
 import unittest
 from models.base import Base
 
+
 class BaseTest(unittest.TestCase):
     """Tests for base class."""
 
@@ -73,7 +74,7 @@ class BaseTest(unittest.TestCase):
         """Test for correct class type."""
         b14 = Base()
         self.assertEqual(str(type(b14)), "<class 'models.base.Base'>")
-        self.assertEqual(b14.__dict__, {"id":6})
+        self.assertEqual(b14.__dict__, {"id": 6})
 
     def test_1B_private_id(self):
         """Test to make sure nb__objects is private."""
