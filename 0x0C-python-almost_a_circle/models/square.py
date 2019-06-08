@@ -6,6 +6,7 @@ This is a module for Square class.
 
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """A square class."""
 

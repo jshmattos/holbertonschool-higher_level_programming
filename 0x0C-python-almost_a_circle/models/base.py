@@ -4,6 +4,7 @@
 This is a module for Base class.
 """
 
+
 class Base:
     """A base class."""
 
@@ -11,7 +12,7 @@ class Base:
 
     def __init__(self, id=None):
         """Intialize a base."""
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1

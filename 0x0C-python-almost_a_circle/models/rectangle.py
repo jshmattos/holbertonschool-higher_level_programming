@@ -4,8 +4,8 @@
 This is a module for Rectangle class.
 """
 
-
 from models.base import Base
+
 
 class Rectangle(Base):
     """A rectangle class."""
