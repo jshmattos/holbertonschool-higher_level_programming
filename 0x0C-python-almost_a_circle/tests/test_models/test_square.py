@@ -55,7 +55,8 @@ class SquareTest(unittest.TestCase):
         """Test for attributes being private."""
         r5 = Square(11, 6, 87, 6)
         d = {"_Rectangle__width": 11, "_Rectangle__height": 11,
-                "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6}
+                "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6,
+                "_Square__size": 11}
         self.assertEqual(r5.__dict__, d)
 
     def test_06_none(self):
@@ -268,11 +269,11 @@ class SquareTest(unittest.TestCase):
     def test_21_str(self):
         """Test for __str__"""
         r18 = Square(4, 6, 2, 1)
-        self.assertEqual(r18.__str__(), "[Square] (1) 6/2 - 4/4")
+        self.assertEqual(r18.__str__(), "[Square] (1) 6/2 - 4")
         r18 = Square(1, 1, 0)
-        self.assertEqual(r18.__str__(), "[Square] (35) 1/0 - 1/1")
+        self.assertEqual(r18.__str__(), "[Square] (35) 1/0 - 1")
         r18 = Square(1, 1)
-        self.assertEqual(r18.__str__(), "[Square] (36) 1/0 - 1/1")
+        self.assertEqual(r18.__str__(), "[Square] (36) 1/0 - 1")
 
     def test_22_display_with_coords(self):
         """Test for display with x, y coords."""
@@ -280,22 +281,22 @@ class SquareTest(unittest.TestCase):
         r19 = Square(3, 2, 1, 0)
         pass
 
-    def test_update_args(self):
+    def test_23_update_args(self):
         """Test for update method."""
         r20 = Square(10, 10, 10, 10)
         r20.update(89)
-        self.assertEqual(r20.__str__(), "[Square] (89) 10/10 - 10/10")
+        self.assertEqual(r20.__str__(), "[Square] (89) 10/10 - 10")
         r20.update(90, 2)
-        self.assertEqual(r20.__str__(), "[Square] (90) 10/10 - 2/10")
+        self.assertEqual(r20.__str__(), "[Square] (90) 10/10 - 2")
         r20.update(91, 3, 4)
-        self.assertEqual(r20.__str__(), "[Square] (91) 10/10 - 3/4")
+        self.assertEqual(r20.__str__(), "[Square] (91) 4/10 - 3")
         r20.update(92, 6, 7, 8)
-        self.assertEqual(r20.__str__(), "[Square] (92) 8/10 - 6/7")
+        self.assertEqual(r20.__str__(), "[Square] (92) 7/8 - 6")
         r20 = Square(1, 1)
-        r20.update(1, 2, 3, 4, 5)
-        self.assertEqual(r20.__str__(), "[Square] (1) 4/5 - 2/3")
+        r20.update(7, 2, 3, 4)
+        self.assertEqual(r20.__str__(), "[Square] (7) 3/4 - 2")
 
-    def test_update_str(self):
+    def test_24_update_str(self):
         """Test for update with string."""
         r21 = Square(10, 10, 10, 1)
         with self.assertRaises(Exception) as x:
@@ -304,7 +305,7 @@ class SquareTest(unittest.TestCase):
                 "args must be integers",
                 str(x.exception))
 
-    def test_update_list(self):
+    def test_25_update_list(self):
         """Test for update with list."""
         r22 = Square(10, 10, 10, 1)
         with self.assertRaises(Exception) as x:
@@ -313,7 +314,7 @@ class SquareTest(unittest.TestCase):
                 "args must be integers",
                 str(x.exception))
 
-    def test_update_tuple(self):
+    def test_26_update_tuple(self):
         """Test for update with tuple."""
         r23 = Square(10, 10, 10, 1)
         with self.assertRaises(Exception) as x:
@@ -322,7 +323,7 @@ class SquareTest(unittest.TestCase):
                 "args must be integers",
                 str(x.exception))
 
-    def test_update_dict(self):
+    def test_27_update_dict(self):
         """Test for update with dict."""
         r24 = Square(10, 10, 10, 1)
         with self.assertRaises(Exception) as x:
@@ -331,29 +332,64 @@ class SquareTest(unittest.TestCase):
                 "args must be integers",
                 str(x.exception))
 
-    def test_update_kwargs(self):
+    def test_28_update_kwargs(self):
         """Test for update with dict."""
         r25 = Square(10, 10, 10, 1)
         r25.update(height=1)
-        self.assertEqual(r25.__str__(), "[Square] (1) 10/10 - 10/1")
+        self.assertEqual(r25.__str__(), "[Square] (1) 10/10 - 10")
         r25.update(width=1, x=2)
-        self.assertEqual(r25.__str__(), "[Square] (1) 2/10 - 1/1")
+        self.assertEqual(r25.__str__(), "[Square] (1) 2/10 - 1")
         r25.update(y=1, width=2, x=3, id=89)
-        self.assertEqual(r25.__str__(), "[Square] (89) 3/1 - 2/1")
+        self.assertEqual(r25.__str__(), "[Square] (89) 3/1 - 2")
 
-    def test_args_and_kwargs(self):
+    def test_29_args_and_kwargs(self):
         """Test for both args and kwargs."""
         r26 = Square(1, 2, 3, 4)
         r26.update(99, height=66)
-        self.assertEqual(r26.__str__(), "[Square] (99) 2/3 - 1/1")
+        self.assertEqual(r26.__str__(), "[Square] (99) 2/3 - 1")
 
-    def test_invalid_kwargs(self):
+    def test_30_invalid_kwargs(self):
         """Test for kwargs that do not match attributes."""
         r27 = Square(1, 2, 3, 4)
         r27.update(weight=25)
         self.assertEqual(hasattr(r27, 'weight'), False)
 
-
+    def test_3A_size(self):
+        """Test for size attr."""
+        r28 = Square(5)
+        self.assertEqual(r28.size, 5)
+        r28.size = 25
+        self.assertEqual(r28.size, 25)
+        with self.assertRaises(TypeError) as x:
+            r28.size = "hello"
+        self.assertEqual(
+                "width must be an integer",
+                str(x.exception))
+        with self.assertRaises(TypeError) as x:
+            r28.size = [1,2]
+        self.assertEqual(
+                "width must be an integer",
+                str(x.exception))
+        with self.assertRaises(TypeError) as x:
+            r28.size = (2,)
+        self.assertEqual(
+                "width must be an integer",
+                str(x.exception))
+        with self.assertRaises(TypeError) as x:
+            r28.size = {"a":1}
+        self.assertEqual(
+                "width must be an integer",
+                str(x.exception))
+        with self.assertRaises(TypeError) as x:
+            r28.size = True
+        self.assertEqual(
+                "width must be an integer",
+                str(x.exception))
+        with self.assertRaises(TypeError) as x:
+            r28.size = {1,2}
+        self.assertEqual(
+                "width must be an integer",
+                str(x.exception))
 
 if __name__ == '__main__':
     unittest.main()
