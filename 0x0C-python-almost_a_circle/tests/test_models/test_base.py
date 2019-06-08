@@ -69,5 +69,20 @@ class BaseTest(unittest.TestCase):
         b13 = Base((1,))
         self.assertEqual(b13.id, (1,))
 
+    def test_1A_class_type(self):
+        """Test for correct class type."""
+        b14 = Base()
+        self.assertEqual(str(type(b14)), "<class 'models.base.Base'>")
+        self.assertEqual(b14.__dict__, {"id":6})
+
+    def test_1B_private_id(self):
+        """Test to make sure nb__objects is private."""
+        b15 = Base(1)
+        with self.assertRaises(Exception) as e:
+            print(b15.nb__objects)
+        self.assertEqual(
+            "'Base' object has no attribute 'nb__objects'",
+            str(e.exception))
+
 if __name__ == '__main__':
     unittest.main()
