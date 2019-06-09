@@ -5,6 +5,7 @@ This is a module for Rectangle class.
 """
 
 from models.base import Base
+import json
 
 
 class Rectangle(Base):
@@ -103,3 +104,14 @@ class Rectangle(Base):
         for k, v in kwargs.items():
             if hasattr(self, k):
                 setattr(self, k, v)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of Rectangle."""
+        d = {}
+        for k, v in vars(self).items():
+            if k.startswith("_"):
+                idx = k.index("__")
+                d[k[idx+2:]] = v
+            else:
+                d[k] = v
+        return 	d

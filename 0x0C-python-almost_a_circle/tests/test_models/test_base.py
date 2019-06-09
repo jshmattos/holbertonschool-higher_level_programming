@@ -85,5 +85,81 @@ class BaseTest(unittest.TestCase):
             "'Base' object has no attribute 'nb__objects'",
             str(e.exception))
 
+    def test_1C_json_none(self):
+        """Test for none in to_json_string."""
+        res = Base.to_json_string(None)
+        self.assertEqual(res, "[]")
+
+    def test_1D_json_empty_list(self):
+        """Test for empty in to_json_string."""
+        res = Base.to_json_string([])
+        self.assertEqual(res, "[]")
+
+    def test_1E_json_str(self):
+        """Test for string in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string("loki")
+        self.assertEqual("list_dictionaries must be a list",
+                str(e.exception))
+
+    def test_1F_json_bool(self):
+        """Test for bool in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string(True)
+        self.assertEqual("list_dictionaries must be a list",
+                str(e.exception))
+
+    def test_20_json_dict(self):
+        """Test for dict in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string({"a": 1})
+        self.assertEqual("list_dictionaries must be a list",
+                str(e.exception))
+
+    def test_21_json_int(self):
+        """Test for int in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string(1)
+        self.assertEqual("list_dictionaries must be a list",
+                str(e.exception))
+
+    def test_22_json_set(self):
+        """Test for set in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string({1, 2})
+        self.assertEqual("list_dictionaries must be a list",
+                str(e.exception))
+
+    def test_23_json_float(self):
+        """Test for float in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string(2.98)
+        self.assertEqual("list_dictionaries must be a list",
+                str(e.exception))
+
+    def test_24_json_list_of_wrong_type(self):
+        """Test for set in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string([1, 3, 4])
+        self.assertEqual("list_dictionaries must contain dictionaries",
+                str(e.exception))
+
+    def test_25_json_list_of_mixed_types(self):
+        """Test for set in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string([{"a": 1}, 5.4])
+        self.assertEqual("list_dictionaries must contain dictionaries",
+                str(e.exception))
+
+    def test_26_json_list_of_multiple_dicts(self):
+        """Test for set in to_json_string."""
+        res = Base.to_json_string([{"a": 1}, {"b": 2}])
+        self.assertEqual(type(res), str)
+
+    def test_27_json_list_of_empty_dict(self):
+        """Test for set in to_json_string."""
+        res = Base.to_json_string([{}])
+        self.assertEqual(res, "[{}]")
+
 if __name__ == '__main__':
     unittest.main()
