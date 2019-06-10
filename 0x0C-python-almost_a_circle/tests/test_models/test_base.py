@@ -5,6 +5,7 @@ Unittest for models/base.py
 """
 
 import unittest
+import os
 from models.base import Base
 
 
@@ -214,6 +215,79 @@ class BaseTest(unittest.TestCase):
             Base.save_to_file(True)
         self.assertEqual("list_objs must be a list",
                 str(e.exception))
+
+    def test_30_from_json_string_None(self):
+        """Test for from_json_method with None."""
+        list_output = Base.from_json_string(None)
+        self.assertEqual(list_output, [])
+
+    def test_31_from_json_string_empty_string(self):
+        """Test for from_json_method with empty string."""
+        list_output = Base.from_json_string("")
+        self.assertEqual(list_output, [])
+
+    def test_31a_from_json_string_no_arg(self):
+        """Test for from_json_method with empty string."""
+        with self.assertRaises(TypeError) as e:
+            list_output = Base.from_json_string()
+        self.assertEqual("from_json_string() missing 1 required positional " + \
+                "argument: 'json_string'",
+            str(e.exception))
+
+    def test_32_from_json_string_list(self):
+        """Test for from_json_method with list."""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string([1, 2, 3])
+        self.assertEqual("json_string must be a string",
+            str(e.exception))
+
+    def test_33_from_json_string_dict(self):
+        """Test for from_json_method with dict."""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string({"a": 1})
+        self.assertEqual("json_string must be a string",
+            str(e.exception))
+
+    def test_34_from_json_string_int(self):
+        """Test for from_json_method with int."""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string(1)
+        self.assertEqual("json_string must be a string",
+            str(e.exception))
+
+    def test_35_from_json_string_bool(self):
+        """Test for from_json_method with bool."""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string(False)
+        self.assertEqual("json_string must be a string",
+            str(e.exception))
+
+    def test_36_from_json_string_float(self):
+        """Test for from_json_method with float."""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string(8.7)
+        self.assertEqual("json_string must be a string",
+            str(e.exception))
+
+    def test_37_from_json_string_set(self):
+        """Test for from_json_method with set."""
+        with self.assertRaises(TypeError) as e:
+            Base.from_json_string({1, 2})
+        self.assertEqual("json_string must be a string",
+            str(e.exception))
+
+    def test_38_from_json_string_non_dicts(self):
+        """Test for from_json_method with empty_dicts."""
+        list_input = [{},{}]
+        json_list_input = Base.to_json_string(list_input)
+        list_output = Base.from_json_string(json_list_input)
+        self.assertEqual(list_output, [{}, {}])
+
+    def test_39_load_from_files(self):
+        """Test for load_from_files."""
+        os.remove("Base.json")
+        base_list = Base.load_from_file()
+        self.assertEqual(base_list, [])
 
 if __name__ == '__main__':
     unittest.main()

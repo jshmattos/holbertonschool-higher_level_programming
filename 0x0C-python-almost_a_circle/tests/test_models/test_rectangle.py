@@ -5,6 +5,7 @@ Unittest for models/rectangle.py
 """
 
 import sys
+import os
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
@@ -434,6 +435,96 @@ class RectangleTest(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(len(file.read()), len(res))
 
+    def test_34_from_json_string(self):
+        """Test for from_json_string method."""
+        list_input = [{'id': 89, 'width': 10, 'height': 4},
+                {'id': 7, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        l = [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]
+        self.assertEqual(list_output, l)
+
+    def test_35_create(self):
+        """Test for create method with rectangle."""
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual((r1 == r2), False)
+        self.assertEqual((r1 is r2), False)
+
+    def test_36_create_none(self):
+        """Test for create method with None."""
+        b1 = Rectangle(1, 1)
+        b1_dictionary = b1.to_dictionary()
+        with self.assertRaises(TypeError) as e:
+            b2 = Rectangle.create(None)
+        self.assertEqual("create() takes 1 positional argument but 2 were given",
+            str(e.exception))
+
+    def test_37_create_string(self):
+        """Test for create method with string."""
+        b1 = Rectangle(1, 1)
+        b1_dictionary = b1.to_dictionary()
+        with self.assertRaises(TypeError) as e:
+            b2 = Rectangle.create("hello")
+        self.assertEqual("create() takes 1 positional argument but 2 were given",
+            str(e.exception))
+
+    def test_38_create_list(self):
+        """Test for create method with list."""
+        b1 = Rectangle(1, 1)
+        b1_dictionary = b1.to_dictionary()
+        with self.assertRaises(TypeError) as e:
+            b2 = Rectangle.create([1, 2, 3])
+        self.assertEqual("create() takes 1 positional argument but 2 were given",
+            str(e.exception))
+
+    def test_39_create_int(self):
+        """Test for create method with int."""
+        b1 = Rectangle(1, 1)
+        b1_dictionary = b1.to_dictionary()
+        with self.assertRaises(TypeError) as e:
+            b2 = Rectangle.create(1)
+        self.assertEqual("create() takes 1 positional argument but 2 were given",
+            str(e.exception))
+
+    def test_40_create_float(self):
+        """Test for create method with float."""
+        b1 = Rectangle(1, 1)
+        b1_dictionary = b1.to_dictionary()
+        with self.assertRaises(TypeError) as e:
+            b2 = Rectangle.create(1.0)
+        self.assertEqual("create() takes 1 positional argument but 2 were given",
+            str(e.exception))
+
+    def test_41_create_set(self):
+        """Test for create method with set."""
+        b1 = Rectangle(1, 1)
+        b1_dictionary = b1.to_dictionary()
+        with self.assertRaises(TypeError) as e:
+            b2 = Rectangle.create({1, 2, 3})
+        self.assertEqual("create() takes 1 positional argument but 2 were given",
+            str(e.exception))
+
+    def test_42_create_invalid_key(self):
+        """Test for create method with set."""
+        b1 = Rectangle(1, 2, 3, 4, 5)
+        b1_dictionary = b1.to_dictionary()
+        b2 = Rectangle.create(volume=1)
+        self.assertEqual(b1.__dict__ == b2.__dict__, False)
+
+    def test_43_create_empty(self):
+        """Test for create method with set."""
+        with self.assertRaises(ValueError) as e:
+            b = Rectangle.create()
+        self.assertEqual("dictionary cannot be empty",
+                str(e.exception))
+
+    def test_44_load_from_files(self):
+        """Test for load_from_files."""
+        os.remove("Rectangle.json")
+        rect_list = Rectangle.load_from_file()
+        self.assertEqual(rect_list, [])
 
 if __name__ == '__main__':
     unittest.main()

@@ -109,9 +109,5 @@ class Rectangle(Base):
         """Return the dictionary representation of Rectangle."""
         d = {}
         for k, v in vars(self).items():
-            if k.startswith("_"):
-                idx = k.index("__")
-                d[k[idx+2:]] = v
-            else:
-                d[k] = v
-        return 	d
+            d[k.split("__")[-1]] = v
+        return	d

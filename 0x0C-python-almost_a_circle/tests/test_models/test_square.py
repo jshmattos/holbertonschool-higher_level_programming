@@ -5,6 +5,7 @@ Unittest for models/square.py
 """
 
 import sys
+import os
 import unittest
 from models.square import Square
 from models.rectangle import Rectangle
@@ -448,6 +449,30 @@ class SquareTest(unittest.TestCase):
             Base.save_to_file([s, r])
     	self.assertEqual("all elements of list_objs must match",
 	    str(e.exception))
+
+    def test_3F_from_json_string(self):
+        """Test for from_json_string method."""
+        list_input = [{'id': 89, 'size': 10},
+                {'id': 7, 'size': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        l = [{'size': 10, 'id': 89}, {'size': 7, 'id': 7}]
+        self.assertEqual(list_output, l)
+
+    def test_40_create(self):
+        """Test for create method with square."""
+        s1 = Square(3, 5, 1)
+        s1_dictionary = s1.to_dictionary()
+        s2 = Square.create(**s1_dictionary)
+        self.assertEqual((s1 == s2), False)
+        self.assertEqual((s1 is s2), False)
+
+    def test_41_load_from_files(self):
+        """Test for load_from_files."""
+        os.remove("Square.json")
+        square_list = Square.load_from_file()
+        self.assertEqual(square_list, [])
+
 
 if __name__ == '__main__':
     unittest.main()

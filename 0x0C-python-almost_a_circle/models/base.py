@@ -6,6 +6,8 @@ This is a module for Base class.
 
 
 import json
+import csv
+import os.path
 
 class Base:
     """A base class."""
@@ -60,9 +62,57 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """Return the list of the JSON string representation."""
-        if json_string is None or "":
+        if json_string is None or json_string == "":
             return []
         if type(json_string) != str:
             raise TypeError("json_string must be a string")
-        return json.loads(json_string)
+        loads = json.loads(json_string)
+        for d in loads:
+            if type(d) != dict:
+                raise ValueError("json_string must contain dictionaries")
+        return loads
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return an instance with all attributes already set."""
+        if type(dictionary) != dict:
+            raise TypeError("dictionary must be a dictionary")
+        if dictionary == {}:
+            raise ValueError("dictionary cannot be empty")
+        test = cls(1, 1)
+        test.update(**dictionary)
+        return test
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of instances."""
+        filename = str(cls).split(".")[-1][:-2] + ".json"
+        if not os.path.exists(filename):
+            return []
+        res = []
+        with open(filename, "r") as f:
+            dicts = cls.from_json_string(f.readline())
+        for d in dicts:
+            res.append(cls.create(**d))
+        return res
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes in CSV."""
+        if type(list_objs) != list:
+            raise TypeError("list_objs must be a list")
+        for objs in list_objs:
+            print(objs.to_dictionary())
+        if "rectangle" in str(cls):
+            filename = "Rectangle.csv"
+        elif "square" in str(cls):
+            filename = "Square.csv"
+        else:
+            filename = "Base.csv"
+        list_objs = [x.to_dictionary() for x in list_objs]
+        with open(filename, "w") as f:
+            fields = ['id', 'height', 'width', 'size', 'x', 'y']
+            writer = csv.DictWriter(f, fieldnames=fields)
+            writer.writeheader()
+            writer.writerows(list_objs)
 
