@@ -161,5 +161,59 @@ class BaseTest(unittest.TestCase):
         res = Base.to_json_string([{}])
         self.assertEqual(res, "[{}]")
 
+    def test_28_save_None_to_file(self):
+        """Test for save_to_file method with None."""
+        Base.save_to_file(None)
+        with open("Base.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_29_save_empty_list_to_file(self):
+        """Test for save_to_file method with empty list."""
+        Base.save_to_file([])
+        with open("Base.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+
+    def test_2A_save_str_to_file(self):
+        """Test for save_to_file method with str."""
+        with self.assertRaises(TypeError) as e:
+            Base.save_to_file("hello")
+        self.assertEqual("list_objs must be a list",
+                str(e.exception))
+
+    def test_2B_save_dict_to_file(self):
+        """Test for save_to_file method with dict."""
+        with self.assertRaises(TypeError) as e:
+            Base.save_to_file({"a": 1})
+        self.assertEqual("list_objs must be a list",
+                str(e.exception))
+
+    def test_2C_save_int_to_file(self):
+        """Test for save_to_file method with integer."""
+        with self.assertRaises(TypeError) as e:
+            Base.save_to_file(1)
+        self.assertEqual("list_objs must be a list",
+                str(e.exception))
+
+    def test_2D_save_float_to_file(self):
+        """Test for save_to_file method with float."""
+        with self.assertRaises(TypeError) as e:
+            Base.save_to_file(1.0)
+        self.assertEqual("list_objs must be a list",
+                str(e.exception))
+
+    def test_2E_save_set_to_file(self):
+        """Test for save_to_file method with set."""
+        with self.assertRaises(TypeError) as e:
+            Base.save_to_file({1, 2})
+        self.assertEqual("list_objs must be a list",
+                str(e.exception))
+
+    def test_2F_save_bool_to_file(self):
+        """Test for save_to_file method with bool."""
+        with self.assertRaises(TypeError) as e:
+            Base.save_to_file(True)
+        self.assertEqual("list_objs must be a list",
+                str(e.exception))
+
 if __name__ == '__main__':
     unittest.main()

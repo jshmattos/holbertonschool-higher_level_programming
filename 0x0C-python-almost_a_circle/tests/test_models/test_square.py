@@ -7,6 +7,7 @@ Unittest for models/square.py
 import sys
 import unittest
 from models.square import Square
+from models.rectangle import Rectangle
 from models.base import Base
 
 
@@ -415,7 +416,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(r29.to_dictionary(), r29_d)
         self.assertEqual(r29.to_dictionary() is r29_d, False)
 
-    def test_32C_to_json_string(self):
+    def test_3C_to_json_string(self):
         """Test for json string of rectangle."""
         Square.reset_nb_objects()
         r30 = Square(10, 7, 2)
@@ -424,6 +425,29 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(type(json_d), str)
         self.assertEqual(d, {'size': 10, 'id': 1, 'x': 7, 'y': 2})
 
+    def test_3D_save_to_file(self):
+        """Test for save_to_file method."""
+        Square.reset_nb_objects()
+        r1 = Square(10, 7, 2)
+        r2 = Square(2, 4)
+        Square.save_to_file([r1, r2])
+        res = '[{"x": 7, "y": 2, "id": 1, "size": 10},' + \
+            ' {"x": 4, "y": 0, "id": 2, "size": 2}]'
+        with open("Square.json", "r") as file:
+            self.assertEqual(len(file.read()), len(res))
+
+    def test_3E_save_to_file_different_types(self):
+    	"""Test for save_to_file method with different types."""
+    	r = Rectangle(1, 2)
+    	s = Square(3, 4)
+    	with self.assertRaises(ValueError) as e:
+            Base.save_to_file([r, s])
+    	self.assertEqual("all elements of list_objs must match",
+	    str(e.exception))
+    	with self.assertRaises(ValueError) as e:
+            Base.save_to_file([s, r])
+    	self.assertEqual("all elements of list_objs must match",
+	    str(e.exception))
 
 if __name__ == '__main__':
     unittest.main()

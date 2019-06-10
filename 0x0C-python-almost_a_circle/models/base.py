@@ -42,8 +42,11 @@ class Base:
         if type(list_objs) != list and list_objs is not None:
             raise TypeError("list_objs must be a list")
         if list_objs is None or list_objs == []:
-            output = "[]"
+            output = []
         else:
+            first = type(list_objs[0])
+            if any(type(x) != first for x in list_objs):
+                raise ValueError("all elements of list_objs must match")
             output = [c.to_dictionary() for c in list_objs]
         if "rectangle" in str(cls):
             filename = "Rectangle.json"

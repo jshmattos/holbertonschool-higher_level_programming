@@ -21,8 +21,8 @@ class RectangleTest(unittest.TestCase):
                 "__init__() missing 1 required positional argument: 'height'",
                 str(x.exception))
 
-        def test_01_two_args(self):
-            """Test for two arguments passed in."""
+    def test_01_two_args(self):
+        """Test for two arguments passed in."""
         Rectangle.reset_nb_objects()
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
@@ -423,6 +423,16 @@ class RectangleTest(unittest.TestCase):
         json_d = Base.to_json_string([d])
         self.assertEqual(type(json_d), str)
         self.assertEqual(d, {'height': 7, 'id': 1, 'width': 10, 'x': 2, 'y': 8})
+
+    def test_33_save_to_file(self):
+        """Test for save_to_file method."""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        res = '[{"x": 2, "y": 8, "id": 2, "height": 7, "width": 10},' + \
+            ' {"x": 0, "y": 0, "id": 3, "height": 4, "width": 2}]'
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(len(file.read()), len(res))
 
 
 if __name__ == '__main__':
