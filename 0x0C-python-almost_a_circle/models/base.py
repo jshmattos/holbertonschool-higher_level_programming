@@ -4,10 +4,10 @@
 This is a module for Base class.
 """
 
-
 import json
 import csv
 import os.path
+
 
 class Base:
     """A base class."""
@@ -124,4 +124,3 @@ class Base:
                             setattr(new, header[j], int(e))
                     res.append(new)
         return res
-
