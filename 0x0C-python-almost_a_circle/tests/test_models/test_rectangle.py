@@ -314,6 +314,13 @@ class RectangleTest(unittest.TestCase):
         s = f.getvalue()
         two_by_four = "##\n##\n##\n##\n"
         self.assertEqual(s, two_by_four)
+        r17 = Rectangle(1, 1)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r17.display()
+        s = f.getvalue()
+        one_by_one = "#\n"
+        self.assertEqual(s, one_by_one)
 
     def test_21_str(self):
         """Test for __str__"""
@@ -328,9 +335,20 @@ class RectangleTest(unittest.TestCase):
 
     def test_22_display_with_coords(self):
         """Test for display with x, y coords."""
-        r19 = Rectangle(2, 3, 2, 2)
-        r19 = Rectangle(3, 2, 1, 0)
-        pass
+        r = Rectangle(2, 3, 2, 2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r.display()
+        s = f.getvalue()
+        output = "\n\n  ##\n  ##\n  ##\n"
+        self.assertEqual(s, output)
+        r = Rectangle(3, 2, 0, 0)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r.display()
+        s = f.getvalue()
+        output = "###\n###\n"
+        self.assertEqual(s, output)
 
     def test_23_update_args(self):
         """Test for update method."""

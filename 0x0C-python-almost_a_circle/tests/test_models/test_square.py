@@ -7,6 +7,8 @@ Unittest for models/square.py
 import sys
 import os
 import unittest
+import io
+import contextlib
 from models.square import Square
 from models.rectangle import Rectangle
 from models.base import Base
@@ -269,9 +271,20 @@ class SquareTest(unittest.TestCase):
 
     def test_20_display(self):
         """Test for display."""
-        r17 = Square(4, 6)
-        r17 = Square(2, 4)
-        pass
+        s = Square(2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            s.display()
+        s = f.getvalue()
+        output = "##\n##\n"
+        self.assertEqual(s, output)
+        s = Square(2, 4)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            s.display()
+        s = f.getvalue()
+        output = "    ##\n    ##\n"
+        self.assertEqual(s, output)
 
     def test_21_str(self):
         """Test for __str__"""
@@ -284,9 +297,27 @@ class SquareTest(unittest.TestCase):
 
     def test_22_display_with_coords(self):
         """Test for display with x, y coords."""
-        r19 = Square(2, 3, 2, 2)
-        r19 = Square(3, 2, 1, 0)
-        pass
+        s = Square(2, 3, 2, 2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            s.display()
+        s = f.getvalue()
+        output = "\n\n   ##\n   ##\n"
+        self.assertEqual(s, output)
+        s = Square(1, 0, 1)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            s.display()
+        s = f.getvalue()
+        output = "\n#\n"
+        self.assertEqual(s, output)
+        s = Square(2)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            s.display()
+        s = f.getvalue()
+        output = "##\n##\n"
+        self.assertEqual(s, output)
 
     def test_23_update_args(self):
         """Test for update method."""
