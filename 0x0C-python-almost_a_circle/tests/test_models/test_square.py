@@ -15,9 +15,11 @@ from models.base import Base
 class SquareTest(unittest.TestCase):
     """Tests for square class."""
 
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
     def test_00_one_arg(self):
         """Test for one argument passed in."""
-        Square.reset_nb_objects()
         r0 = Square(5)
         self.assertEqual(r0.id, 1)
         self.assertEqual(r0.width, 5)
@@ -27,7 +29,6 @@ class SquareTest(unittest.TestCase):
 
     def test_01_two_args(self):
         """Test for two arguments passed in."""
-        Square.reset_nb_objects()
         r1 = Square(10, 2)
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 10)
@@ -37,7 +38,6 @@ class SquareTest(unittest.TestCase):
 
     def test_02_three_args(self):
         """Test for three arguments passed in."""
-        Square.reset_nb_objects()
         r2 = Square(98, 12, 64)
         self.assertEqual(r2.id, 1)
         self.assertEqual(r2.width, 98)
@@ -47,7 +47,6 @@ class SquareTest(unittest.TestCase):
 
     def test_03_four_args(self):
         """Test for four arguments passed in."""
-        Square.reset_nb_objects()
         r3 = Square(4, 51, 96, 88)
         self.assertEqual(r3.id, 88)
         self.assertEqual(r3.width, 4)
@@ -276,7 +275,6 @@ class SquareTest(unittest.TestCase):
 
     def test_21_str(self):
         """Test for __str__"""
-        Square.reset_nb_objects()
         r18 = Square(4, 6, 2, 1)
         self.assertEqual(r18.__str__(), "[Square] (1) 6/2 - 4")
         r18 = Square(1, 1, 0)
@@ -292,7 +290,6 @@ class SquareTest(unittest.TestCase):
 
     def test_23_update_args(self):
         """Test for update method."""
-        Square.reset_nb_objects()
         r20 = Square(10, 10, 10, 10)
         r20.update(89)
         self.assertEqual(r20.__str__(), "[Square] (89) 10/10 - 10")
@@ -403,7 +400,6 @@ class SquareTest(unittest.TestCase):
 
     def test_3B_to_dictionary(self):
         """Returns the dictionary representation of rectangle."""
-        Square.reset_nb_objects()
         r29 = Square(10, 2, 1, 9)
         r29_d = {'x': 2, 'y': 1, 'id': 9, 'size': 10}
         self.assertEqual(r29.to_dictionary(), r29_d)
@@ -419,7 +415,6 @@ class SquareTest(unittest.TestCase):
 
     def test_3C_to_json_string(self):
         """Test for json string of rectangle."""
-        Square.reset_nb_objects()
         r30 = Square(10, 7, 2)
         d = r30.to_dictionary()
         json_d = Base.to_json_string([d])
@@ -428,7 +423,6 @@ class SquareTest(unittest.TestCase):
 
     def test_3D_save_to_file(self):
         """Test for save_to_file method."""
-        Square.reset_nb_objects()
         r1 = Square(10, 7, 2)
         r2 = Square(2, 4)
         Square.save_to_file([r1, r2])
@@ -473,6 +467,21 @@ class SquareTest(unittest.TestCase):
         square_list = Square.load_from_file()
         self.assertEqual(square_list, [])
 
+    def test_42_save_to_csv(self):
+        """Test for save_to_csv."""
+        r1 = Square(1, 2, 3, 4)
+        r2 = Square(5, 6, 7)
+        r3 = Square(8, 9)
+        r4 = Square(10)
+        list_rectangles_input = [r1, r2, r3, r4]
+        Square.save_to_file_csv(list_rectangles_input)
+        with open("Square.csv", "r") as f:
+            data = f.readlines()
+        self.assertEqual(data[0], 'id,size,x,y\n')
+        self.assertEqual(data[1], '4,1,2,3\n')
+        self.assertEqual(data[2], '1,5,6,7\n')
+        self.assertEqual(data[3], '2,8,9,0\n')
+        self.assertEqual(data[4], '3,10,0,0\n')
 
 if __name__ == '__main__':
     unittest.main()

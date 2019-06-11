@@ -96,7 +96,7 @@ class Rectangle(Base):
         """Assigns an argument to each attribute."""
         if args:
             if any(type(x) != int for x in args):
-                raise TypeError("args must be integers")
+               raise TypeError("args must be integers")
             attrs = ["id", "width", "height", "x", "y"]
             for i, e in enumerate(args):
                 setattr(self, attrs[i], e)

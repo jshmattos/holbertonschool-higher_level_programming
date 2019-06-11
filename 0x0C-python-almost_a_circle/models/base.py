@@ -23,11 +23,6 @@ class Base:
             self.id = Base.__nb_objects
 
     @staticmethod
-    def reset_nb_objects():
-        """Reset nb_objects."""
-        Base.__nb_objects = 0
-
-    @staticmethod
     def to_json_string(list_dictionaries):
         """Return the JSON string representation of list_dictionaries."""
         if list_dictionaries is None or list_dictionaries == []:
@@ -50,12 +45,7 @@ class Base:
             if any(type(x) != first for x in list_objs):
                 raise ValueError("all elements of list_objs must match")
             output = [c.to_dictionary() for c in list_objs]
-        if "rectangle" in str(cls):
-            filename = "Rectangle.json"
-        elif "square" in str(cls):
-            filename = "Square.json"
-        else:
-            filename = "Base.json"
+        filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
             f.write(cls.to_json_string(output))
 
@@ -101,16 +91,15 @@ class Base:
         """Serializes in CSV."""
         if type(list_objs) != list:
             raise TypeError("list_objs must be a list")
-        if "rectangle" in str(cls):
-            filename = "Rectangle.csv"
-        elif "square" in str(cls):
-            filename = "Square.csv"
-        else:
-            filename = "Base.csv"
+        filename = cls.__name__ + ".csv"
         list_objs = [x.to_dictionary() for x in list_objs]
         with open(filename, "w") as f:
-            fields = ['id', 'height', 'width', 'size', 'x', 'y']
-            writer = csv.DictWriter(f, fieldnames=fields)
+            rec_fields = ['id', 'width', 'height', 'x', 'y']
+            squ_fields = ['id', 'size', 'x', 'y']
+            if cls.__name__ == "Rectangle":
+                writer = csv.DictWriter(f, fieldnames=rec_fields)
+            else:
+                writer = csv.DictWriter(f, fieldnames=squ_fields)
             writer.writeheader()
             writer.writerows(list_objs)
 
@@ -118,15 +107,21 @@ class Base:
     def load_from_file_csv(cls):
         """Deserializes in CSV."""
         filename = cls.__name__ + ".csv"
-        header = ["id", "width", "height", "size", "x", "z"]
+        rec_header = ["id", "width", "height", "x", "z"]
+        squ_header = ["id", "size", "x", "z"]
+        if cls.__name__ == "Rectangle":
+            header = rec_header
+        else:
+            header = squ_header
         res = []
         with open(filename, "r") as f:
             csv_reader = csv.reader(f, delimiter=',')
             for i, row in enumerate(csv_reader):
                 if i > 0:
                     new = cls(1, 1)
-                    if row[i]:
-                        setattr(new, header[i], int(row[i]))
+                    for j, e in enumerate(row):
+                        if e:
+                            setattr(new, header[j], int(e))
                     res.append(new)
         return res
 

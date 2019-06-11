@@ -6,6 +6,8 @@ Unittest for models/rectangle.py
 
 import sys
 import os
+import io
+import contextlib
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
@@ -13,6 +15,9 @@ from models.base import Base
 
 class RectangleTest(unittest.TestCase):
     """Tests for rectangle class."""
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
 
     def test_00_one_arg(self):
         """Test for one argument passed in."""
@@ -24,7 +29,6 @@ class RectangleTest(unittest.TestCase):
 
     def test_01_two_args(self):
         """Test for two arguments passed in."""
-        Rectangle.reset_nb_objects()
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, 1)
         self.assertEqual(r1.width, 10)
@@ -34,7 +38,6 @@ class RectangleTest(unittest.TestCase):
 
     def test_02_three_args(self):
         """Test for three arguments passed in."""
-        Rectangle.reset_nb_objects()
         r2 = Rectangle(98, 12, 64)
         self.assertEqual(r2.id, 1)
         self.assertEqual(r2.width, 98)
@@ -44,7 +47,6 @@ class RectangleTest(unittest.TestCase):
 
     def test_03_four_args(self):
         """Test for four arguments passed in."""
-        Rectangle.reset_nb_objects()
         r3 = Rectangle(4, 51, 96, 88)
         self.assertEqual(r3.id, 1)
         self.assertEqual(r3.width, 4)
@@ -54,7 +56,6 @@ class RectangleTest(unittest.TestCase):
 
     def test_04_five_args(self):
         """Test for five arguments passed in."""
-        Rectangle.reset_nb_objects()
         r4 = Rectangle(5, 66, 151, 44, 822)
         self.assertEqual(r4.id, 822)
         self.assertEqual(r4.width, 5)
@@ -300,12 +301,22 @@ class RectangleTest(unittest.TestCase):
     def test_20_display(self):
         """Test for display."""
         r17 = Rectangle(4, 6)
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r17.display()
+        s = f.getvalue()
+        four_by_six = "####\n####\n####\n####\n####\n####\n"
+        self.assertEqual(s, four_by_six)
         r17 = Rectangle(2, 4)
-        pass
+        f = io.StringIO()
+        with contextlib.redirect_stdout(f):
+            r17.display()
+        s = f.getvalue()
+        two_by_four = "##\n##\n##\n##\n"
+        self.assertEqual(s, two_by_four)
 
     def test_21_str(self):
         """Test for __str__"""
-        Rectangle.reset_nb_objects()
         r18 = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(r18.__str__(), "[Rectangle] (12) 2/1 - 4/6")
         r18 = Rectangle(5, 5, 1, 1)
@@ -398,7 +409,6 @@ class RectangleTest(unittest.TestCase):
 
     def test_31_to_dictionary(self):
         """Test for dictionary representation of rectangle."""
-        Rectangle.reset_nb_objects()
         r28 = Rectangle(10, 2, 1, 9)
         r28_d = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
         self.assertEqual(r28.to_dictionary(), r28_d)
@@ -418,7 +428,6 @@ class RectangleTest(unittest.TestCase):
 
     def test_32_to_json_string(self):
         """Test for json string of rectangle."""
-        Rectangle.reset_nb_objects()
         r29 = Rectangle(10, 7, 2, 8)
         d = r29.to_dictionary()
         json_d = Base.to_json_string([d])
@@ -525,6 +534,22 @@ class RectangleTest(unittest.TestCase):
         os.remove("Rectangle.json")
         rect_list = Rectangle.load_from_file()
         self.assertEqual(rect_list, [])
+
+    def test_45_save_to_csv(self):
+        """Test for save_to_csv."""
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        r2 = Rectangle(6, 7, 8, 9)
+        r3 = Rectangle(10, 11, 12)
+        r4 = Rectangle(13, 14)
+        list_rectangles_input = [r1, r2, r3, r4]
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        with open("Rectangle.csv", "r") as f:
+            data = f.readlines()
+        self.assertEqual(data[0], 'id,width,height,x,y\n')
+        self.assertEqual(data[1], '5,1,2,3,4\n')
+        self.assertEqual(data[2], '1,6,7,8,9\n')
+        self.assertEqual(data[3], '2,10,11,12,0\n')
+        self.assertEqual(data[4], '3,13,14,0,0\n')
 
 if __name__ == '__main__':
     unittest.main()

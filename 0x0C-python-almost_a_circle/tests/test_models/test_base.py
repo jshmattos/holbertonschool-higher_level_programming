@@ -12,6 +12,12 @@ from models.base import Base
 class BaseTest(unittest.TestCase):
     """Tests for base class."""
 
+    def setUp(self):
+        Base._Base__nb_objects == 0
+
+    def tearDown(self):
+        pass
+
     def test_00_correct_id(self):
         """Test for correct id attribute."""
         b1 = Base()
