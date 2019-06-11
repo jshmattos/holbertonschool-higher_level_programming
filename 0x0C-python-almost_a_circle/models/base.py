@@ -101,8 +101,6 @@ class Base:
         """Serializes in CSV."""
         if type(list_objs) != list:
             raise TypeError("list_objs must be a list")
-        for objs in list_objs:
-            print(objs.to_dictionary())
         if "rectangle" in str(cls):
             filename = "Rectangle.csv"
         elif "square" in str(cls):
@@ -115,4 +113,20 @@ class Base:
             writer = csv.DictWriter(f, fieldnames=fields)
             writer.writeheader()
             writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes in CSV."""
+        filename = cls.__name__ + ".csv"
+        header = ["id", "width", "height", "size", "x", "z"]
+        res = []
+        with open(filename, "r") as f:
+            csv_reader = csv.reader(f, delimiter=',')
+            for i, row in enumerate(csv_reader):
+                if i > 0:
+                    new = cls(1, 1)
+                    if row[i]:
+                        setattr(new, header[i], int(row[i]))
+                    res.append(new)
+        return res
 
