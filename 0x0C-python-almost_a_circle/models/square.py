@@ -39,8 +39,6 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute."""
         if args:
-            if any(type(x) != int for x in args):
-                raise TypeError("args must be integers")
             attrs = ["id", "size", "x", "y"]
             for i, e in enumerate(args):
                 setattr(self, attrs[i], e)

@@ -367,42 +367,6 @@ class RectangleTest(unittest.TestCase):
         r.update(1, 2, 3, 4, 5)
         self.assertEqual(r.__str__(), "[Rectangle] (1) 4/5 - 2/3")
 
-    def test_24_update_str(self):
-        """Test for update with string."""
-        r = Rectangle(10, 10, 10, 10, 1)
-        with self.assertRaises(Exception) as x:
-            r.update("hello")
-        self.assertEqual(
-                "args must be integers",
-                str(x.exception))
-
-    def test_25_update_list(self):
-        """Test for update with list."""
-        r = Rectangle(10, 10, 10, 10, 1)
-        with self.assertRaises(Exception) as x:
-            r.update([1, 2, 3])
-        self.assertEqual(
-                "args must be integers",
-                str(x.exception))
-
-    def test_26_update_tuple(self):
-        """Test for update with tuple."""
-        r = Rectangle(10, 10, 10, 10, 1)
-        with self.assertRaises(Exception) as x:
-            r.update((1, 2, 3))
-        self.assertEqual(
-                "args must be integers",
-                str(x.exception))
-
-    def test_27_update_dict(self):
-        """Test for update with dict."""
-        r = Rectangle(10, 10, 10, 10, 1)
-        with self.assertRaises(Exception) as x:
-            r.update({"a": 1, "b": 2, "c": 3})
-        self.assertEqual(
-                "args must be integers",
-                str(x.exception))
-
     def test_28_update_kwargs(self):
         """Test for update with dict."""
         r = Rectangle(10, 10, 10, 10, 1)
