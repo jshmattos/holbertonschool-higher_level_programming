@@ -95,9 +95,16 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(res, "[]")
 
     def test_1D_json_empty_list(self):
-        """Test for empty in to_json_string."""
+        """Test for empty list to_json_string."""
         res = Base.to_json_string([])
         self.assertEqual(res, "[]")
+
+    def test_1Da_json_empty_list(self):
+        """Test for no args to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.to_json_string()
+        self.assertEqual("to_json_string() missing 1 required positional " +
+                         "argument: 'list_dictionaries'", str(e.exception))
 
     def test_1E_json_str(self):
         """Test for string in to_json_string."""
@@ -149,21 +156,28 @@ class BaseTest(unittest.TestCase):
                          str(e.exception))
 
     def test_25_json_list_of_mixed_types(self):
-        """Test for set in to_json_string."""
+        """Test for mixed types in to_json_string."""
         with self.assertRaises(TypeError) as e:
             res = Base.to_json_string([{"a": 1}, 5.4])
         self.assertEqual("list_dictionaries must contain dictionaries",
                          str(e.exception))
 
     def test_26_json_list_of_multiple_dicts(self):
-        """Test for set in to_json_string."""
+        """Test for multiple dicts in to_json_string."""
         res = Base.to_json_string([{"a": 1}, {"b": 2}])
         self.assertEqual(type(res), str)
 
     def test_27_json_list_of_empty_dict(self):
-        """Test for set in to_json_string."""
+        """Test for empty dict in to_json_string."""
         res = Base.to_json_string([{}])
         self.assertEqual(res, "[{}]")
+
+    def test_27a_save_to_file_no_args(self):
+        """Test for no args in to_json_string."""
+        with self.assertRaises(TypeError) as e:
+            res = Base.save_to_file()
+        self.assertEqual("save_to_file() missing 1 required positional " +
+                         "argument: 'list_objs'", str(e.exception))
 
     def test_28_save_None_to_file(self):
         """Test for save_to_file method with None."""

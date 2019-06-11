@@ -13,7 +13,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initialize square class."""
         super().__init__(size, size, x, y, id)
-        self.size = size
 
     def __str__(self):
         """Return string representation of class."""
@@ -23,18 +22,12 @@ class Square(Rectangle):
     @property
     def size(self):
         """Getter for size."""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, size):
         """Setter for size."""
-        if type(size) != int:
-            raise TypeError("width must be an integer")
-        if size <= 0:
-            raise ValueError("width must be > 0")
         self.width = size
-        self.height = size
-        self.__size = size
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute."""
