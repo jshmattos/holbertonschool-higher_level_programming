@@ -71,7 +71,7 @@ class SquareTest(unittest.TestCase):
     def test_06_none(self):
         """Test for None passed in."""
         with self.assertRaises(TypeError) as x:
-            r6 = Square(None)
+            r = Square(None)
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
@@ -79,7 +79,7 @@ class SquareTest(unittest.TestCase):
     def test_07_no_args(self):
         """Test for no arguments passed in."""
         with self.assertRaises(TypeError) as x:
-            r7 = Square()
+            r = Square()
         self.assertEqual(
                 "__init__() missing 1 required positional argument: 'size'",
                 str(x.exception))
@@ -87,42 +87,42 @@ class SquareTest(unittest.TestCase):
     def test_08_string_test(self):
         """Test for strings passed in as arguments."""
         with self.assertRaises(TypeError) as x:
-            r8 = Square(10, "2")
+            r = Square(10, "2")
         self.assertEqual(
                 "x must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r8 = Square("10", 2)
+            r = Square("10", 2)
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r8 = Square(10, 2, "3")
+            r = Square(10, 2, "3")
         self.assertEqual(
                 "y must be an integer",
                 str(x.exception))
-        r8 = Square(10, 2, 0, "lol")
-        self.assertEqual(r8.id, "lol")
+        r = Square(10, 2, 0, "lol")
+        self.assertEqual(r.id, "lol")
 
     def test_09_float_test(self):
         """Test for floats passed in as arguments."""
         with self.assertRaises(TypeError) as x:
-            r9 = Square(10, 2.1)
+            r = Square(10, 2.1)
         self.assertEqual(
                 "x must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r9 = Square(9.0, 2)
+            r = Square(9.0, 2)
         self.assertEqual(
                 "width must be an integer",
                 str(x.exception))
         with self.assertRaises(TypeError) as x:
-            r9 = Square(10, 2, 3.2131)
+            r = Square(10, 2, 3.2131)
         self.assertEqual(
                 "y must be an integer",
                 str(x.exception))
-        r9 = Square(10, 2, 0, 12.3)
-        self.assertEqual(r9.id, 12.3)
+        r = Square(10, 2, 0, 12.3)
+        self.assertEqual(r.id, 12.3)
 
     def test_10_list_test(self):
         """Test for lists passed in as arguments."""
