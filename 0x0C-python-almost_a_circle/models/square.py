@@ -18,7 +18,7 @@ class Square(Rectangle):
     def __str__(self):
         """Return string representation of class."""
         return "[Square] ({}) {}/{} - {}".format(
-                self.id, self.x, self.y, self.width)
+            self.id, self.x, self.y, self.width)
 
     @property
     def size(self):
@@ -54,7 +54,7 @@ class Square(Rectangle):
             if k.startswith("_"):
                 if not k.endswith("width") and not k.endswith("height"):
                     idx = k.index("__")
-                    d[k[idx+2:]] = v
+                    d[k[idx + 2:]] = v
             else:
                 d[k] = v
         return d

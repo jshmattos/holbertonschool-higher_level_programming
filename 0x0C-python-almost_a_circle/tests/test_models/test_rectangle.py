@@ -24,8 +24,8 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(TypeError) as e:
             r = Rectangle(5)
         self.assertEqual(
-                "__init__() missing 1 required positional argument: 'height'",
-                str(e.exception))
+            "__init__() missing 1 required positional argument: 'height'",
+            str(e.exception))
 
     def test_01_two_args(self):
         """Test for two arguments passed in."""
@@ -75,214 +75,214 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(TypeError) as x:
             r = Rectangle(None)
         self.assertEqual(
-                "__init__() missing 1 required positional argument: 'height'",
-                str(x.exception))
+            "__init__() missing 1 required positional argument: 'height'",
+            str(x.exception))
 
     def test_07_no_args(self):
         """Test for no arguments passed in."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle()
         self.assertEqual(
-                "__init__() missing 2 required positional arguments:" +
-                " 'width' and 'height'",
-                str(x.exception))
+            "__init__() missing 2 required positional arguments:" +
+            " 'width' and 'height'",
+            str(x.exception))
 
     def test_08_string_test(self):
         """Test for strings passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, "2")
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle("10", 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r8 = Rectangle(10, 2, "3")
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, "lol")
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_09_float_test(self):
         """Test for floats passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2.1)
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(9.0, 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 3.2131)
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, 1662.1)
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_10_list_test(self):
         """Test for lists passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, [])
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle([1, 2, 3], 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, [[2, 4]])
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, ["hi"])
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_1A_dict_test(self):
         """Test for dicts passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, {})
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle({"a": 1, "b": 2, "c": 3}, 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, {"a": 1})
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, {"hi": None})
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_1B_bool_test(self):
         """Test for booleans passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, True)
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(False, 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, True)
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, False)
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_1C_tuple_test(self):
         """Test for tuples passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, ())
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle((1, 2, 3), 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, (2, 4))
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, ("hi",))
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_1C_sets_test(self):
         """Test for sets passed in as arguments."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, {})
         self.assertEqual(
-                "height must be an integer",
-                str(x.exception))
+            "height must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle({1, 2, 3}, 2)
         self.assertEqual(
-                "width must be an integer",
-                str(x.exception))
+            "width must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, {2, 4})
         self.assertEqual(
-                "x must be an integer",
-                str(x.exception))
+            "x must be an integer",
+            str(x.exception))
         with self.assertRaises(TypeError) as x:
             r = Rectangle(10, 2, 0, {"hi"})
         self.assertEqual(
-                "y must be an integer",
-                str(x.exception))
+            "y must be an integer",
+            str(x.exception))
 
     def test_1D_negative_ints(self):
         """Test for negative inputs."""
         with self.assertRaises(ValueError) as x:
             r = Rectangle(1, -2)
         self.assertEqual(
-                "height must be > 0",
-                str(x.exception))
+            "height must be > 0",
+            str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(-1, -2)
         self.assertEqual(
-                "width must be > 0",
-                str(x.exception))
+            "width must be > 0",
+            str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(1, 2, -1)
         self.assertEqual(
-                "x must be >= 0",
-                str(x.exception))
+            "x must be >= 0",
+            str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(1, 2, 5, -1)
         self.assertEqual(
-                "y must be >= 0",
-                str(x.exception))
+            "y must be >= 0",
+            str(x.exception))
 
     def test_1E_zero(self):
         """Test for zero inputs."""
         with self.assertRaises(ValueError) as x:
             r = Rectangle(6, 0)
         self.assertEqual(
-                "height must be > 0",
-                str(x.exception))
+            "height must be > 0",
+            str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(0, 2)
         self.assertEqual(
-                "width must be > 0",
-                str(x.exception))
+            "width must be > 0",
+            str(x.exception))
         r = Rectangle(1, 2, 0, 0)
         self.assertEqual(r.x, 0)
         self.assertEqual(r.y, 0)
@@ -414,7 +414,8 @@ class RectangleTest(unittest.TestCase):
         d = r.to_dictionary()
         json_d = Base.to_json_string([d])
         self.assertEqual(type(json_d), str)
-        self.assertEqual(d, {'height': 7, 'id': 1, 'width': 10, 'x': 2, 'y': 8})
+        self.assertEqual(
+            d, {'height': 7, 'id': 1, 'width': 10, 'x': 2, 'y': 8})
 
     def test_33_save_to_file(self):
         """Test for save_to_file method."""
@@ -429,10 +430,11 @@ class RectangleTest(unittest.TestCase):
     def test_34_from_json_string(self):
         """Test for from_json_string method."""
         list_input = [{'id': 89, 'width': 10, 'height': 4},
-                {'id': 7, 'width': 1, 'height': 7}]
+                      {'id': 7, 'width': 1, 'height': 7}]
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
-        l = [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}]
+        l = [{'height': 4, 'width': 10, 'id': 89},
+             {'height': 7, 'width': 1, 'id': 7}]
         self.assertEqual(list_output, l)
 
     def test_35_create(self):
@@ -449,8 +451,9 @@ class RectangleTest(unittest.TestCase):
         r_dictionary = r.to_dictionary()
         with self.assertRaises(TypeError) as e:
             r = Rectangle.create(None)
-        self.assertEqual("create() takes 1 positional argument but 2 were given",
-            str(e.exception))
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_37_create_string(self):
         """Test for create method with string."""
@@ -458,8 +461,9 @@ class RectangleTest(unittest.TestCase):
         r_dictionary = r.to_dictionary()
         with self.assertRaises(TypeError) as e:
             r = Rectangle.create("hello")
-        self.assertEqual("create() takes 1 positional argument but 2 were given",
-            str(e.exception))
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_38_create_list(self):
         """Test for create method with list."""
@@ -467,8 +471,9 @@ class RectangleTest(unittest.TestCase):
         r_dictionary = r.to_dictionary()
         with self.assertRaises(TypeError) as e:
             r = Rectangle.create([1, 2, 3])
-        self.assertEqual("create() takes 1 positional argument but 2 were given",
-            str(e.exception))
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_39_create_int(self):
         """Test for create method with int."""
@@ -476,8 +481,9 @@ class RectangleTest(unittest.TestCase):
         r_dictionary = r.to_dictionary()
         with self.assertRaises(TypeError) as e:
             r = Rectangle.create(1)
-        self.assertEqual("create() takes 1 positional argument but 2 were given",
-            str(e.exception))
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_40_create_float(self):
         """Test for create method with float."""
@@ -485,8 +491,9 @@ class RectangleTest(unittest.TestCase):
         r_dictionary = r.to_dictionary()
         with self.assertRaises(TypeError) as e:
             r = Rectangle.create(1.0)
-        self.assertEqual("create() takes 1 positional argument but 2 were given",
-            str(e.exception))
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_41_create_set(self):
         """Test for create method with set."""
@@ -494,8 +501,9 @@ class RectangleTest(unittest.TestCase):
         r_dictionary = r.to_dictionary()
         with self.assertRaises(TypeError) as e:
             r = Rectangle.create({1, 2, 3})
-        self.assertEqual("create() takes 1 positional argument but 2 were given",
-            str(e.exception))
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_42_create_invalid_key(self):
         """Test for create method with set."""
@@ -509,7 +517,7 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(ValueError) as e:
             b = Rectangle.create()
         self.assertEqual("dictionary cannot be empty",
-                str(e.exception))
+                         str(e.exception))
 
     def test_44_load_from_files(self):
         """Test for load_from_files."""
@@ -532,6 +540,7 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(data[2], '1,6,7,8,9\n')
         self.assertEqual(data[3], '2,10,11,12,0\n')
         self.assertEqual(data[4], '3,13,14,0,0\n')
+
 
 if __name__ == '__main__':
     unittest.main()
