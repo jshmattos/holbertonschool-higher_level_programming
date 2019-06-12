@@ -512,13 +512,6 @@ class RectangleTest(unittest.TestCase):
         r2 = Rectangle.create(volume=1)
         self.assertEqual(r1.__dict__ == r2.__dict__, False)
 
-    def test_43_create_empty(self):
-        """Test for create method with set."""
-        with self.assertRaises(ValueError) as e:
-            b = Rectangle.create()
-        self.assertEqual("dictionary cannot be empty",
-                         str(e.exception))
-
     def test_44_load_from_files(self):
         """Test for load_from_files."""
         os.remove("Rectangle.json")

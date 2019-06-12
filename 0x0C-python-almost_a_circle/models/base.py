@@ -65,11 +65,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Return an instance with all attributes already set."""
-        if type(dictionary) != dict:
-            raise TypeError("dictionary must be a dictionary")
-        if dictionary == {}:
-            raise ValueError("dictionary cannot be empty")
-        test = cls(1, 1)
+        test = cls(1, 1) if cls.__name__ == "Rectangle" else cls(1)
         test.update(**dictionary)
         return test
 
