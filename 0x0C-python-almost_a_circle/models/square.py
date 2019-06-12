@@ -49,6 +49,8 @@ class Square(Rectangle):
                 if not k.endswith("width") and not k.endswith("height"):
                     idx = k.index("__")
                     d[k[idx + 2:]] = v
+                else:
+                    d["size"] = v
             else:
                 d[k] = v
         return d
