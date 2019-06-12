@@ -433,6 +433,14 @@ class RectangleTest(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(len(file.read()), len(res))
 
+    def test_33a_save_to_file_no_args(self):
+        """Test for no args in save_to_file"""
+        with self.assertRaises(TypeError) as e:
+            Rectangle.save_to_file()
+        self.assertEqual("save_to_file() missing 1 required positional" +
+                " argument: 'list_objs'",
+                str(e.exception))
+
     def test_34_from_json_string(self):
         """Test for from_json_string method."""
         list_input = [{'id': 89, 'width': 10, 'height': 4},
