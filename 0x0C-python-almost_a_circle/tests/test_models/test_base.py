@@ -20,9 +20,11 @@ class BaseTest(unittest.TestCase):
         b1 = Base()
         b2 = Base()
         b3 = Base()
+        b4 = Base(0)
         self.assertEqual(b1.id, 1)
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 3)
+        self.assertEqual(b4.id, 0)
 
     def test_01_custom_id(self):
         """Test for custom id."""
