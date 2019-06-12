@@ -460,23 +460,18 @@ class SquareTest(unittest.TestCase):
         os.remove("Square.json")
         square_list = Square.load_from_file()
         self.assertEqual(square_list, [])
-"""
-    def test_42_save_to_csv(self):
-        Test for save_to_csv.
-        r1 = Square(1, 2, 3, 4)
-        r2 = Square(5, 6, 7)
-        r3 = Square(8, 9)
-        r4 = Square(10)
-        list_rectangles_input = [r1, r2, r3, r4]
-        Square.save_to_file_csv(list_rectangles_input)
-        with open("Square.csv", "r") as f:
-            data = f.readlines()
-        self.assertEqual(data[0], 'id,size,x,y\n')
-        self.assertEqual(data[1], '4,1,2,3\n')
-        self.assertEqual(data[2], '1,5,6,7\n')
-        self.assertEqual(data[3], '2,8,9,0\n')
-        self.assertEqual(data[4], '3,10,0,0\n')
-"""
+
+    def test_42_save_to_file_None(self):
+        """Test for None in save_to_file"""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(len(file.read()), 2)
+
+    def test_43_save_to_file_empty_list(self):
+        """Test for None in save_to_file"""
+        Rectangle.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertEqual(len(file.read()), 2)
 
 if __name__ == '__main__':
     unittest.main()

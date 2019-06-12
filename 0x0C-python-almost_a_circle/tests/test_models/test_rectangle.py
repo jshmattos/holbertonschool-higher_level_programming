@@ -549,9 +549,20 @@ class RectangleTest(unittest.TestCase):
 
     def test_44_load_from_files(self):
         """Test for load_from_files."""
-        os.remove("Rectangle.json")
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
         rect_list = Rectangle.load_from_file()
         self.assertEqual(rect_list, [])
+
+    def test_44a_load_from_files(self):
+        """Test for load_from_files."""
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        with self.assertRaises(TypeError) as e:
+            rect_list = Rectangle.load_from_file("Rectangle.json")
+        self.assertEqual(
+            "load_from_file() takes 1 positional argument but 2 were given", str(
+                e.exception))
 
     def test_45_save_to_csv(self):
         """Test for save_to_csv."""
@@ -568,6 +579,21 @@ class RectangleTest(unittest.TestCase):
         self.assertEqual(data[2], '1,6,7,8,9\n')
         self.assertEqual(data[3], '2,10,11,12,0\n')
         self.assertEqual(data[4], '3,13,14,0,0\n')
+
+    def test_46_save_to_file_None(self):
+        """Test for None in save_to_file"""
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(len(file.read()), 2)
+
+    def test_47_save_to_file_empty_list(self):
+        """Test for None in save_to_file"""
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(len(file.read()), 2)
+
+
+
 
 
 if __name__ == '__main__':
