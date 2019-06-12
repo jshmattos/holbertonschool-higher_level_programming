@@ -173,7 +173,7 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(res, "[{}]")
 
     def test_27a_save_to_file_no_args(self):
-        """Test for no args in to_json_string."""
+        """Test for no args in save_to_file."""
         with self.assertRaises(TypeError) as e:
             res = Base.save_to_file()
         self.assertEqual("save_to_file() missing 1 required positional " +

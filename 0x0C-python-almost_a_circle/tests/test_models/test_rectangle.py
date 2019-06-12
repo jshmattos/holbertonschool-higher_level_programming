@@ -389,6 +389,12 @@ class RectangleTest(unittest.TestCase):
         r.update(weight=25)
         self.assertEqual(hasattr(r, 'weight'), False)
 
+    def test_30a_invalid_kwargs(self):
+        """Test for kwargs that do not match attributes."""
+        r = Rectangle(1, 2, 3, 4, 5)
+        r.update()
+        self.assertEqual(r.__str__(), "[Rectangle] (5) 3/4 - 1/2")
+
     def test_31_to_dictionary(self):
         """Test for dictionary representation of rectangle."""
         r = Rectangle(10, 2, 1, 9)
