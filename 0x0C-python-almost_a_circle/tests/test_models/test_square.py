@@ -395,15 +395,15 @@ class SquareTest(unittest.TestCase):
     def test_3B_to_dictionary(self):
         """Returns the dictionary representation of rectangle."""
         r = Square(10, 2, 1, 9)
-        r_d = {'x': 2, 'y': 1, 'id': 9}
+        r_d = {'x': 2, 'size': 10, 'y': 1, 'id': 9}
         self.assertEqual(r.to_dictionary(), r_d)
         self.assertEqual(r.to_dictionary() is r_d, False)
         r = Square(9, 4, 15)
-        r_d = {'x': 4, 'id': 1, 'y': 15}
+        r_d = {'x': 4, 'id': 1, 'y': 15, 'size': 9}
         self.assertEqual(r.to_dictionary(), r_d)
         self.assertEqual(r.to_dictionary() is r_d, False)
         r = Square(62, 414)
-        r_d = {'x': 414, 'id': 2, 'y': 0}
+        r_d = {'x': 414, 'id': 2, 'y': 0, 'size': 62}
         self.assertEqual(r.to_dictionary(), r_d)
         self.assertEqual(r.to_dictionary() is r_d, False)
 
@@ -413,15 +413,15 @@ class SquareTest(unittest.TestCase):
         d = r.to_dictionary()
         json_d = Base.to_json_string([d])
         self.assertEqual(type(json_d), str)
-        self.assertEqual(d, {'id': 1, 'x': 7, 'y': 2})
+        self.assertEqual(d, {'id': 1, 'x': 7, 'y': 2, 'size': 10})
 
     def test_3D_save_to_file(self):
         """Test for save_to_file method."""
         r1 = Square(10, 7, 2)
         r2 = Square(2, 4)
         Square.save_to_file([r1, r2])
-        res = '[{"x": 7, "y": 2, "id": 1},' + \
-            ' {"x": 4, "y": 0, "id": 2}]'
+        res = '[{"x": 7, "y": 2, "size": 10, "id": 1},' + \
+                ' {"x": 4, "y": 0, "size": 2, "id": 2}]'
         with open("Square.json", "r") as file:
             self.assertEqual(len(file.read()), len(res))
 
