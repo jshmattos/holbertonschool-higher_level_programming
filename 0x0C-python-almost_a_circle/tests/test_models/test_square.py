@@ -64,8 +64,7 @@ class SquareTest(unittest.TestCase):
         """Test for attributes being private."""
         r5 = Square(11, 6, 87, 6)
         d = {"_Rectangle__width": 11, "_Rectangle__height": 11,
-             "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6,
-             "_Square__size": 11}
+             "_Rectangle__x": 6, "_Rectangle__y": 87, "id": 6}
         self.assertEqual(r5.__dict__, d)
 
     def test_06_none(self):
@@ -396,15 +395,15 @@ class SquareTest(unittest.TestCase):
     def test_3B_to_dictionary(self):
         """Returns the dictionary representation of rectangle."""
         r = Square(10, 2, 1, 9)
-        r_d = {'x': 2, 'y': 1, 'id': 9, 'size': 10}
+        r_d = {'x': 2, 'y': 1, 'id': 9}
         self.assertEqual(r.to_dictionary(), r_d)
         self.assertEqual(r.to_dictionary() is r_d, False)
         r = Square(9, 4, 15)
-        r_d = {'size': 9, 'x': 4, 'id': 1, 'y': 15}
+        r_d = {'x': 4, 'id': 1, 'y': 15}
         self.assertEqual(r.to_dictionary(), r_d)
         self.assertEqual(r.to_dictionary() is r_d, False)
         r = Square(62, 414)
-        r_d = {'size': 62, 'x': 414, 'id': 2, 'y': 0}
+        r_d = {'x': 414, 'id': 2, 'y': 0}
         self.assertEqual(r.to_dictionary(), r_d)
         self.assertEqual(r.to_dictionary() is r_d, False)
 
@@ -414,15 +413,15 @@ class SquareTest(unittest.TestCase):
         d = r.to_dictionary()
         json_d = Base.to_json_string([d])
         self.assertEqual(type(json_d), str)
-        self.assertEqual(d, {'size': 10, 'id': 1, 'x': 7, 'y': 2})
+        self.assertEqual(d, {'id': 1, 'x': 7, 'y': 2})
 
     def test_3D_save_to_file(self):
         """Test for save_to_file method."""
         r1 = Square(10, 7, 2)
         r2 = Square(2, 4)
         Square.save_to_file([r1, r2])
-        res = '[{"x": 7, "y": 2, "id": 1, "size": 10},' + \
-            ' {"x": 4, "y": 0, "id": 2, "size": 2}]'
+        res = '[{"x": 7, "y": 2, "id": 1},' + \
+            ' {"x": 4, "y": 0, "id": 2}]'
         with open("Square.json", "r") as file:
             self.assertEqual(len(file.read()), len(res))
 
@@ -461,9 +460,9 @@ class SquareTest(unittest.TestCase):
         os.remove("Square.json")
         square_list = Square.load_from_file()
         self.assertEqual(square_list, [])
-
+"""
     def test_42_save_to_csv(self):
-        """Test for save_to_csv."""
+        Test for save_to_csv.
         r1 = Square(1, 2, 3, 4)
         r2 = Square(5, 6, 7)
         r3 = Square(8, 9)
@@ -477,7 +476,7 @@ class SquareTest(unittest.TestCase):
         self.assertEqual(data[2], '1,5,6,7\n')
         self.assertEqual(data[3], '2,8,9,0\n')
         self.assertEqual(data[4], '3,10,0,0\n')
-
+"""
 
 if __name__ == '__main__':
     unittest.main()
