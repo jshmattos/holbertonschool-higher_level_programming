@@ -469,7 +469,7 @@ class SquareTest(unittest.TestCase):
 
     def test_43_save_to_file_empty_list(self):
         """Test for None in save_to_file"""
-        Rectangle.save_to_file([])
+        Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual(len(file.read()), 2)
 

@@ -592,9 +592,5 @@ class RectangleTest(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual(len(file.read()), 2)
 
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
