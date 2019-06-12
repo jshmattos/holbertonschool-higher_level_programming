@@ -85,7 +85,8 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Serializes in CSV."""
-        if type(list_objs) != list:
+        if type(list_objs) != list and list_objs is not None \
+                or not all(isinstance(x, cls) for x in list_objs):
             raise TypeError("list_objs must be a list")
         filename = cls.__name__ + ".csv"
         list_objs = [x.to_dictionary() for x in list_objs]
@@ -110,7 +111,7 @@ class Base:
         else:
             header = squ_header
         res = []
-        if not os.path.exists(file):
+        if not os.path.exists(filename):
             return res
         with open(filename, "r") as f:
             csv_reader = csv.reader(f, delimiter=',')
