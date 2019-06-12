@@ -19,6 +19,11 @@ class RectangleTest(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
+    def test_000_isinstance(self):
+        """Test for isinstance."""
+        r = Rectangle(1, 2)
+        self.assertEqual(isinstance(r, Base), True)
+
     def test_00_one_arg(self):
         """Test for one argument passed in."""
         with self.assertRaises(TypeError) as e:
