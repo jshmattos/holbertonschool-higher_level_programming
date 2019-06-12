@@ -471,7 +471,11 @@ class SquareTest(unittest.TestCase):
         """Test for None in save_to_file"""
         Square.save_to_file([])
         with open("Square.json", "r") as file:
-            self.assertEqual(len(file.read()), 2)
+            self.assertEqual(file.read(), '[]')
+        empty = []
+        Square.save_to_file(empty)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
 
 if __name__ == '__main__':
     unittest.main()
