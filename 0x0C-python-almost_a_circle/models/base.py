@@ -110,6 +110,8 @@ class Base:
         else:
             header = squ_header
         res = []
+        if not os.path.exists(file):
+            return res
         with open(filename, "r") as f:
             csv_reader = csv.reader(f, delimiter=',')
             for i, row in enumerate(csv_reader):
