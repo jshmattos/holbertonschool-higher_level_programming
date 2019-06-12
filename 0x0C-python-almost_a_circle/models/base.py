@@ -105,8 +105,8 @@ class Base:
     def load_from_file_csv(cls):
         """Deserializes in CSV."""
         filename = cls.__name__ + ".csv"
-        rec_header = ["id", "width", "height", "x", "z"]
-        squ_header = ["id", "size", "x", "z"]
+        rec_header = ["id", "width", "height", "x", "y"]
+        squ_header = ["id", "size", "x", "y"]
         if cls.__name__ == "Rectangle":
             header = rec_header
         else:
