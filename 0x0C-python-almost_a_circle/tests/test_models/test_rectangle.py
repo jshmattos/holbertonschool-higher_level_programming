@@ -32,6 +32,14 @@ class RectangleTest(unittest.TestCase):
             "width must be an integer",
             str(x.exception))
 
+    def test_002_float_nan(self):
+        """Test for float nan."""
+        with self.assertRaises(TypeError) as x:
+            r = Rectangle(float("inf"), 1)
+        self.assertEqual(
+            "width must be an integer",
+            str(x.exception))
+
     def test_00_one_arg(self):
         """Test for one argument passed in."""
         with self.assertRaises(TypeError) as e:
