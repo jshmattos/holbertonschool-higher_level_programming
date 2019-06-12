@@ -20,6 +20,20 @@ class SquareTest(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
+    def tearDown(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        try:
+            os.remove("Base.json")
+        except:
+            pass
+        try:
+            os.remove("Square.json")
+        except:
+            pass
+
     def test_00_one_arg(self):
         """Test for one argument passed in."""
         s = Square(5)
@@ -457,7 +471,6 @@ class SquareTest(unittest.TestCase):
 
     def test_41_load_from_files(self):
         """Test for load_from_files."""
-        os.remove("Square.json")
         square_list = Square.load_from_file()
         self.assertEqual(square_list, [])
 
@@ -468,7 +481,7 @@ class SquareTest(unittest.TestCase):
             self.assertEqual(len(file.read()), 2)
 
     def test_43_save_to_file_empty_list(self):
-        """Test for None in save_to_file"""
+        """Test for empty list in save_to_file"""
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[]')
@@ -476,6 +489,11 @@ class SquareTest(unittest.TestCase):
         Square.save_to_file(empty)
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[]')
+
+    def test_44_save_to_file_two_args(self):
+        """Test for two args in save_to_file"""
+        with self.assertRaises(TypeError):
+            Square.save_to_file([], 6)
 
 if __name__ == '__main__':
     unittest.main()

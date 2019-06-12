@@ -19,6 +19,20 @@ class RectangleTest(unittest.TestCase):
     def setUp(self):
         Base._Base__nb_objects = 0
 
+    def tearDown(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
+        try:
+            os.remove("Base.json")
+        except:
+            pass
+        try:
+            os.remove("Square.json")
+        except:
+            pass
+
     def test_000_isinstance(self):
         """Test for isinstance."""
         r = Rectangle(1, 2)
@@ -587,7 +601,7 @@ class RectangleTest(unittest.TestCase):
             self.assertEqual(file.read(), '[]')
 
     def test_47_save_to_file_empty_list(self):
-        """Test for None in save_to_file"""
+        """Test for empty list in save_to_file"""
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
@@ -595,6 +609,11 @@ class RectangleTest(unittest.TestCase):
         Rectangle.save_to_file(empty)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
+
+    def test_48_save_to_file_two_args(self):
+        """Test for two args in save_to_file"""
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file([], 6)
 
 if __name__ == '__main__':
     unittest.main()
