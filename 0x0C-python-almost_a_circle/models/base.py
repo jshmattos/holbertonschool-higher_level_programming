@@ -107,20 +107,16 @@ class Base:
         filename = cls.__name__ + ".csv"
         rec_header = ["id", "width", "height", "x", "y"]
         squ_header = ["id", "size", "x", "y"]
-        if cls.__name__ == "Rectangle":
-            header = rec_header
-        else:
-            header = squ_header
+        header = rec_header if cls.__name__ == "Rectangle" else squ_header
         res = []
-        if not os.path.exists(filename):
-            return res
-        with open(filename, "r") as f:
-            reader = csv.reader(f, delimiter=',')
-            for i, row in enumerate(reader):
-                if i > 0:
-                    new = cls(1, 1)
-                    for j, e in enumerate(row):
-                        if e:
-                            setattr(new, header[j], int(e))
-                    res.append(new)
+        if os.path.exists(filename):
+            with open(filename, "r") as f:
+                reader = csv.reader(f, delimiter=',')
+                for i, row in enumerate(reader):
+                    if i > 0:
+                        new = cls(1, 1)
+                        for j, e in enumerate(row):
+                            if e:
+                                setattr(new, header[j], int(e))
+                        res.append(new)
         return res

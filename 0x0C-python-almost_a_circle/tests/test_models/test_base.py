@@ -99,7 +99,7 @@ class BaseTest(unittest.TestCase):
         res = Base.to_json_string([])
         self.assertEqual(res, "[]")
 
-    def test_1Da_json_empty_list(self):
+    def test_1Da_json_no_args(self):
         """Test for no args to_json_string."""
         with self.assertRaises(TypeError) as e:
             res = Base.to_json_string()
@@ -149,7 +149,7 @@ class BaseTest(unittest.TestCase):
                          str(e.exception))
 
     def test_24_json_list_of_wrong_type(self):
-        """Test for set in to_json_string."""
+        """Test for wrong types in to_json_string."""
         with self.assertRaises(TypeError) as e:
             res = Base.to_json_string([1, 3, 4])
         self.assertEqual("list_dictionaries must contain dictionaries",
@@ -244,7 +244,7 @@ class BaseTest(unittest.TestCase):
         self.assertEqual(list_output, [])
 
     def test_31a_from_json_string_no_arg(self):
-        """Test for from_json_method with empty string."""
+        """Test for from_json_method with no args."""
         with self.assertRaises(TypeError) as e:
             list_output = Base.from_json_string()
         self.assertEqual("from_json_string() missing 1 required positional " +
@@ -305,7 +305,6 @@ class BaseTest(unittest.TestCase):
         os.remove("Base.json")
         base_list = Base.load_from_file()
         self.assertEqual(base_list, [])
-
 
 if __name__ == '__main__':
     unittest.main()

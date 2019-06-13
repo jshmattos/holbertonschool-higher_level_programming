@@ -41,7 +41,7 @@ class RectangleTest(unittest.TestCase):
             str(x.exception))
 
     def test_002_float_nan(self):
-        """Test for float nan."""
+        """Test for float inf."""
         with self.assertRaises(TypeError) as x:
             r = Rectangle(float("inf"), 1)
         self.assertEqual(
@@ -418,8 +418,8 @@ class RectangleTest(unittest.TestCase):
         r.update(weight=25)
         self.assertEqual(hasattr(r, 'weight'), False)
 
-    def test_30a_invalid_kwargs(self):
-        """Test for kwargs that do not match attributes."""
+    def test_30a_empty_update(self):
+        """Test for empty update."""
         r = Rectangle(1, 2, 3, 4, 5)
         r.update()
         self.assertEqual(r.__str__(), "[Rectangle] (5) 3/4 - 1/2")
@@ -557,15 +557,11 @@ class RectangleTest(unittest.TestCase):
 
     def test_44_load_from_files(self):
         """Test for load_from_files."""
-        if os.path.exists("Rectangle.json"):
-            os.remove("Rectangle.json")
         rect_list = Rectangle.load_from_file()
         self.assertEqual(rect_list, [])
 
     def test_44a_load_from_files(self):
         """Test for load_from_files."""
-        if os.path.exists("Rectangle.json"):
-            os.remove("Rectangle.json")
         with self.assertRaises(TypeError) as e:
             rect_list = Rectangle.load_from_file("Rectangle.json")
         self.assertEqual(
