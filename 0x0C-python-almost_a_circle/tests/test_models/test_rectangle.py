@@ -20,18 +20,12 @@ class RectangleTest(unittest.TestCase):
         Base._Base__nb_objects = 0
 
     def tearDown(self):
-        try:
-            os.remove("Rectangle.json")
-        except:
-            pass
-        try:
+        if os.path.exists("Base.json"):
             os.remove("Base.json")
-        except:
-            pass
-        try:
+        if os.path.exists("Rectangle.json"):
+            os.remove("Rectangle.json")
+        if os.path.exists("Square.json"):
             os.remove("Square.json")
-        except:
-            pass
 
     def test_000_isinstance(self):
         """Test for isinstance."""
