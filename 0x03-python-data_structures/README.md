@@ -580,6 +580,8 @@ l.append(4)
 lib.print_python_list_info(l)
 l.pop()
 lib.print_python_list_info(l)
+```
+```sh
 julien@ubuntu:~/CPython$ python3 100-test_lists.py 
 [*] Size of the Python List = 2
 [*] Allocated = 2
