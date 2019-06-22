@@ -30,7 +30,8 @@ guillaume@ubuntu:~/py/0x00$ cat main.py
 ```python
 #!/usr/bin/python3
 print("Holberton School")
-
+```
+```sh
 guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 guillaume@ubuntu:~/py/0x00$ ./0-run
 Holberton School
