@@ -25,7 +25,9 @@ General
 * Write a Shell script that runs a Python script.
 * The Python file name will be saved in the environment variable $PYFILE
 ```sh
-guillaume@ubuntu:~/py/0x00$ cat main.py 
+guillaume@ubuntu:~/py/0x00$ cat main.py
+```
+```python
 #!/usr/bin/python3
 print("Holberton School")
 
@@ -371,7 +373,7 @@ and that piece of art is useful - Dora Korpar, 2015-10-19
 ```sh
 guillaume@ubuntu:~/py/0x00$ cat main.py
 ```
-```py
+```python
 #!/usr/bin/python3
 print("Holberton School")
 
