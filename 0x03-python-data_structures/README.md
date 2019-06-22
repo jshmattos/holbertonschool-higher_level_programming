@@ -557,7 +557,7 @@ Since we now know a bit of C, we can look at what is happening under the hood of
 ```sh
 julien@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c
 julien@ubuntu:~/CPython$ cat 100-test_lists.py 
-```sh
+```
 ```python
 import ctypes
 
