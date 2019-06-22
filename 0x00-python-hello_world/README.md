@@ -1,8 +1,7 @@
 # 0x00. Python - Hello, World
 
-# Description
-What you should learn from this project:
-
+## Learning Objectives
+General
 * Why Python programming is awesome(don’t forget to tweet today, with the hashtag  # pythoniscool :))
 * Who created Python
 * Who is Guido van Rossum
@@ -14,13 +13,19 @@ What you should learn from this project:
 * What are indexing and slicing in Python
 * What is the official Holberton Python coding style and how to check your code with PEP 8
 
-- --
+## Usage
+* All files are interpreted/compiled on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+* All code use the PEP 8 style (version 1.7.*)
 
-# [0. Run Python file](./0-run)
+---
+
+## Tasks
+
+### [0. Run Python file](./0-run)
 * Write a Shell script that runs a Python script.
 
 
-# [1. Run inline](./1-run_inline)
+## [1. Run inline](./1-run_inline)
 * Write a Shell script that runs Python code.
 
 
