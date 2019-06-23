@@ -11,8 +11,8 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x05-python-exceptions](./0x05-python-exceptions) | Error handling and exceptions in Python |
 | [0x06-python-classes](./0x06-python-classes) | Introduction to Object Oriented Programming |
 | [0x07-python-test_driven_development]() | Doctests and Unittests Libraries |
-| [0x08-python-more_classes]() | |
-| [0x09-python-everything_is_object]() | |
+| [0x08-python-more_classes](./0x08-python-more_classes) | Public, private, class, static methods in Python |
+| [0x09-python-everything_is_object]() |  |
 | [0x0A-python-inheritance]() | |
 | [0x0B-python-input_output]() | |
 | [0x0C-python-almost_a_circle]()  | |
