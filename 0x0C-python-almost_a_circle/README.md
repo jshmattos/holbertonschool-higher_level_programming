@@ -677,7 +677,7 @@ guillaume@ubuntu:~/$ cat 16-main.py
 """ 16-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     list_input = [
         {'id': 89, 'width': 10, 'height': 4}, 
