@@ -124,7 +124,7 @@ guillaume@ubuntu:~/$ cat 2-main.py
 """ 2-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     try:
         Rectangle(10, "2")
