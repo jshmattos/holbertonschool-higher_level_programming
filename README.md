@@ -16,3 +16,6 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x0A-python-inheritance](./0x0A-python-inheritance) | Child classes, super classes, base classes |
 | [0x0B-python-input_output](./0x0B-python-input_output) | Open, read, write files |
 | [0x0C-python-almost_a_circle](./0x0C-python-almost_a_circle) | Args/kwargs, serialization, JSON |
+
+## Author
+* __Tu Vo__
