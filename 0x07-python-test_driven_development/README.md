@@ -272,6 +272,8 @@ def max_integer(list=[]):
 ```sh
 guillaume@ubuntu:~/0x07$ 
 guillaume@ubuntu:~/0x07$ cat 6-main.py
+```
+```python
 #!/usr/bin/python3
 max_integer = __import__('6-max_integer').max_integer
 
