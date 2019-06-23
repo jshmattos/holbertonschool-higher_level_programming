@@ -167,7 +167,7 @@ guillaume@ubuntu:~/$ cat 3-main.py
 """ 3-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(3, 2)
     print(r1.area())
@@ -196,7 +196,7 @@ guillaume@ubuntu:~/$ cat 4-main.py
 """ 4-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(4, 6)
     r1.display()
@@ -221,7 +221,7 @@ guillaume@ubuntu:~/$ ./4-main.py
 ```
 
 ### [6. __str__](./models/rectangle.py)
-* Update the class Rectangle by overriding the __str__ method so that it returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+* Update the class Rectangle by overriding the \__str__ method so that it returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
 ```sh
 guillaume@ubuntu:~/$ cat 5-main.py
 ```
@@ -230,7 +230,7 @@ guillaume@ubuntu:~/$ cat 5-main.py
 """ 5-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(4, 6, 2, 1, 12)
     print(r1)
@@ -255,7 +255,7 @@ guillaume@ubuntu:~/$ cat 6-main.py
 """ 6-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(2, 3, 2, 2)
     r1.display()
@@ -293,7 +293,7 @@ guillaume@ubuntu:~/$ cat 7-main.py
 """ Doc """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 10, 10, 10)
     print(r1)
@@ -338,7 +338,7 @@ guillaume@ubuntu:~/$ cat 8-main.py
 """ 8-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 10, 10, 10)
     print(r1)
@@ -382,7 +382,7 @@ guillaume@ubuntu:~/$ cat 9-main.py
 """ 9-main """
 from models.square import Square
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     s1 = Square(5)
     print(s1)
@@ -441,7 +441,7 @@ guillaume@ubuntu:~/$ cat 10-main.py
 """ 10-main """
 from models.square import Square
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     s1 = Square(5)
     print(s1)
@@ -481,7 +481,7 @@ guillaume@ubuntu:~/$ cat 11-main.py
 """ 11-main """
 from models.square import Square
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     s1 = Square(5)
     print(s1)
@@ -536,7 +536,7 @@ guillaume@ubuntu:~/$ cat 12-main.py
 """ 12-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 2, 1, 9)
     print(r1)
@@ -576,7 +576,7 @@ guillaume@ubuntu:~/$ cat 13-main.py
 """ 13-main """
 from models.square import Square
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     s1 = Square(10, 2, 1)
     print(s1)
@@ -615,7 +615,7 @@ guillaume@ubuntu:~/$ cat 14-main.py
 from models.base import Base
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 7, 2, 8)
     dictionary = r1.to_dictionary()
@@ -649,7 +649,7 @@ guillaume@ubuntu:~/$ cat 15-main.py
 """ 15-main """
 from models.rectangle import Rectangle
 
-if \_\_name__ == "\_\_main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 7, 2, 8)
     r2 = Rectangle(2, 4)
@@ -732,6 +732,7 @@ guillaume@ubuntu:~/$ ./17-main.py
 False
 False
 ```
+
 ### [19. File to instances](./models/base.py)
 * Update the class Base by adding the class method def load_from_file(cls): that returns a list of instances:
   * The filename must be: <Class name>.json - example: Rectangle.json
@@ -747,7 +748,7 @@ guillaume@ubuntu:~/$ cat 18-main.py
 from models.rectangle import Rectangle
 from models.square import Square
 
-if \_\_name_\_ == "\_\_main_\_":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 7, 2, 8)
     r2 = Rectangle(2, 4)
@@ -817,7 +818,7 @@ guillaume@ubuntu:~/$ cat 100-main.py
 from models.rectangle import Rectangle
 from models.square import Square
 
-if \__name__ == "\__main__":
+if __name__ == "__main__":
 
     r1 = Rectangle(10, 7, 2, 8)
     r2 = Rectangle(2, 4)
