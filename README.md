@@ -9,7 +9,7 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x03-python-data_structures](./0x03-python-data_structures)| Python sequences: lists, tuples |
 | [0x04-python-more_data_structures](./0x04-python-more_data_structures)| Sets, dictionaries, lambda expressions | 
 | [0x05-python-exceptions](./0x05-python-exceptions) | Error handling and exceptions in Python |
-| [0x06-python-classes](./0x06-python-classes) | Object Oriented Programming in Python |
+| [0x06-python-classes](./0x06-python-classes) | Introduction to Object Oriented Programming |
 | [0x07-python-test_driven_development]() | |
 | [0x08-python-more_classes]() | |
 | [0x09-python-everything_is_object]() | |
