@@ -150,6 +150,8 @@ if inherits_from(a, bool):
 if inherits_from(a, object):
     print("{} inherited from class {}".format(a, object.__name__))
 
+```
+```sh
 guillaume@ubuntu:~/0x0A$ ./4-main.py
 True inherited from class int
 True inherited from class object
