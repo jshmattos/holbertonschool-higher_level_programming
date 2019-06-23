@@ -428,7 +428,7 @@ Bye rectangle...
   * What are the advantages and drawbacks of each of them
   * How does Python deal with the object and class attributes using the __dict__
 
-### [11. N queens]
+### [11. N queens](./101-nqueens.py)
 * The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
 
   * Usage: nqueens N
