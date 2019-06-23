@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="http://www.holbertonschool.com/holberton-logo.png">
+</p>
+
 # Higher Level Programming
 This repository contains programs written in Python for the Higher Level Programming curriculum at Holberton School.
 
