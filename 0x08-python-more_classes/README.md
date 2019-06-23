@@ -50,6 +50,8 @@ my_rectangle = Rectangle()
 print(type(my_rectangle))
 print(my_rectangle.__dict__)
 
+```
+```sh
 guillaume@ubuntu:~/0x08$ ./0-main.py
 <class '0-rectangle.Rectangle'>
 {}
