@@ -170,11 +170,11 @@ try:
 except Exception as e:
     print(e)
 
-```
-```sh
 my_square_2 = Square(5)
 print("Area: {}".format(my_square_2.area()))
 
+```
+```sh
 guillaume@ubuntu:~/0x06$ ./3-main.py
 Area: 9
 'Square' object has no attribute 'size'
