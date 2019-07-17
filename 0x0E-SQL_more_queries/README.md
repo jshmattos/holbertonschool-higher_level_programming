@@ -1,8 +1,8 @@
 # 0x0E. SQL - More queries 
 
-## Description
-What you should learn from this project:
+## Learning Objectives
 
+General
 * How to create a new MySQL user
 * How to manage privileges for a user to a database or table
 * What’s a PRIMARY KEY
@@ -11,6 +11,9 @@ What you should learn from this project:
 * How to retrieve datas from multiple tables in one request
 * What are subqueries
 * What are JOIN and UNION
+
+## Usage
+* All files will be executed on Ubuntu 14.04 LTS using MySQL 5.7 (version 5.7.8-rc)
 
 ---
 
