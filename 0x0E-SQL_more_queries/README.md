@@ -515,4 +515,4 @@ Thriller    40
 ---
 
 ## Author
-* **Tu Vo** - [tuvo1106](github.com/tuvo1106)
+* **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
