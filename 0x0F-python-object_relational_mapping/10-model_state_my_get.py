@@ -21,11 +21,6 @@ if __name__ == '__main__':
 
     session = Session()
     states = session.query(State)
-    found = False
-    for state in states:
-        if state_name == state.name:
-            found = True
-            print(state.id)
-    if not found:
-        print("Not found")
+    res = states.filter_by(name=state_name).first()
+    print(res.id if res else "Not found")
     session.close()
