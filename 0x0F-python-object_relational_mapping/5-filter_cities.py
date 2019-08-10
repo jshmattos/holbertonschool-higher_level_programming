@@ -23,7 +23,6 @@ if __name__ == '__main__':
             "WHERE states.name = %s ORDER BY cities.id ASC"
     cur.execute(query, (state_name,))
     rows = cur.fetchall()
-    for i, row in enumerate(rows):
-        print(row[0], end=", " if i != len(rows) - 1 else "\n")
+    print(", ".join([row[0] for row in rows]))
     cur.close()
     db.close()
