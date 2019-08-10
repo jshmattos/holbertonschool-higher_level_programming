@@ -21,6 +21,6 @@ if __name__ == '__main__':
                 "name LIKE 'N%' ORDER BY 'states.id' ASC;")
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        print("({}, '{}')".format(row[0], row[1]))
     cur.close()
     db.close()
