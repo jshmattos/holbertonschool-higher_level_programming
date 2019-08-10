@@ -524,4 +524,4 @@ guillaume@ubuntu:~/0x0F$ ./102-relationship_cities_states_list.py root root hbtn
 ```
 
 ## Author
-* **Tu Vo** -
+* **Tu Vo**
