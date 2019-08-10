@@ -10,7 +10,7 @@
 
 ## Usage
 * All files will be executed on Ubuntu 14.04 LTS using MySQL 5.7 and Python3 (version 3.4.3)
-* All Pythoncode use the PEP 8 style (version 1.7.*)
+* All Python code use the PEP 8 style (version 1.7.*)
 
 ## Tasks
 
@@ -19,8 +19,10 @@
   * Results must be sorted in ascending order by states.id
   * Results must be displayed as they are in the example below
 
-```
+```sh
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql
+```
+```sql
 -- Create states table in hbtn_0e_0_usa with some data
 CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa;
 USE hbtn_0e_0_usa;
@@ -30,7 +32,8 @@ CREATE TABLE IF NOT EXISTS states (
     PRIMARY KEY (id)
 );
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
-
+```
+```sh
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
 Enter password: 
 guillaume@ubuntu:~/0x0F$ ./0-select_states.py root root hbtn_0e_0_usa
