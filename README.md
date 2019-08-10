@@ -21,7 +21,7 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x0B-python-input_output](./0x0B-python-input_output) | Open, read, write files |
 | [0x0C-python-almost_a_circle](./0x0C-python-almost_a_circle) | Args/kwargs, serialization, JSON |
 | [0x0D-python-sql_introduction](./0x0D-SQL_introduction) | MySQL tables and basic queries |
-| [0x0E-python-sql-more-queries](0x0E-SQL_more_queries) | Joins, unions and advanced queries |
+| [0x0E-python-sql-more-queries](0x0E-SQL_more_queries) | Joins, unions, advanced queries |
 | [0x0F-python-object-relational-mapping](./0x0F-python-object_relational_mapping) | ORM with MySQLdb and MySQLAlchemy |
 
 ## Author
