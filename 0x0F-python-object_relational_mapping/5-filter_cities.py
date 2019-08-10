@@ -20,7 +20,7 @@ if __name__ == '__main__':
     cur = db.cursor()
     query = "SELECT cities.name FROM cities " +\
             "JOIN states ON cities.state_id = states.id " +\
-            "WHERE states.name = %s "
+            "WHERE states.name = %s ORDER BY cities.id ASC"
     cur.execute(query, (state_name,))
     rows = cur.fetchall()
     for i, row in enumerate(rows):
