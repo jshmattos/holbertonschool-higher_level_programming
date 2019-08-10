@@ -2,7 +2,6 @@
 
 ## Learning Objectives
 
-General
 * How to create a new MySQL user
 * How to manage privileges for a user to a database or table
 * What’s a PRIMARY KEY
@@ -15,7 +14,7 @@ General
 ## Usage
 * All files will be executed on Ubuntu 14.04 LTS using MySQL 5.7 (version 5.7.8-rc)
 
----
+## Tasks
 
 ### [0. My privileges!](./0-privileges.sql)
 * Write a script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server.
