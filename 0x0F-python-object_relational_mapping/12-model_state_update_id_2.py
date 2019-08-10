@@ -17,7 +17,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_mex = session.query(State).states.filter_by(id=2).first()
+    new_mex = session.query(State).filter_by(id=2).first()
     try:
         new_mex.name = "New Mexico"
     except Exception:
