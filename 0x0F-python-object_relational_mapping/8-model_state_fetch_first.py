@@ -17,9 +17,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    res = session.query(State)
+    res = session.query(State).first()
     if res:
-        print("1: " + res.first().name)
+        print("1: " + res.name)
     else:
         print("Nothing")
     session.close()
