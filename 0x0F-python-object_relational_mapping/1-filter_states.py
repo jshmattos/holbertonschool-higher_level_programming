@@ -18,7 +18,7 @@ if __name__ == '__main__':
                          charset="utf8")
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE " +
-                "SUBSTRING(name, 1, 1)='N' ORDER BY 'states.id' ASC;")
+                "name LIKE 'N%' ORDER BY 'states.id' ASC;")
     rows = cur.fetchall()
     for row in rows:
         print(row)
