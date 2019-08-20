@@ -32,11 +32,11 @@ def find_peak(list_of_integers):
     end = len(list_of_integers) - 1
     while mid > start and mid < end:
         if list_of_integers[mid - 1] > list_of_integers[mid]:
-            end = mid
+            end = mid - 1
             mid = int(mid/2)
             continue
         if list_of_integers[mid + 1] > list_of_integers[mid]:
-            start = mid
+            start = mid + 1
             mid = int((end + mid)/2)
             continue
         else:
