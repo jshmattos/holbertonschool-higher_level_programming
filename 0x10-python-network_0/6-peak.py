@@ -27,17 +27,14 @@ def find_peak(list_of_integers):
     """Finds a peak in a list of integers"""
     if not list_of_integers:
         return None
-    _list = list_of_integers
     left_only = right_only = True
     mid = int(len(list_of_integers) / 2)
     while mid > 0 and mid < len(list_of_integers) - 1:
-        right = mid + 1
-        left = mid - 1
-        if _list[left] > _list[mid] and left_only:
+        if _list_of_integers[mid - 1] > _list_of_integers[mid] and left_only:
             right_only = False
             mid -= 1
             continue
-        if _list[right] > _list[mid] and right_only:
+        if _list_of_integers[mid + 1] > _list_of_integers[mid] and right_only:
             left_only = False
             mid += 1
             continue
