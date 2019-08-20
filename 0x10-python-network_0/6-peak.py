@@ -21,24 +21,44 @@ Write a function that finds a peak in a list of unsorted integers.
 #                return _list[i + 1]
 #    return None
 
-
 # efficient
+# def find_peak(list_of_integers):
+#    """Finds a peak in a list of integers"""
+#    if not list_of_integers:
+#        return None
+#    left_only = right_only = True
+#    mid = int(len(list_of_integers) / 2)
+#    while mid > 0 and mid < len(list_of_integers) - 1:
+#        if _list_of_integers[mid - 1] > _list_of_integers[mid] and left_only:
+#            right_only = False
+#            mid -= 1
+#            continue
+#        if _list_of_integers[mid + 1] > _list_of_integers[mid] and right_only:
+#            left_only = False
+#            mid += 1
+#            continue
+#        else:
+#            break
+#    return list_of_integers[mid]
+
+
+# even more effecient
 def find_peak(list_of_integers):
     """Finds a peak in a list of integers"""
     if not list_of_integers:
         return None
-    mid = int(len(list_of_integers) / 2)
-    start = 0
-    end = len(list_of_integers) - 1
-    while mid > start and mid < end:
-        if list_of_integers[mid - 1] > list_of_integers[mid]:
-            end = mid - 1
-            mid = int(mid/2)
-            continue
-        if list_of_integers[mid + 1] > list_of_integers[mid]:
-            start = mid + 1
-            mid = int((end + mid)/2)
-            continue
-        else:
-            break
-    return list_of_integers[mid]
+    return fp(list_of_integers, 0, len(list_of_integers) - 1,
+              len(list_of_integers))
+
+
+def fp(arr, low, high, n):
+    """Helper func"""
+    mid = low + (high - low)//2
+
+    if (mid == 0 or arr[mid - 1] <= arr[mid]) and\
+       (mid == n - 1 or arr[mid + 1] <= arr[mid]):
+        return arr[mid]
+    elif (mid > 0 and arr[mid - 1] > arr[mid]):
+        return fp(arr, low, mid - 1, n)
+    else:
+        return fp(arr, mid + 1, high, n)
