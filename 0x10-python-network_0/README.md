@@ -21,7 +21,7 @@
 * What happens when you type google.com in your browser (Application level)
 
 ## Usage
-* All files will be executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+* All files are executed with Ubuntu 14.04 LTS using Python3 (version 3.4.3)
 * All Python code is linted with PEP 8 style guide (version 1.7.*)
 
 ## Tasks
