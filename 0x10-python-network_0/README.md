@@ -1,7 +1,6 @@
 # 0x10. Python - Network #0
 
-## Description
-What you should learn from this project:
+## Learning Objectives
 
 * What a URL is
 * What HTTP is
@@ -21,7 +20,11 @@ What you should learn from this project:
 * How to make a request with cURL
 * What happens when you type google.com in your browser (Application level)
 
----
+## Usage
+* All files will be executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+* All Python code is linted with PEP 8 style guide (version 1.7.*)
+
+## Tasks
 
 ### [0. cURL body size](./0-body_size.sh)
 * Write a Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
@@ -90,8 +93,10 @@ POST params:
   * 6-peak.py must contain the function
   * 6-peak.txt must contain the complexity of your algorithm: O(log(n)), O(n), O(nlog(n)) or O(n2)
 
-```python
+```sh
 guillaume@ubuntu:~/0x10$ cat 6-main.py
+```
+```python
 #!/usr/bin/python3
 """ Test function find_peak """
 find_peak = __import__('6-peak').find_peak
@@ -102,7 +107,8 @@ print(find_peak([2, 2, 2]))
 print(find_peak([]))
 print(find_peak([-2, -4, 2, 1]))
 print(find_peak([4, 2, 1, 2, 3, 1]))
-
+```
+```sh
 guillaume@ubuntu:~/0x10$ ./6-main.py
 6
 3
@@ -170,4 +176,4 @@ You got me!
 ---
 
 ## Author
-* **Tu Vo** - [tuvo1106](github.com/tuvo1106)
+* **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
