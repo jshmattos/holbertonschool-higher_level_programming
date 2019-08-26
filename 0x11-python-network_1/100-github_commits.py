@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-Takes in a string and sends a search request to the Star Wars API
+Please list 10 commits (from the most recent to oldest) of the repository
+“rails” by the user “rails”
 """
 
 import requests

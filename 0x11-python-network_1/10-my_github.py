@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-Takes in a string and sends a search request to the Star Wars API
+Takes your Github credentials (username and password) and uses the
+Github API to display your id
 """
 
 import requests
