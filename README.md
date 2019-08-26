@@ -23,6 +23,8 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x0D-python-sql_introduction](./0x0D-SQL_introduction) | MySQL tables and basic queries |
 | [0x0E-python-sql-more-queries](0x0E-SQL_more_queries) | Joins, unions, advanced queries |
 | [0x0F-python-object-relational-mapping](./0x0F-python-object_relational_mapping) | ORM with MySQLdb and MySQLAlchemy |
+| [0x10. Python - Network #0](./0x10-python-network_0)| Using CURL to get HTTP responses |
+| [0x11. Python - Network #1](./0x11-python-network_1) | Interacting with API endpoints with Python's requests module |
 
 ## Author
 * __Tu Vo__
