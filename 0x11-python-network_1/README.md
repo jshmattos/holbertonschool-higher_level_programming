@@ -39,8 +39,7 @@ Body response:$
   * You don’t need to check arguments passed to the script (number or type)
   * You must use a with statement
 
-```
-sh
+```sh
 guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://intranet.hbtn.io
 ade2627e-41dd-4c34-b9d9-a0fa0f47b237
 guillaume@ubuntu:~/0x11$ 
@@ -226,7 +225,7 @@ Write a Python script that takes 2 arguments in order to solve this challenge.
   * You are not allowed to import packages other than requests and sys
   * You don’t need to check arguments passed to the script (number or type)
 
-```
+```sh
 guillaume@ubuntu:~/0x11$ ./100-github_commits.py rails rails
 3b5a6dfb18f33c373a89760c60d741f34206f23b: Jon Moss
 f785ad786ae49dd6f7a2f1d77c44ea17008c6656: Jon Moss
