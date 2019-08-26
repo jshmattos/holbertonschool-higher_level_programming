@@ -9,7 +9,7 @@ from sys import argv
 
 if __name__ == "__main__":
     github_commits = 'https://api.github.com/repos/'\
-                     + argv[1] + '/' + argv[2] + '/commits'
+                     + argv[2] + '/' + argv[1] + '/commits'
     r = requests.get(github_commits)
     if "json" not in r.headers.get('content-type'):
         print("Not a valid JSON")
