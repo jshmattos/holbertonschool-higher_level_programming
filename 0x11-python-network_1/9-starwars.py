@@ -14,5 +14,5 @@ if __name__ == "__main__":
     else:
         res = r.json()
         print("Number of results: " + str(res.get('count')))
-        for r in res['results']:
+        for r in res.get('results'):
             print(r.get('name'))
