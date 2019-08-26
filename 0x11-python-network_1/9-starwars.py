@@ -14,6 +14,6 @@ if __name__ == "__main__":
     else:
         res = r.json()
         search_res = res.get('results')
-        print("Number of results: " + str(len(search_res)))
+        print("Number of results: " + str(res.get('count')))
         for r in search_res:
             print(r.get('name'))
