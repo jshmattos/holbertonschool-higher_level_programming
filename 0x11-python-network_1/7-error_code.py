@@ -13,3 +13,5 @@ if __name__ == "__main__":
     status = r.status_code
     if status >= 400:
         print("Error code: " + str(status))
+    else:
+        print(r.text)
