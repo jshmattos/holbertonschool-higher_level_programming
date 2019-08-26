@@ -4,7 +4,6 @@
 Takes in a string and sends a search request to the Star Wars API
 """
 
-import pprint
 import requests
 from sys import argv
 
