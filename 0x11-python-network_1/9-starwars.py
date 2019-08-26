@@ -9,10 +9,7 @@ from sys import argv
 
 if __name__ == "__main__":
     r = requests.get("https://swapi.co/api/people/?search=" + argv[1])
-    if "json" not in r.headers.get('content-type'):
-        print("Not a valid JSON")
-    else:
-        res = r.json()
-        print("Number of results: " + str(res.get('count')))
-        for r in res.get('results'):
-            print(r.get('name'))
+    res = r.json()
+    print("Number of results: " + str(res.get('count')))
+    for r in res.get('results'):
+        print(r.get('name'))
