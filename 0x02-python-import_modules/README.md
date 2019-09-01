@@ -396,4 +396,4 @@ guillaume@ubuntu:~/0x02$ wc -l 103-fast_alphabet.py
 
 ## Author
 
-- **Tu Vo** - [tuvo1106@gmail.com](https://github.com/tuvo1106)
+- **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)

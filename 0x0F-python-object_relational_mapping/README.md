@@ -568,4 +568,4 @@ guillaume@ubuntu:~/0x0F$ ./102-relationship_cities_states_list.py root root hbtn
 
 ## Author
 
-- **Tu Vo** - [tuvo1106@gmail.com](https://github.com/tuvo1106)
+- **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
