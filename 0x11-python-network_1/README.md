@@ -12,7 +12,7 @@
 
 ## Requirements
 
-- All files are executed with Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+- All files are created and executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
 - All Python code is linted with PEP 8 style guide (version 1.7.\*)
 
 ## Tasks
