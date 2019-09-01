@@ -1,47 +1,51 @@
 # 0x08. Python - More Classes and Objects
 
 ## Learning Objectives
+
 General
-* Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
-* What is OOP
-* “first-class everything”
-* What is a class
-* What is an object and an instance
-* What is the difference between a class and an object or instance
-* What is an attribute
-* What are and how to use public, protected and private attributes
-* What is self
-* What is a method
-* What is the special \__init__ method and how to use it
-* What is Data Abstraction, Data Encapsulation, and Information Hiding
-* What is a property
-* What is the difference between an attribute and a property in Python
-* What is the Pythonic way to write getters and setters in Python
-* What are the special \__str__ and \__repr__ methods and how to use them
-* What is the difference between \__str__ and \__repr__
-* What is a class attribute
-* What is the difference between a object attribute and a class attribute
-* What is a class method
-* What is a static method
-* How to dynamically create arbitrary new attributes for existing instances of a class
-* How to bind attributes to object and classes
-* What is and what does contain __dict__ of a class and of an instance of a class
-* How does Python find the attributes of an object or class
-* How to use the getattr function
 
-## Usage
-* All files are interpreted/compiled on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
-* All code use the PEP 8 style (version 1.7.*)
+- Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
+- What is OOP
+- “first-class everything”
+- What is a class
+- What is an object and an instance
+- What is the difference between a class and an object or instance
+- What is an attribute
+- What are and how to use public, protected and private attributes
+- What is self
+- What is a method
+- What is the special \_\_init\_\_ method and how to use it
+- What is Data Abstraction, Data Encapsulation, and Information Hiding
+- What is a property
+- What is the difference between an attribute and a property in Python
+- What is the Pythonic way to write getters and setters in Python
+- What are the special \_\_str** and \_\_repr** methods and how to use them
+- What is the difference between \_\_str** and \_\_repr**
+- What is a class attribute
+- What is the difference between a object attribute and a class attribute
+- What is a class method
+- What is a static method
+- How to dynamically create arbitrary new attributes for existing instances of a class
+- How to bind attributes to object and classes
+- What is and what does contain **dict** of a class and of an instance of a class
+- How does Python find the attributes of an object or class
+- How to use the getattr function
 
----
+## Requirements
+
+- All files are created and executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+- All Python code use the PEP 8 style (version 1.7.\*)
 
 ## Tasks
 
 ### [0. Simple rectangle](./0-rectangle.py)
-* Write an empty class Rectangle that defines a rectangle:
+
+- Write an empty class Rectangle that defines a rectangle:
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 0-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('0-rectangle').Rectangle
@@ -51,6 +55,7 @@ print(type(my_rectangle))
 print(my_rectangle.__dict__)
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./0-main.py
 <class '0-rectangle.Rectangle'>
@@ -58,21 +63,24 @@ guillaume@ubuntu:~/0x08$ ./0-main.py
 ```
 
 ### [1. Real definition of a rectangle](./1-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 0-rectangle.py)
-  * Private instance attribute: width:
-    * property def width(self): to retrieve it
-    * property setter def width(self, value): to set it:
-      * width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
-      * if width is less than 0, raise a ValueError exception with the message width must be >= 0
-  * Private instance attribute: height:
-    * property def height(self): to retrieve it
-    * property setter def height(self, value): to set it:
-      * height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
-      * if height is less than 0, raise a ValueError exception with the message height must be >= 0
-  * Instantiation with optional width and height: def __init__(self, width=0, height=0):
+
+- Write a class Rectangle that defines a rectangle by: (based on 0-rectangle.py)
+  - Private instance attribute: width:
+    - property def width(self): to retrieve it
+    - property setter def width(self, value): to set it:
+      - width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
+      - if width is less than 0, raise a ValueError exception with the message width must be >= 0
+  - Private instance attribute: height:
+    - property def height(self): to retrieve it
+    - property setter def height(self, value): to set it:
+      - height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
+      - if height is less than 0, raise a ValueError exception with the message height must be >= 0
+  - Instantiation with optional width and height: def **init**(self, width=0, height=0):
+
 ```
 guillaume@ubuntu:~/0x08$ cat 1-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('1-rectangle').Rectangle
@@ -85,6 +93,7 @@ my_rectangle.height = 3
 print(my_rectangle.__dict__)
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./1-main.py
 {'_Rectangle__height': 4, '_Rectangle__width': 2}
@@ -92,13 +101,16 @@ guillaume@ubuntu:~/0x08$ ./1-main.py
 ```
 
 ### [2. Area and Perimeter](./2-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
-  * Public instance method: def area(self): that returns the rectangle area
-  * Public instance method: def perimeter(self): that returns the rectangle perimeter:
-    * if width or height is equal to 0, perimeter is equal to 0
+
+- Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
+  - Public instance method: def area(self): that returns the rectangle area
+  - Public instance method: def perimeter(self): that returns the rectangle perimeter:
+    - if width or height is equal to 0, perimeter is equal to 0
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 2-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('2-rectangle').Rectangle
@@ -113,6 +125,7 @@ my_rectangle.height = 3
 print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./2-main.py
 Area: 8 - Perimeter: 12
@@ -121,12 +134,15 @@ Area: 30 - Perimeter: 26
 ```
 
 ### [3. String representation](./3-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
-  * print() and str() should print the rectangle with the character #: (see example below)
-    * if width or height is equal to 0, return an empty string
+
+- Write a class Rectangle that defines a rectangle by: (based on 2-rectangle.py)
+  - print() and str() should print the rectangle with the character #: (see example below)
+    - if width or height is equal to 0, return an empty string
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 3-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('3-rectangle').Rectangle
@@ -145,6 +161,7 @@ print(my_rectangle)
 print(repr(my_rectangle))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./3-main.py
 Area: 8 - Perimeter: 12
@@ -161,11 +178,14 @@ Area: 8 - Perimeter: 12
 ```
 
 ### [4. Eval is magic](./4-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
-  * repr() should return a string representation of the rectangle to be able to recreate a new instance by using eval() (see example below)
+
+- Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
+  - repr() should return a string representation of the rectangle to be able to recreate a new instance by using eval() (see example below)
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 4-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('4-rectangle').Rectangle
@@ -195,6 +215,7 @@ print(new_rectangle is my_rectangle)
 print(type(new_rectangle) is type(my_rectangle))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./4-main.py
 ##
@@ -230,11 +251,14 @@ True
 ```
 
 ### [5. Detect instance deletion](./5-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 4-rectangle.py)
-  * Print the message Bye rectangle... (... being 3 dots not ellipsis) when an instance of Rectangle is deleted
+
+- Write a class Rectangle that defines a rectangle by: (based on 4-rectangle.py)
+  - Print the message Bye rectangle... (... being 3 dots not ellipsis) when an instance of Rectangle is deleted
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 5-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('5-rectangle').Rectangle
@@ -250,6 +274,7 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./5-main.py
 Area: 8 - Perimeter: 12
@@ -258,14 +283,17 @@ Bye rectangle...
 ```
 
 ### [6. How many instances](./6-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 5-rectangle.py)
-  * Public class attribute number_of_instances:
-    * Initialized to 0
-    * Incremented during each new instance instantiation
-    * Decremented during each instance deletion
+
+- Write a class Rectangle that defines a rectangle by: (based on 5-rectangle.py)
+  - Public class attribute number_of_instances:
+    - Initialized to 0
+    - Incremented during each new instance instantiation
+    - Decremented during each instance deletion
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 6-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('6-rectangle').Rectangle
@@ -279,6 +307,7 @@ del my_rectangle_2
 print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./6-main.py
 2 instances of Rectangle
@@ -289,14 +318,17 @@ Bye rectangle...
 ```
 
 ### [7. Change representation](./7-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 6-rectangle.py)
-  * Public class attribute print_symbol:
-    * Initialized to #
-    * Used as symbol for string representation
-    * Can be any type
+
+- Write a class Rectangle that defines a rectangle by: (based on 6-rectangle.py)
+  - Public class attribute print_symbol:
+    - Initialized to #
+    - Used as symbol for string representation
+    - Can be any type
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 7-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('7-rectangle').Rectangle
@@ -326,6 +358,7 @@ print(my_rectangle_3)
 print("--")
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./7-main.py
 ########
@@ -356,14 +389,17 @@ Bye rectangle...
 ```
 
 ### [8. Compare rectangles](./8-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 7-rectangle.py)
-  * Static method def bigger_or_equal(rect_1, rect_2): that returns the biggest rectangle based on the area
-    * rect_1 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_1 must be an instance of Rectangle
-    * rect_2 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_2 must be an instance of Rectangle
-    * Returns rect_1 if both have the same area value
+
+- Write a class Rectangle that defines a rectangle by: (based on 7-rectangle.py)
+  - Static method def bigger_or_equal(rect_1, rect_2): that returns the biggest rectangle based on the area
+    - rect_1 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_1 must be an instance of Rectangle
+    - rect_2 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_2 must be an instance of Rectangle
+    - Returns rect_1 if both have the same area value
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 8-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('8-rectangle').Rectangle
@@ -385,6 +421,7 @@ else:
     print("my_rectangle_2 is bigger than my_rectangle_1")
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./8-main.py
 my_rectangle_1 is bigger or equal to my_rectangle_2
@@ -394,11 +431,14 @@ Bye rectangle...
 ```
 
 ### [9. A square is a rectangle](./9-rectangle.py)
-* Write a class Rectangle that defines a rectangle by: (based on 8-rectangle.py)
-  * Class method def square(cls, size=0): that returns a new Rectangle instance with width == height == size
+
+- Write a class Rectangle that defines a rectangle by: (based on 8-rectangle.py)
+  - Class method def square(cls, size=0): that returns a new Rectangle instance with width == height == size
+
 ```sh
 guillaume@ubuntu:~/0x08$ cat 9-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('9-rectangle').Rectangle
@@ -408,6 +448,7 @@ print("Area: {} - Perimeter: {}".format(my_square.area(), my_square.perimeter())
 print(my_square)
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x08$ ./9-main.py
 Area: 25 - Perimeter: 20
@@ -420,27 +461,30 @@ Bye rectangle...
 ```
 
 ### [10. Class and instance attributes](https://medium.com/@tuvo1106/python-class-and-instance-attributes-c4d9c7d3b3ef)
-* Write a blog post describing how object and class attributes work.
-  * What’s a class attribute
-  * What’s an instance attribute
-  * What are all the ways to create them and what is the Pythonic way of doing it
-  * What are the differences between class and instance attributes
-  * What are the advantages and drawbacks of each of them
-  * How does Python deal with the object and class attributes using the __dict__
+
+- Write a blog post describing how object and class attributes work.
+  - What’s a class attribute
+  - What’s an instance attribute
+  - What are all the ways to create them and what is the Pythonic way of doing it
+  - What are the differences between class and instance attributes
+  - What are the advantages and drawbacks of each of them
+  - How does Python deal with the object and class attributes using the **dict**
 
 ### [11. N queens](./101-nqueens.py)
-* The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
 
-  * Usage: nqueens N
-    * If the user called the program with the wrong number of arguments, print Usage: nqueens N, followed by a new line, and exit with the   status 1
-  * where N must be an integer greater or equal to 4
-    * If N is not an integer, print N must be a number, followed by a new line, and exit with the status 1
-    * If N is smaller than 4, print N must be at least 4, followed by a new line, and exit with the status 1
-  * The program should print every possible solution to the problem
-    * One solution per line
-    * Format: see example
-    * You don’t have to print the solutions in a specific order
-  * You are only allowed to import the sys module
+- The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
+
+  - Requirements: nqueens N
+    - If the user called the program with the wrong number of arguments, print Requirements: nqueens N, followed by a new line, and exit with the status 1
+  - where N must be an integer greater or equal to 4
+    - If N is not an integer, print N must be a number, followed by a new line, and exit with the status 1
+    - If N is smaller than 4, print N must be at least 4, followed by a new line, and exit with the status 1
+  - The program should print every possible solution to the problem
+    - One solution per line
+    - Format: see example
+    - You don’t have to print the solutions in a specific order
+  - You are only allowed to import the sys module
+
 ```sh
 julien@ubuntu:~/0x08. N Queens$ ./101-nqueens.py 4
 [[0, 1], [1, 3], [2, 0], [3, 2]]
@@ -452,7 +496,6 @@ julien@ubuntu:~/0x08. N Queens$ ./101-nqueens.py 6
 [[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
 ```
 
----
-
 ## Author
-* **Tu Vo** - [tuvo1106](./)
+
+- **Tu Vo** - [tuvo1106@gmail.com](https://github.com/tuvo1106)

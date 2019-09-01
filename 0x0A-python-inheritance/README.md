@@ -1,35 +1,39 @@
 # 0x0A. Python - Inheritance
 
 ## Learning Objectives
+
 General
-* Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
-* What is a superclass, baseclass or parentclass
-* What is a subclass
-* How to list all attributes and methods of a class or instance
-* When can an instance have new attributes
-* How to inherit class from another
-* How to define a class with multiple base classes 
-* What is the default class every class inherit from
-* How to override a method or attribute inherited from the base class
-* Which attributes or methods are available by heritage to subclasses
-* What is the purpose of inheritance
-* What are, when and how to use isinstance, issubclass, type and super built-in functions
 
-## Usage
-* All files are interpreted/compiled on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
-* All code use the PEP 8 style (version 1.7.*)
+- Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
+- What is a superclass, baseclass or parentclass
+- What is a subclass
+- How to list all attributes and methods of a class or instance
+- When can an instance have new attributes
+- How to inherit class from another
+- How to define a class with multiple base classes
+- What is the default class every class inherit from
+- How to override a method or attribute inherited from the base class
+- Which attributes or methods are available by heritage to subclasses
+- What is the purpose of inheritance
+- What are, when and how to use isinstance, issubclass, type and super built-in functions
 
----
+## Requirements
+
+- All files are created and executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+- All Python code use the PEP 8 style (version 1.7.\*)
 
 ## Tasks
 
 ### [0. Lookup](./0-lookup.py)
-* Write a function that returns the list of available attributes and methods of an object:
-  * Prototype: def lookup(obj):
-  * Returns a list object
+
+- Write a function that returns the list of available attributes and methods of an object:
+  - Prototype: def lookup(obj):
+  - Returns a list object
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 0-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 lookup = __import__('0-lookup').lookup
@@ -47,6 +51,7 @@ print(lookup(MyClass2))
 print(lookup(int))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./0-main.py
 ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__']
@@ -55,12 +60,15 @@ guillaume@ubuntu:~/0x0A$ ./0-main.py
 ```
 
 ### [1. My list](./1-my_list.py)
-* Write a class MyList that inherits from list:
-  * Public instance method: def print_sorted(self): that prints the list, but sorted (ascending sort)
-  * You can assume that all the elements of the list will be of type int
+
+- Write a class MyList that inherits from list:
+  - Public instance method: def print_sorted(self): that prints the list, but sorted (ascending sort)
+  - You can assume that all the elements of the list will be of type int
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 1-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 MyList = __import__('1-my_list').MyList
@@ -76,6 +84,7 @@ my_list.print_sorted()
 print(my_list)
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./1-main.py
 [1, 4, 2, 3, 5]
@@ -84,11 +93,14 @@ guillaume@ubuntu:~/0x0A$ ./1-main.py
 ```
 
 ### [2. Exact same object](./2-is_same_class.py)
-* Write a function that returns True if the object is exactly an instance of the specified class ; otherwise False.
-  * Prototype: def is_same_class(obj, a_class):
+
+- Write a function that returns True if the object is exactly an instance of the specified class ; otherwise False.
+  - Prototype: def is_same_class(obj, a_class):
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 2-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 is_same_class = __import__('2-is_same_class').is_same_class
@@ -102,17 +114,21 @@ if is_same_class(a, object):
     print("{} is an instance of the class {}".format(a, object.__name__))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./2-main.py
 1 is an instance of the class int
 ```
 
 ### [3. Same class or inherit from](./3-is_kind_of_class.py)
-* Write a function that returns True if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class ; otherwise False.
-  * Prototype: def is_kind_of_class(obj, a_class):
+
+- Write a function that returns True if the object is an instance of, or if the object is an instance of a class that inherited from, the specified class ; otherwise False.
+  - Prototype: def is_kind_of_class(obj, a_class):
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 3-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 is_kind_of_class = __import__('3-is_kind_of_class').is_kind_of_class
@@ -126,6 +142,7 @@ if is_kind_of_class(a, object):
     print("{} comes from {}".format(a, object.__name__))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./3-main.py
 1 comes from int
@@ -133,11 +150,14 @@ guillaume@ubuntu:~/0x0A$ ./3-main.py
 ```
 
 ### [4. Only sub class of](./4-inherits_from.py)
-* Write a function that returns True if the object is an instance of a class that inherited (directly or indirectly) from the specified class ; otherwise False.
-  * Prototype: def inherits_from(obj, a_class):
+
+- Write a function that returns True if the object is an instance of a class that inherited (directly or indirectly) from the specified class ; otherwise False.
+  - Prototype: def inherits_from(obj, a_class):
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 4-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 inherits_from = __import__('4-inherits_from').inherits_from
@@ -151,6 +171,7 @@ if inherits_from(a, object):
     print("{} inherited from class {}".format(a, object.__name__))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./4-main.py
 True inherited from class int
@@ -158,10 +179,13 @@ True inherited from class object
 ```
 
 ### [5. Geometry module](./5-base_geometry.py)
-* Write an empty class BaseGeometry.
+
+- Write an empty class BaseGeometry.
+
 ```
 guillaume@ubuntu:~/0x0A$ cat 5-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 BaseGeometry = __import__('5-base_geometry').BaseGeometry
@@ -173,6 +197,7 @@ print(dir(bg))
 print(dir(BaseGeometry))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./5-main.py
 <5-base_geometry.BaseGeometry object at 0x7f2050c69208>
@@ -181,11 +206,14 @@ guillaume@ubuntu:~/0x0A$ ./5-main.py
 ```
 
 ### [6. Improve Geometry](./6-base_geometry.py)
-* Write a class BaseGeometry (based on 5-base_geometry.py).
-  * Public instance method: def area(self): that raises an Exception with the message area() is not implemented
+
+- Write a class BaseGeometry (based on 5-base_geometry.py).
+  - Public instance method: def area(self): that raises an Exception with the message area() is not implemented
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 6-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 BaseGeometry = __import__('6-base_geometry').BaseGeometry
@@ -198,21 +226,25 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./6-main.py
 [Exception] area() is not implemented
 ```
 
 ### [7. Integer validator](./7-base_geometry.py)
-* Write a class BaseGeometry (based on 6-base_geometry.py).
-  * Public instance method: def area(self): that raises an Exception with the message area() is not implemented
-  * Public instance method: def integer_validator(self, name, value): that validates value:
-    * you can assume name is always a string
-    * if value is not an integer: raise a TypeError exception, with the message <name> must be an integer
-    * if value is less or equal to 0: raise a ValueError exception with the message <name> must be greater than 0  * 
+
+- Write a class BaseGeometry (based on 6-base_geometry.py).
+  - Public instance method: def area(self): that raises an Exception with the message area() is not implemented
+  - Public instance method: def integer_validator(self, name, value): that validates value:
+    - you can assume name is always a string
+    - if value is not an integer: raise a TypeError exception, with the message <name> must be an integer
+    - if value is less or equal to 0: raise a ValueError exception with the message <name> must be greater than 0 \*
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 7-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
@@ -238,6 +270,7 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./7-main.py
 [TypeError] name must be an integer
@@ -246,13 +279,16 @@ guillaume@ubuntu:~/0x0A$ ./7-main.py
 ```
 
 ### [8. Rectangle](./8-rectangle.py)
-* Write a class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
-  * Instantiation with width and height: def __init__(self, width, height):
-    * width and height must be private. No getter or setter
-    * width and height must be positive integers, validated by integer_validator
+
+- Write a class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
+  - Instantiation with width and height: def **init**(self, width, height):
+    - width and height must be private. No getter or setter
+    - width and height must be positive integers, validated by integer_validator
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 8-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('8-rectangle').Rectangle
@@ -273,6 +309,7 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./8-main.py
 <8-rectangle.Rectangle object at 0x7f6f488f7eb8>
@@ -282,16 +319,19 @@ guillaume@ubuntu:~/0x0A$ ./8-main.py
 ```
 
 ### [9. Full rectangle](./9-rectangle.py)
-* Write a class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
-(task based on 8-rectangle.py)
-  * Instantiation with width and height: def __init__(self, width, height)::
-    * width and height must be private. No getter or setter
-    * width and height must be positive integers validated by integer_validator
-  * the area() method must be implemented
-  * print() should print, and str() should return, the following rectangle description: [Rectangle] <width>/<height>
+
+- Write a class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
+  (task based on 8-rectangle.py)
+  - Instantiation with width and height: def **init**(self, width, height)::
+    - width and height must be private. No getter or setter
+    - width and height must be positive integers validated by integer_validator
+  - the area() method must be implemented
+  - print() should print, and str() should return, the following rectangle description: [Rectangle] <width>/<height>
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 9-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Rectangle = __import__('9-rectangle').Rectangle
@@ -302,6 +342,7 @@ print(r)
 print(r.area())
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./9-main.py
 [Rectangle] 3/5
@@ -309,14 +350,17 @@ guillaume@ubuntu:~/0x0A$ ./9-main.py
 ```
 
 ### [10. Square #1](./10-square.py)
-* Write a class Square that inherits from Rectangle (9-rectangle.py):
-  * Instantiation with size: def \_init__(self, size)::
-    * size must be private. No getter or setter
-    * size must be a positive integer, validated by integer_validator
-  * the area() method must be implemented
+
+- Write a class Square that inherits from Rectangle (9-rectangle.py):
+  - Instantiation with size: def \_init\_\_(self, size)::
+    - size must be private. No getter or setter
+    - size must be a positive integer, validated by integer_validator
+  - the area() method must be implemented
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 10-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Square = __import__('10-square').Square
@@ -327,6 +371,7 @@ print(s)
 print(s.area())
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./10-main.py
 [Rectangle] 13/13
@@ -334,16 +379,19 @@ guillaume@ubuntu:~/0x0A$ ./10-main.py
 ```
 
 ### [11. Square #2](./11-square.py)
-* Write a class Square that inherits from Rectangle (9-rectangle.py).
-(task based on 10-square.py).
-  * Instantiation with size: def __init__(self, size)::
-    * size must be private. No getter or setter
-    * size must be a positive integer, validated by integer_validator
-  * the area() method must be implemented
-  * print() should print, and str() should return, the square description: [Square] <width>/<height>
+
+- Write a class Square that inherits from Rectangle (9-rectangle.py).
+  (task based on 10-square.py).
+  - Instantiation with size: def **init**(self, size)::
+    - size must be private. No getter or setter
+    - size must be a positive integer, validated by integer_validator
+  - the area() method must be implemented
+  - print() should print, and str() should return, the square description: [Square] <width>/<height>
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 11-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 Square = __import__('11-square').Square
@@ -354,6 +402,7 @@ print(s)
 print(s.area())
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./11-main.py
 [Square] 13/13
@@ -361,11 +410,14 @@ guillaume@ubuntu:~/0x0A$ ./11-main.py
 ```
 
 ### [12. My integer](./100-my_int.py)
-* Write a class MyInt that inherits from int:
-  * MyInt is a rebel. MyInt has == and != operators inverted
+
+- Write a class MyInt that inherits from int:
+  - MyInt is a rebel. MyInt has == and != operators inverted
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 100-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 MyInt = __import__('100-my_int').MyInt
@@ -376,6 +428,7 @@ print(my_i == 3)
 print(my_i != 3)
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./100-main.py
 3
@@ -384,12 +437,15 @@ True
 ```
 
 ### [13. Can I?](./101-add_attribute.py)
-* Write a function that adds a new attribute to an object if it’s possible:
-  * Raise a TypeError exception, with the message can't add new attribute if the object can’t have new attribute
-  * You are not allowed to use try/catch
+
+- Write a function that adds a new attribute to an object if it’s possible:
+  - Raise a TypeError exception, with the message can't add new attribute if the object can’t have new attribute
+  - You are not allowed to use try/catch
+
 ```sh
 guillaume@ubuntu:~/0x0A$ cat 101-main.py
 ```
+
 ```python
 #!/usr/bin/python3
 add_attribute = __import__('101-add_attribute').add_attribute
@@ -409,13 +465,13 @@ except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 ```
+
 ```sh
 guillaume@ubuntu:~/0x0A$ ./101-main.py
 John
 [TypeError] can't add new attribute
 ```
 
----
-
 ## Author
-* **Tu Vo** - [tuvo1106](./)
+
+- **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)

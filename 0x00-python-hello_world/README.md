@@ -1,36 +1,41 @@
 # 0x00. Python - Hello, World
 
 ## Learning Objectives
+
 General
-* Why Python programming is awesome(don’t forget to tweet today, with the hashtag  # pythoniscool :))
-* Who created Python
-* Who is Guido van Rossum
-* Where does the name ‘Python’ come from
-* What is the Zen of Python
-* How to use the Python interpreter
-* How to print text and variables using print
-* How to use strings
-* What are indexing and slicing in Python
-* What is the official Holberton Python coding style and how to check your code with PEP 8
 
-## Usage
-* All files are interpreted/compiled on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
-* All code use the PEP 8 style (version 1.7.*)
+- Why Python programming is awesome(don’t forget to tweet today, with the hashtag # pythoniscool :))
+- Who created Python
+- Who is Guido van Rossum
+- Where does the name ‘Python’ come from
+- What is the Zen of Python
+- How to use the Python interpreter
+- How to print text and variables using print
+- How to use strings
+- What are indexing and slicing in Python
+- What is the official Holberton Python coding style and how to check your code with PEP 8
 
----
+## Requirements
+
+- All files are created and executed on Ubuntu 14.04 LTS using Python3 (version 3.4.3)
+- All Python code use the PEP 8 style (version 1.7.\*)
 
 ## Tasks
 
 ### [0. Run Python file](./0-run)
-* Write a Shell script that runs a Python script.
-* The Python file name will be saved in the environment variable $PYFILE
+
+- Write a Shell script that runs a Python script.
+- The Python file name will be saved in the environment variable \$PYFILE
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ cat main.py
 ```
+
 ```python
 #!/usr/bin/python3
 print("Holberton School")
 ```
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 guillaume@ubuntu:~/py/0x00$ ./0-run
@@ -38,71 +43,83 @@ Holberton School
 ```
 
 ### [1. Run inline](./1-run_inline)
-* Write a Shell script that runs Python code.
-* The Python code will be saved in the environment variable $PYCODE
+
+- Write a Shell script that runs Python code.
+- The Python code will be saved in the environment variable \$PYCODE
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ export PYCODE='print("Holberton School: {}".format(88+10))'
-guillaume@ubuntu:~/py/0x00$ ./1-run_inline 
+guillaume@ubuntu:~/py/0x00$ ./1-run_inline
 Holberton School: 98
 ```
 
 ### [2. Hello, print](./2-print.py)
-* Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
-  * Use the function print
+
+- Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
+  - Use the function print
+
 ```sh
-guillaume@ubuntu:~/py/0x00$ ./2-print.py 
+guillaume@ubuntu:~/py/0x00$ ./2-print.py
 "Programming is like building a multilingual puzzle
 ```
 
 ### [3. Print integer](./3-print_number.py)
-* Complete this source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
-  * You can find the source code here
-  * The output of the script should be:
-    * the number, followed by Battery street,
-    * followed by a new line
-  * You are not allowed to cast the variable number into a string
-  * Your code must be 3 lines long
-  * You have to use the new print numbers tips (with .format(...))
+
+- Complete this source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
+  - You can find the source code here
+  - The output of the script should be:
+    - the number, followed by Battery street,
+    - followed by a new line
+  - You are not allowed to cast the variable number into a string
+  - Your code must be 3 lines long
+  - You have to use the new print numbers tips (with .format(...))
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
 98 Battery street
 ```
 
 ### [4. Print float](./4-print_float.py)
-* Complete the source code in order to print the float stored in the variable number with a precision of 2 digits.
-  * You can find the source code here
-  * The output of the program should be:
-    * Float:, followed by the float with only 2 digits
-    * followed by a new line
-  * You are not allowed to cast number to string
-  * You have to use the new print formatting tips (with .format(...))
+
+- Complete the source code in order to print the float stored in the variable number with a precision of 2 digits.
+  - You can find the source code here
+  - The output of the program should be:
+    - Float:, followed by the float with only 2 digits
+    - followed by a new line
+  - You are not allowed to cast number to string
+  - You have to use the new print formatting tips (with .format(...))
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./4-print_float.py
 Float: 3.14
 ```
 
 ### [5. Print string](./5-print_string.py)
-* Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
-  * You can find the source code here
-  * The output of the program should be:
-    * 3 times the value of str
-    * followed by a new line
-    * followed by the 9 first characters of str
-    * followed by a new line
-  * You are not allowed to use any loops or conditional statement
-  * Your program should be maximum 5 lines long
+
+- Complete this source code in order to print 3 times a string stored in the variable str, followed by its first 9 characters.
+  - You can find the source code here
+  - The output of the program should be:
+    - 3 times the value of str
+    - followed by a new line
+    - followed by the 9 first characters of str
+    - followed by a new line
+  - You are not allowed to use any loops or conditional statement
+  - Your program should be maximum 5 lines long
+
 ```sh
-guillaume@ubuntu:~/py/0x00$ ./5-print_string.py 
+guillaume@ubuntu:~/py/0x00$ ./5-print_string.py
 Holberton SchoolHolberton SchoolHolberton School
 Holberton
 ```
 
 ### [6. Play with strings](./6-concat.py)
-* Complete this source code to print Welcome to Holberton School!
-  * You can find the source code here
-  * You are not allowed to use any loops or conditional statements.
-  * You have to use the variables str1 and str2 in your new line of code
-  * Your program should be exactly 5 lines long
+
+- Complete this source code to print Welcome to Holberton School!
+  - You can find the source code here
+  - You are not allowed to use any loops or conditional statements.
+  - You have to use the variables str1 and str2 in your new line of code
+  - Your program should be exactly 5 lines long
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./6-concat.py
 Welcome to Holberton School!
@@ -111,13 +128,15 @@ guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
 ```
 
 ### [7. Copy - Cut - Paste](./7-edges.py)
-* Complete this source code
-  * You can find the source code here
-  * You are not allowed to use any loops or conditional statements
-  * Your program should be exactly 8 lines long
-  * word_first_3 should contain the first 3 letters of the variable word
-  * word_last_2 should contain the last 2 letters of the variable word
-  * middle_word should contain the value of the variable word without the first and last letters
+
+- Complete this source code
+  - You can find the source code here
+  - You are not allowed to use any loops or conditional statements
+  - Your program should be exactly 8 lines long
+  - word_first_3 should contain the first 3 letters of the variable word
+  - word_last_2 should contain the last 2 letters of the variable word
+  - middle_word should contain the value of the variable word without the first and last letters
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./7-edges.py
 First 3 letters: Hol
@@ -128,12 +147,14 @@ guillaume@ubuntu:~/py/0x00$ wc -l 7-edges.py
 ```
 
 ### [8. Create a new sentence](./8-concat_edges.py)
-* Complete this source code to print object - oriented programming with Python, followed by a new line.
-  * You can find the source code here
-  * You are not allowed to use any loops or conditional statements
-  * Your program should be exactly 5 lines long
-  * You are not allowed to create new variables
-  * You are not allowed to use string literals
+
+- Complete this source code to print object - oriented programming with Python, followed by a new line.
+  - You can find the source code here
+  - You are not allowed to use any loops or conditional statements
+  - Your program should be exactly 5 lines long
+  - You are not allowed to create new variables
+  - You are not allowed to use string literals
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
 object-oriented programming with Python
@@ -142,8 +163,10 @@ guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
 ```
 
 ### [9. Easter Egg](./9-easter_egg.py)
-* Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
-  * Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
+
+- Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
+  - Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py
 The Zen of Python, by Tim Peters
@@ -170,18 +193,21 @@ Namespaces are one honking great idea -- let's do more of those!
 ```
 
 ### [10. Linked list cycle](./10-check_cycle.c)
-* Technical interview preparation:
-  * You are not allowed to google anything
-  * Whiteboard first
-  * This task and all future technical interview prep tasks will include checks for the efficiency of your solution, i.e. is your solution’s runtime fast enough, does your solution require extra memory usage / mallocs, etc.
-* Write a function in C that checks if a singly linked list has a cycle in it.
-  * Prototype: int check_cycle(listint_t *list);
-  * Return: 0 if there is no cycle, 1 if there is a cycle
-* Requirements:
-  * Only these functions are allowed: write, printf, putchar, puts, malloc, free
+
+- Technical interview preparation:
+  - You are not allowed to google anything
+  - Whiteboard first
+  - This task and all future technical interview prep tasks will include checks for the efficiency of your solution, i.e. is your solution’s runtime fast enough, does your solution require extra memory usage / mallocs, etc.
+- Write a function in C that checks if a singly linked list has a cycle in it.
+  - Prototype: int check_cycle(listint_t \*list);
+  - Return: 0 if there is no cycle, 1 if there is a cycle
+- Requirements:
+  - Only these functions are allowed: write, printf, putchar, puts, malloc, free
+
 ```sh
 carrie@ubuntu:~/0x00$ cat lists.h
 ```
+
 ```c
 #ifndef LISTS_H
 #define LISTS_H
@@ -209,9 +235,11 @@ int check_cycle(listint_t *list);
 
 #endif /* LISTS_H */
 ```
+
 ```sh
 carrie@ubuntu:~/0x00$ cat 10-linked_lists.c
 ```
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -277,9 +305,11 @@ void free_listint(listint_t *head)
     }
 }
 ```
+
 ```sh
 carrie@ubuntu:~/0x00$ cat 10-main.c
 ```
+
 ```c
 #include <stdlib.h>
 #include <string.h>
@@ -335,6 +365,7 @@ int main(void)
     return (0);
 }
 ```
+
 ```sh
 carrie@ubuntu:~/0x00$ gcc -Wall -Werror -Wextra -pedantic 10-main.c 10-check_cycle.c 10-linked_lists.c -o cycle
 carrie@ubuntu:~/0x00$$ ./cycle
@@ -351,12 +382,14 @@ Linked list has a cycle
 ```
 
 ### [11. Hello, write](./100-write.py)
-* Write a Python script that prints exactly and that piece of art is useful - Dora Korpar, 2015 - 10 - 19, followed by a new line.
-  * Use the function write from the sys module
-  * You are not allowed to use print
-  * Your script should print to stderr
-  * Your script should exit with the status code 1
-  * (Dora Korpar was a Holberton student in Cohort 0 of San Francisco)
+
+- Write a Python script that prints exactly and that piece of art is useful - Dora Korpar, 2015 - 10 - 19, followed by a new line.
+  - Use the function write from the sys module
+  - You are not allowed to use print
+  - Your script should print to stderr
+  - Your script should exit with the status code 1
+  - (Dora Korpar was a Holberton student in Cohort 0 of San Francisco)
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ ./100-write.py
 and that piece of art is useful - Dora Korpar, 2015-10-19
@@ -368,17 +401,21 @@ and that piece of art is useful - Dora Korpar, 2015-10-19
 ```
 
 ### [12. Compile](./101-compile)
-* Write a script that compiles a Python script file.
-  * The Python file name will be stored in the environment variable $PYFILE
-  * The output filename has to be $PYFILEc (ex: export PYFILE=my_main.py => output filename: my_main.pyc)
+
+- Write a script that compiles a Python script file.
+  - The Python file name will be stored in the environment variable \$PYFILE
+  - The output filename has to be \$PYFILEc (ex: export PYFILE=my_main.py => output filename: my_main.pyc)
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ cat main.py
 ```
+
 ```python
 #!/usr/bin/python3
 print("Holberton School")
 
 ```
+
 ```sh
 guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 guillaume@ubuntu:~/py/0x00$ ./101-compile
@@ -400,7 +437,9 @@ guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFE
 ```
 
 ### [13. ByteCode -> Python #1](./102-magic_calculation.py)
-* Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
+
+- Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
+
 ```sh
   3           0 LOAD_CONST               1 (98)
               3 LOAD_FAST                0 (a)
@@ -409,7 +448,7 @@ guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFE
              10 BINARY_ADD
              11 RETURN_VALUE
 ```
----
 
 ## Author
-* **Tu Vo** - [tuvo1106](./)
+
+- **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
