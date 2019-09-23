@@ -2,7 +2,7 @@
 
 ## Description
 
-What you should learn from this project:
+Learning Objectives
 
 - Why Javascript programming is amazing (don’t forget to tweet today, with the hashtag #javascriptisamazing :))
 - How to run a Javascript script
