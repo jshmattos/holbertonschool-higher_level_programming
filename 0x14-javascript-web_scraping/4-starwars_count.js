@@ -7,12 +7,12 @@ request(`${process.argv[2]}`, (err, response, body) => {
   if (err) {
     console.log(err);
   } else {
-    films = JSON.parse(body).results;
+    const films = JSON.parse(body).results;
     console.log(films.reduce((count, el) => {
-      if (el.characters.includes(wedge)) {
-        count++
+      if (el.characters.includes('18')) {
+        count++;
       }
-      return count
-    }, 0))
+      return count;
+    }, 0));
   }
 });
