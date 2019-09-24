@@ -9,9 +9,11 @@ request(`${process.argv[2]}`, (err, response, body) => {
   } else {
     const films = JSON.parse(body).results;
     console.log(films.reduce((count, el) => {
-      if (el.characters.includes('18')) {
-        count++;
-      }
+      el.characters.forEach(e => {
+	if (e.includes('18')) {
+	  count++;
+	}
+      })
       return count;
     }, 0));
   }
