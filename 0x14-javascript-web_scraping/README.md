@@ -4,10 +4,10 @@
 
 Learning Objectives
 
-* Why Javascript programming is amazing (don’t forget to tweet today, with the hashtag #javascriptisamazing :))
-* How to manipulate JSON data
-* How to use request and fetch API
-* How to read and write a file using fs module
+- Why Javascript programming is amazing (don’t forget to tweet today, with the hashtag #javascriptisamazing :))
+- How to manipulate JSON data
+- How to use request and fetch API
+- How to read and write a file using fs module
 
 ## Requirements
 
@@ -15,10 +15,11 @@ Learning Objectives
 - All Javascript code is linted with semistandard
 
 ### [0. Readme](./0-readme.js)
-  * Write a script that reads and prints the content of a file.
-  * The first argument is the file path
-  * The content of the file must be read in utf-8
-  * If an error occurred during the reading, print the error object
+
+- Write a script that reads and prints the content of a file.
+- The first argument is the file path
+- The content of the file must be read in utf-8
+- If an error occurred during the reading, print the error object
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./0-readme.js cisfun
@@ -35,11 +36,12 @@ guillaume@ubuntu:~/0x14$ ./0-readme.js doesntexist
 ```
 
 ### [1. Write me](./1-writeme.js)
-* Write a script that writes a string to a file.
-  * The first argument is the file path
-  * The second argument is the string to write
-  * The content of the file must be written in utf-8
-  * If an error occurred during while writing, print the error object
+
+- Write a script that writes a string to a file.
+  - The first argument is the file path
+  - The second argument is the string to write
+  - The content of the file must be written in utf-8
+  - If an error occurred during while writing, print the error object
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./1-writeme.js my_file.txt "Python is cool"
@@ -48,10 +50,11 @@ Python is cool
 ```
 
 ### [2. Status code](./2-statuscode.js)
-* Write a script that display the status code of a GET request.
-  * The first argument is the URL to request (GET)
-  * The status code must be printed like this: code: <status code>
-  * You must use the module request
+
+- Write a script that display the status code of a GET request.
+  - The first argument is the URL to request (GET)
+  - The status code must be printed like this: code: <status code>
+  - You must use the module request
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./2-statuscode.js https://intranet.hbtn.io/status
@@ -61,10 +64,11 @@ code: 404
 ```
 
 ### [3. Star wars movie title](./3-starwars_title.js)
-* Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
-  * The first argument is the episode number
-  * You must use the Star wars API with the endpoint http://swapi.co/api/films/:id
-  * You must use the module request
+
+- Write a script that prints the title of a Star Wars movie where the episode number matches a given integer.
+  - The first argument is the episode number
+  - You must use the Star wars API with the endpoint http://swapi.co/api/films/:id
+  - You must use the module request
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./3-starwars_title.js 1
@@ -74,10 +78,11 @@ Attack of the Clones
 ```
 
 ### [4. Star wars Wedge Antilles](./4-starwars_count.js)
-* Write a script that prints the number of movies where the character “Wedge Antilles” is present.
-  * The first argument is the API URL of the Star wars API: http://swapi.co/api/films/
-  * Wedge Antilles is character ID 18
-  * You must use the module request
+
+- Write a script that prints the number of movies where the character “Wedge Antilles” is present.
+  - The first argument is the API URL of the Star wars API: http://swapi.co/api/films/
+  - Wedge Antilles is character ID 18
+  - You must use the module request
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./4-starwars_count.js http://swapi.co/api/films
@@ -85,11 +90,12 @@ guillaume@ubuntu:~/0x14$ ./4-starwars_count.js http://swapi.co/api/films
 ```
 
 ### [5. Loripsum](./5-request_store.js)
-* Write a script that gets the contents of a webpage and stores it in a file.
-  * The first argument is the URL to request
-  * The second argument the file path to store the body response
-  * The file must be UTF-8 encoded
-  * You must use the module request
+
+- Write a script that gets the contents of a webpage and stores it in a file.
+  - The first argument is the URL to request
+  - The second argument the file path to store the body response
+  - The file must be UTF-8 encoded
+  - You must use the module request
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./5-request_store.js http://loripsum.net/api loripsum
@@ -99,9 +105,10 @@ guillaume@ubuntu:~/0x14$ cat loripsum
 ```
 
 ### [6. How many completed?](./6-completed_tasks.js)
-* Write a script that computes the number of tasks completed by user id.
-  * The first argument is the API URL: https://jsonplaceholder.typicode.com/todos
-  * You must use the module request
+
+- Write a script that computes the number of tasks completed by user id.
+  - The first argument is the API URL: https://jsonplaceholder.typicode.com/todos
+  - You must use the module request
 
 ```
 guillaume@ubuntu:~/0x14$ ./6-completed_tasks.js https://jsonplaceholder.typicode.com/todos
@@ -116,12 +123,14 @@ guillaume@ubuntu:~/0x14$ ./6-completed_tasks.js https://jsonplaceholder.typicode
   '9': 8,
   '10': 12 }
 ```
+
 ### [7. Who was playing in this movie?](./100-starwars_characters.js)
-* Write a script that prints all characters of a Star Wars movie:
-  * The first argument is the Movie ID - example: 3 = “Return of the Jedi”
-  * Display one character name by line
-  * You must use the Star wars API
-  * You must use the module request
+
+- Write a script that prints all characters of a Star Wars movie:
+  - The first argument is the Movie ID - example: 3 = “Return of the Jedi”
+  - Display one character name by line
+  - You must use the Star wars API
+  - You must use the module request
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./100-starwars_characters.js 3
@@ -148,11 +157,12 @@ Lando Calrissian
 ```
 
 ### [8. Right order](./101-starwars_characters.js)
-* Write a script that prints all characters of a Star Wars movie:
-  * The first argument is the Movie ID - example: 3 = “Return of the Jedi”
-  * Display one character name by line in the same order of the list “characters” in the /films/ response
-  * You must use the Star wars API
-  * You must use the module request
+
+- Write a script that prints all characters of a Star Wars movie:
+  - The first argument is the Movie ID - example: 3 = “Return of the Jedi”
+  - Display one character name by line in the same order of the list “characters” in the /films/ response
+  - You must use the Star wars API
+  - You must use the module request
 
 ```sh
 guillaume@ubuntu:~/0x14$ ./101-starwars_characters.js 3
@@ -179,17 +189,19 @@ Bib Fortuna
 ```
 
 ### [9. Twitter Auth](./102-search_twitter.js)
-* Write a Javascript script that takes in 3 strings and sends a search request to the Twitter API
-  * Use the Twitter API search endpoint
-  * Use the Application-only authentication flow to do a search request
-  * Create an Twitter application here
-  * The first argument must be the Consumer Key (API Key)
-  * The second argument must be the Consumer Secret (API Secret)
-  * The third argument must be the search string
-  * Display only 5 results in the following format: [<Tweet ID>] <Tweet text> by <Tweet owner name> (see example below)
-  * Only these modules are allowed: request, base-64 and utf8
-  * You don’t need to check arguments passed to the script (number or type)
-  
+
+- Write a Javascript script that takes in 3 strings and sends a search request to the Twitter API
+
+  - Use the Twitter API search endpoint
+  - Use the Application-only authentication flow to do a search request
+  - Create an Twitter application here
+  - The first argument must be the Consumer Key (API Key)
+  - The second argument must be the Consumer Secret (API Secret)
+  - The third argument must be the search string
+  - Display only 5 results in the following format: [<Tweet ID>] <Tweet text> by <Tweet owner name> (see example below)
+  - Only these modules are allowed: request, base-64 and utf8
+  - You don’t need to check arguments passed to the script (number or type)
+
 ```sh
 guillaume@ubuntu:~/0x14$ ./102-search_twitter.js AAAAAA BBBBBB "#cisfun"
 [857232487553974300] Im not sure if uber will be around in the next couple of years
@@ -203,20 +215,20 @@ https://t.co/ZLIvgZoC5I
 #cisfun by MJohnson
 [856588726884982800] Itching to read my python book...instead picked up a mystery novel.
 #HappyBreak! #cisfun too by Biebop
-[855696357788614700] Twitter Likes and followers hack 
+[855696357788614700] Twitter Likes and followers hack
 #Humedal
 #Mondorf
 #cisfun https://t.co/I1tc1iR5g2 by Mustafa ugurlu
 [855594028397584400] @julienbarbier42 #neverforget
 
 @sophie_rb42
-@holbertonschool 
+@holbertonschool
 #cisfun
 #lol https://t.co/WSiZFW8bgg by MJohnson
 [855473339757998100] Lessons learnt at #DockerCon - containers rock, #pythoniscool, and because #Cisfun, I was able to have more meaningful convos w/ tech peeps by Zee Adams
 [855202379183960000] https://t.co/VeGXxjptRD
 
-@holbertonschool 
+@holbertonschool
 #cisfun by MJohnson
 [855136931973283800] @Linux source code: about 6,000,000 lines of code❤👯#mindblown #cisfun @holberton https://t.co/0x64hr3iAd by Naomi
 [854919921200840700] RT @NamoDawn: Shoutout to the @holbertonschool community for dropping knowledge during Shell Project 👩🏻‍💻✨💪🏻#cisfun #manpagesfordays by Holberton
@@ -237,4 +249,5 @@ https://t.co/jnIqSF8azO by Christian Agha
 ```
 
 ## Author
-* **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
+
+- **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
