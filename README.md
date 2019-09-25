@@ -26,6 +26,9 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x0F-python-object-relational-mapping](./0x0F-python-object_relational_mapping) | ORM with MySQLdb and MySQLAlchemy |
 | [0x10. Python - Network #0](./0x10-python-network_0) | Using CURL to get HTTP responses |
 | [0x11. Python - Network #1](./0x11-python-network_1) | Interacting with API endpoints with Python's requests module |
+| [0x12. Javascript - Warm Up](./0x12-javascript-warm_up) | Introduction to NodeJS |
+| [0x13. Javascript - Objects, Scropes, Closures](./0x13-javascript_objects_scopes_closures) | Global and lexical scopes in JS |
+| [0x14. Javascript - Web Scraping](./0x14-javascript-web_scraping) | Using fs and request library to make API calls in JS |
 
 ## Author
 
