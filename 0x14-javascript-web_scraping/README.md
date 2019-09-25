@@ -9,6 +9,11 @@ Learning Objectives
 * How to use request and fetch API
 * How to read and write a file using fs module
 
+## Requirements
+
+- All files are created and executed on Ubuntu 14.04 LTS using Nodejs (version 10)
+- All Javascript code is linted with semistandard
+
 ### [0. Readme](./0-readme.js)
   * Write a script that reads and prints the content of a file.
   * The first argument is the file path
