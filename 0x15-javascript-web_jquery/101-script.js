@@ -1,13 +1,13 @@
 $(document).ready(() => {
   $('#add_item').click(() => {
-    $('.my_list').append('<li>Item</li>')
-  })
+    $('.my_list').append('<li>Item</li>');
+  });
   $('#remove_item').click(() => {
-    $('.my_list li:last-child').remove()
-  })
+    $('.my_list li:last-child').remove();
+  });
   $('#clear_list').click(() => {
     $('.my_list')
       .find('li')
-      .remove()
-  })
-})
+      .remove();
+  });
+});
