@@ -29,7 +29,7 @@ This repository contains programs written in Python for the Higher Level Program
 | [0x12. Javascript - Warm Up](./0x12-javascript-warm_up) | Introduction to NodeJS |
 | [0x13. Javascript - Objects, Scropes, Closures](./0x13-javascript_objects_scopes_closures) | Global and lexical scopes in JS |
 | [0x14. Javascript - Web Scraping](./0x14-javascript-web_scraping) | Using fs and request library to make API calls in JS |
-| [0x15. Javascript - Web JQuery](./0x15-javascript-web_jquery)| Dom manipulation with JQuery and AJAX |
+| [0x15. Javascript - Web JQuery](./0x15-javascript-web_jquery)| DOM manipulation with JQuery and AJAX |
 
 ## Author
 
