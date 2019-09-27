@@ -21,25 +21,121 @@ Learning Objectives
 - All files are created and executed on Ubuntu 14.04 LTS using Nodejs (version 10)
 - All Javascript code is linted with semistandard
 
+## Tasks
+
 ### [0. No jQuery](./0-script.js)
 * Write a Javascript script that updates the text color of the HTML tag HEADER to red (#FF0000):
   * You must use document.querySelector to select the HTML tag
   * You can’t use the jQuery API
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 0-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="0-script.js"></script>
+  </body>
+</html>
+```
+
 ### [1. With jQuery](./1-script.js)
 * Write a Javascript script that updates the text color of the HTML tag HEADER to red (#FF0000):
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
+  
+```sh
+guillaume@ubuntu:~/0x15$ cat 1-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="1-script.js"></script>
+  </body>
+</html>
+```
 
 ### [2. Click and turn red](./2-script.js)
 * Write a Javascript script that updates the text color of the HTML tag HEADER to red (#FF0000) when the user clicks on the tag DIV#red_header:
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 2-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <div id="red_header">Red header</div>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="2-script.js"></script>
+  </body>
+</html>
+```
+
 ### [3. Add `.red` class](./3-script.js)
 * Write a Javascript script that adds the class red to the HTML tag HEADER to red (#FF0000) when the user clicks on the tag DIV#red_header:
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
+
+```sh
+guillaume@ubuntu:~/0x15$ cat 3-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+      .red {
+        color: #FF0000;
+      }
+    </style>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <div id="red_header">Red header</div>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="3-script.js"></script>
+  </body>
+</html>
+```
 
 ### [4. Toggle classes](./4-script.js)
 * Write a Javascript script that toggles the class of the HTML tag HEADER to red (#FF0000) when the user clicks on the tag DIV#toggle_header:
@@ -48,6 +144,37 @@ Learning Objectives
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 4-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <style>
+      .red {
+        color: #FF0000;
+      }
+      .green {
+        color: #00FF00;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="green"> 
+      First HTML page
+    </header>
+    <div id="toggle_header">Toggle header</div>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="4-script.js"></script>
+  </body>
+</html>
+```
+
 ### [5. List of elements](./5-script.js)
 * Write a Javascript script that adds a LI element to a list when the user clicks on the tag DIV#add_item:
   * The new element must be: <li>Item</li>
@@ -55,10 +182,63 @@ Learning Objectives
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 5-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <br />
+    <div id="add_item">Add item</div>
+    <br />
+    <ul class="my_list">
+      <li>Item</li>
+    </ul>
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="5-script.js"></script>
+  </body>
+</html>
+```
+
 ### [6. Change the text](./6-script.js)
 * Write a Javascript script that updates the text of the HTML tag HEADER to “New Header!!!” when the user clicks on DIV#update_header
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
+
+```sh
+guillaume@ubuntu:~/0x15$ cat 6-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <br />
+    <div id="update_header">Update the header</div>
+    <br />
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="6-script.js"></script>
+  </body>
+</html>
+```
 
 ### [7. Star wars character](./7-script.js)
 * Write a Javascript script that fetches and replaces the name of this URL: https://swapi.co/api/people/5/?format=json
@@ -66,11 +246,62 @@ Learning Objectives
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 7-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header> 
+      Star Wars character
+    </header>
+    <br />
+    <div id="character"></div>
+    <br />
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="7-script.js"></script>
+  </body>
+</html>
+```
+
 ### [8. Star Wars movies](./8-script.js)
 * Write a Javascript script that fetches and lists all movies title by using this URL: https://swapi.co/api/films/?format=json
   * All movie titles must be list in the HTML tag UL#list_movies
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
+
+```sh
+guillaume@ubuntu:~/0x15$ cat 8-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+    <header> 
+      Star Wars movies
+    </header>
+    <br />
+    <ul id="list_movies">
+    </ul>
+    <br />
+    <footer>
+      Holberton School - 2017
+    </footer>
+    <script type="text/javascript" src="8-script.js"></script>
+  </body>
+</html>
+```
 
 ### [9. Say Hello!](./9-script.js)
 * Write a Javascript script that fetches and prints how to say “Hello” depending of the language: (here in French) https://fourtonfish.com/hellosalut/?lang=fr
@@ -79,11 +310,57 @@ Learning Objectives
   * You must use the jQuery API
   * Your script must work when it is imported from the HEAD tag
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 9-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="9-script.js"></script>
+  </head>
+  <body>
+    <header> 
+      Say Hello!
+    </header>
+    <br />
+    <div id="hello"></div>
+    <br />
+    <footer>
+      Holberton School - 2017
+    </footer>
+  </body>
+</html>
+```
+
 ### [10. No jQuery - document loaded](./100-script.js)
 * Write a Javascript script that updates the text color of the HTML tag HEADER to red (#FF0000):
   * You must use document.querySelector to select the HTML tag
   * You can’t use the jQuery API
   * Note: Your script must be imported from the HEAD tag, not at the end of the HTML
+
+```sh
+guillaume@ubuntu:~/0x15$ cat 100-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script type="text/javascript" src="100-script.js"></script>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <footer>
+      Holberton School - 2017
+    </footer>
+  </body>
+</html>
+```
 
 ### [11. List, add, remove](./101-script.js)
 * Write a Javascript script that adds, removes and clears LI elements from a list when the user clicks:
@@ -96,6 +373,36 @@ Learning Objectives
   * You must use the jQuery API
   * You script must be work when it imported from the HEAD tag
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 101-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="101-script.js"></script>
+  </head>
+  <body>
+    <header> 
+      First HTML page
+    </header>
+    <br />
+    <div id="add_item">Add item</div>
+    <div id="remove_item">Remove item</div>
+    <div id="clear_list">Clear list</div>
+    <br />
+    <ul class="my_list">
+      <li>Item</li>
+    </ul>
+    <footer>
+      Holberton School - 2017
+    </footer>
+  </body>
+</html>
+```
+
 ### [12. Say hello to everybody!](./102-script.js)
 * Write a Javascript script that fetches and prints how to say “Hello” depending of the language
   * You should use this API service: https://www.fourtonfish.com/hellosalut/hello/
@@ -106,6 +413,34 @@ Learning Objectives
   * You must use the jQuery API
   * You script must be work when it imported from the HEAD tag
 
+```sh
+guillaume@ubuntu:~/0x15$ cat 102-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="102-script.js"></script>
+  </head>
+  <body>
+    <header> 
+      Say Hello
+    </header>
+    <br />
+    <input id="language_code" type="text" placeholder="Language code"/>
+    <input id="btn_translate" type="button" value="Translate"/>
+    <br />
+    <div id="hello"></div>
+    <br />
+    <footer>
+      Holberton School - 2017
+    </footer>
+  </body>
+</html>
+```
+
 ### [13. And press ENTER](./103-script.js)
 * Write a Javascript script that fetches and prints how to say “Hello” depending of the language
   * You should use this API service: https://www.fourtonfish.com/hellosalut/hello/
@@ -115,6 +450,34 @@ Learning Objectives
   * You can’t use document.querySelector to select the HTML tag
   * You must use the jQuery API
   * You script must be work when it imported from the HEAD tag
+
+```sh
+guillaume@ubuntu:~/0x15$ cat 103-main.html
+```
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Holberton School</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="103-script.js"></script>
+  </head>
+  <body>
+    <header> 
+      Say Hello
+    </header>
+    <br />
+    <input id="language_code" type="text" placeholder="Language code"/>
+    <input id="btn_translate" type="button" value="Translate"/>
+    <br />
+    <div id="hello"></div>
+    <br />
+    <footer>
+      Holberton School - 2017
+    </footer>
+  </body>
+</html>
+```
 
 ## Author
 * **Tu Vo** - [tuvo1106](https://github.com/tuvo1106)
