@@ -14,6 +14,8 @@ Learning Objectives
 - All files are created and executed on Ubuntu 14.04 LTS using Nodejs (version 10)
 - All Javascript code is linted with semistandard
 
+## Tasks
+
 ### [0. Readme](./0-readme.js)
 
 - Write a script that reads and prints the content of a file.
