@@ -23,10 +23,13 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Squared simple](./0-square_matrix_simple.py)
 
 - Write a function that computes the square value of all integers of a matrix.
-  - Prototype: def square_matrix_simple(matrix=[]):
+  - Prototype: `def square_matrix_simple(matrix=[])`:
   - matrix is a 2 dimensional array
   - Returns a new matrix:
     - Same size as matrix
@@ -34,7 +37,7 @@ General
   - Initial matrix should not be modified
   - You are allowed to use regular loops, map, etc.
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 0-main.py
 ```
 
@@ -54,7 +57,7 @@ print(matrix)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./0-main.py
 [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -63,12 +66,12 @@ guillaume@ubuntu:~/0x04$ ./0-main.py
 ### [1. Search and replace](./1-search_replace.py)
 
 - Write a function that replaces all occurrences of an element by another in a new list.
-  - Prototype: def search_replace(my_list, search, replace):
+  - Prototype: `def search_replace(my_list, search, replace)`:
   - my_list is the initial list
   - search is the element to replace in the list
   - replace is the new element
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 1-main.py
 ```
 
@@ -84,7 +87,7 @@ print(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./1-main.py
 [1, 89, 3, 4, 5, 4, 89, 1, 1, 4, 89]
 [1, 2, 3, 4, 5, 4, 2, 1, 1, 4, 89]
@@ -93,9 +96,9 @@ guillaume@ubuntu:~/0x04$ ./1-main.py
 ### [2. Unique addition](./2-uniq_add.py)
 
 - Write a function that adds all unique integers in a list (only once for each integer).
-  - Prototype: def uniq_add(my_list=[]):
+  - Prototype: `def uniq_add(my_list=[])`:
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 2-main.py
 ```
 
@@ -109,7 +112,7 @@ print("Result: {:d}".format(result))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./2-main.py
 Result: 15
 ```
@@ -117,9 +120,9 @@ Result: 15
 ### [3. Present in both](./3-common_elements.py)
 
 - Write a function that returns a set of common elements in two sets.
-  - Prototype: def common_elements(set_1, set_2):
+  - Prototype: `def common_elements(set_1, set_2)`:
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 3-main.py
 ```
 
@@ -134,7 +137,7 @@ print(sorted(list(c_set)))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./3-main.py
 ['C']
 ```
@@ -142,7 +145,7 @@ guillaume@ubuntu:~/0x04$ ./3-main.py
 ### [4. Only differents](./4-only_diff_elements.py)
 
 - Write a function that returns a set of all elements present in only one set.
-  - Prototype: def only_diff_elements(set_1, set_2):
+  - Prototype: `def only_diff_elements(set_1, set_2)`:
 
 ```sh
 guillaume@ubuntu:~/0x04$ cat 4-main.py
@@ -159,7 +162,7 @@ print(sorted(list(od_set)))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./4-main.py
 ['Bash', 'Javascript', 'Perl', 'Python', 'Ruby']
 ```
@@ -167,7 +170,7 @@ guillaume@ubuntu:~/0x04$ ./4-main.py
 ### [5. Number of keys](./5-number_keys.py)
 
 - Write a function that returns the number of keys in a dictionary.
-  - Prototype: def number_keys(a_dictionary):
+  - Prototype: `def number_keys(a_dictionary)`:
 
 ```sh
 guillaume@ubuntu:~/0x04$ cat 5-main.py
@@ -183,7 +186,7 @@ print("Number of keys: {:d}".format(nb_keys))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./5-main.py
 Number of keys: 3
 ```
@@ -191,13 +194,13 @@ Number of keys: 3
 ### [6. Print sorted dictionary](./6-print_sorted_dictionary.py)
 
 - Write a function that prints a dictionary by ordered keys.
-  - Prototype: def print_sorted_dictionary(a_dictionary):
+  - Prototype: `def print_sorted_dictionary(a_dictionary)`:
   - You can assume that all keys are strings
   - Keys should be sorted by alphabetic order
   - Only sort keys of the first level (don’t sort keys of a dictionary inside the main dictionary)
   - Dictionary values can have any type
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 6-main.py
 ```
 
@@ -210,7 +213,7 @@ print_sorted_dictionary(a_dictionary)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./6-main.py
 Number: 89
 ids: [1, 2, 3]
@@ -221,13 +224,13 @@ track: Low level
 ### [7. Update dictionary](./7-update_dictionary.py)
 
 - Write a function that replaces or adds key/value in a dictionary.
-  - Prototype: def update_dictionary(a_dictionary, key, value):
+  - Prototype: `def update_dictionary(a_dictionary, key, value)`:
   - key argument will be always a string
   - value argument will be any type
   - If a key exists in the dictionary, the value will be replaced
   - If a key doesn’t exist in the dictionary, it will be created
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 7-main.py
 ```
 
@@ -252,7 +255,7 @@ print_sorted_dictionary(a_dictionary)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./7-main.py
 language: Python
 number: 89
@@ -277,11 +280,11 @@ track: Low level
 ### [8. Simple delete by key](./8-simple_delete.py)
 
 - Write a function that deletes a key in a dictionary.
-  - Prototype: def simple_delete(a_dictionary, key=""):
+  - Prototype: `def simple_delete(a_dictionary, key="")`:
   - key argument will be always a string
   - If a key doesn’t exist, the dictionary won’t change
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 8-main.py
 ```
 
@@ -306,7 +309,7 @@ print_sorted_dictionary(new_dict)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./8-main.py
 Number: 89
 ids: [1, 2, 3]
@@ -329,11 +332,11 @@ language: C
 ### [9. Multiply by 2](./9-multiply_by_2.py)
 
 - Write a function that returns a new dictionary with all values multiplied by 2
-  - Prototype: def multiply_by_2(a_dictionary):
+  - Prototype: `def multiply_by_2(a_dictionary)`:
   - You can assume that all values are only integers
   - Returns a new dictionary
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 9-main.py
 ```
 
@@ -351,7 +354,7 @@ print_sorted_dictionary(new_dict)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./9-main.py
 Alex: 8
 Bob: 14
@@ -369,12 +372,12 @@ Molly: 32
 ### [10. Best score](./10-best_score.py)
 
 - Write a function that returns a key with the biggest integer value.
-  - Prototype: def best_score(a_dictionary):
+  - Prototype: `def best_score(a_dictionary)`:
   - You can assume that all values are only integers
   - If no score fo \* und, return None
   - You can assume all students have a different score
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 10-main.py
 ```
 
@@ -391,7 +394,7 @@ print("Best score: {}".format(best_key))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./10-main.py
 Best score: Molly
 Best score: None
@@ -400,7 +403,7 @@ Best score: None
 ### [11. Multiply by using map](./11-mutiply_list_map.py)
 
 - Write a function that returns a list with all values multiplied by a number without using any loops.
-  - Prototype: def mutiply_list_map(my_list=[], number=0):
+  - Prototype: `def mutiply_list_map(my_list=[], number=0)`:
   - Returns a new list:
     - Same length as my_list
     - Each value should be multiplied by number
@@ -409,7 +412,7 @@ Best score: None
   - You have to use map
   - Your file should be max 3 lines
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 11-main.py
 ```
 
@@ -424,7 +427,7 @@ print(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./11-main.py
 [4, 8, 12, 16, 24]
 [1, 2, 3, 4, 6]
@@ -432,12 +435,12 @@ guillaume@ubuntu:~/0x04$ ./11-main.py
 
 ### [12. Roman to Integer](./12-roman_to_int.py)
 
-- Create a function def roman_to_int(roman_string): that converts a Roman numeral to an integer.
+- Create a function `def roman_to_int(roman_string)`: that converts a Roman numeral to an integer.
   - You can assume the number will be between 1 to 3999.
-  - def roman_to_int(roman_string) must return an integer
+  - `def roman_to_int(roman_string)` must return an integer
   - If the roman_string is not a string or None, return 0
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 12-main.py
 ```
 
@@ -464,7 +467,7 @@ print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./12-main.py
 X = 10
 VII = 7
@@ -476,10 +479,10 @@ DCCVII = 707
 ### [13. Weighted average!](./100-weight_average.py)
 
 - Write a function that returns the weighted average of all integers tuple (<score>, <weight>)
-  - Prototype: def weight_average(my_list=[]):
+  - Prototype: `def weight_average(my_list=[])`:
   - Returns 0 if the list is empty
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 100-main.py
 ```
 
@@ -494,7 +497,7 @@ print("Average: {:0.2f}".format(result))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./100-main.py
 Average: 2.80
 ```
@@ -513,7 +516,7 @@ Average: 2.80
   - You are not allowed to use for or while
   - Your file should be max 3 lines
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 101-main.py
 ```
 
@@ -534,7 +537,7 @@ print(matrix)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./101-main.py
 [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -543,11 +546,11 @@ guillaume@ubuntu:~/0x04$ ./101-main.py
 ### [15. Delete by value](./102-complex_delete.py)
 
 - Write a function that deletes keys with a specific value in a dictionary.
-  - Prototype: def complex_delete(a_dictionary, value):
+  - Prototype: `def complex_delete(a_dictionary, value)`:
   - If the value doesn’t exist, the dictionary won’t change
   - All keys having the searched value have to be deleted
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ cat 102-main.py
 ```
 
@@ -572,7 +575,7 @@ print_sorted_dictionary(new_dict)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x04$ ./102-main.py
 ids: [1, 2, 3]
 track: Low
@@ -592,10 +595,10 @@ track: Low
 
 - Create two C functions that print some basic info about Python lists and Python bytes objects.
 - Python lists:
-  - Prototype: void print_python_list(PyObject \*p);
+  - Prototype: `void print_python_list(PyObject *p)`;
   - Format: see example
 - Python bytes:
-  - Prototype: void print_python_bytes(PyObject \*p);
+  - Prototype: `void print_python_bytes(PyObject *p)`;
   - Format: see example
   - Line “first X bytes”: print a maximum of 10 bytes
   - If p is not a valid PyBytesObject, print an error message (see example)
@@ -608,7 +611,7 @@ track: Low
     - PyList_GetItem
     - PyBytes_AS_STRING
 
-```sh
+```
 julien@ubuntu:~/CPython$ python3 --version
 julien@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,libPython.so -o libPython.so -fPIC -I/usr/include/python3.4 103-python.c
 julien@ubuntu:~/CPython$ cat 103-tests.py
@@ -648,7 +651,7 @@ lib.print_python_list(l)
 lib.print_python_bytes(l);
 ```
 
-```sh
+```
 julien@ubuntu:~/CPython$ python3 103-tests.py
 [.] bytes object info
   size: 5
@@ -731,6 +734,8 @@ Element 0: str
 [.] bytes object info
   [ERROR] Invalid Bytes Object
 ```
+
+</details>
 
 ## Author
 

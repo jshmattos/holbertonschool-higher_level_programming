@@ -38,11 +38,14 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Simple rectangle](./0-rectangle.py)
 
 - Write an empty class Rectangle that defines a rectangle:
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 0-main.py
 ```
 
@@ -56,7 +59,7 @@ print(my_rectangle.__dict__)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./0-main.py
 <class '0-rectangle.Rectangle'>
 {}
@@ -66,16 +69,16 @@ guillaume@ubuntu:~/0x08$ ./0-main.py
 
 - Write a class Rectangle that defines a rectangle by: (based on 0-rectangle.py)
   - Private instance attribute: width:
-    - property def width(self): to retrieve it
-    - property setter def width(self, value): to set it:
+    - property `def width(self)`: to retrieve it
+    - property setter `def width(self, value)`: to set it:
       - width must be an integer, otherwise raise a TypeError exception with the message width must be an integer
       - if width is less than 0, raise a ValueError exception with the message width must be >= 0
   - Private instance attribute: height:
-    - property def height(self): to retrieve it
-    - property setter def height(self, value): to set it:
+    - property `def height(self)`: to retrieve it
+    - property setter `def height(self, value)`: to set it:
       - height must be an integer, otherwise raise a TypeError exception with the message height must be an integer
       - if height is less than 0, raise a ValueError exception with the message height must be >= 0
-  - Instantiation with optional width and height: def **init**(self, width=0, height=0):
+  - Instantiation with optional width and height: `def __init__(self, width=0, height=0)`:
 
 ```
 guillaume@ubuntu:~/0x08$ cat 1-main.py
@@ -103,11 +106,11 @@ guillaume@ubuntu:~/0x08$ ./1-main.py
 ### [2. Area and Perimeter](./2-rectangle.py)
 
 - Write a class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
-  - Public instance method: def area(self): that returns the rectangle area
-  - Public instance method: def perimeter(self): that returns the rectangle perimeter:
+  - Public instance method: `def area(self)`: that returns the rectangle area
+  - Public instance method: `def perimeter(self)`: that returns the rectangle perimeter:
     - if width or height is equal to 0, perimeter is equal to 0
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 2-main.py
 ```
 
@@ -126,7 +129,7 @@ print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perime
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./2-main.py
 Area: 8 - Perimeter: 12
 --
@@ -139,7 +142,7 @@ Area: 30 - Perimeter: 26
   - print() and str() should print the rectangle with the character #: (see example below)
     - if width or height is equal to 0, return an empty string
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 3-main.py
 ```
 
@@ -162,7 +165,7 @@ print(repr(my_rectangle))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./3-main.py
 Area: 8 - Perimeter: 12
 ##
@@ -182,7 +185,7 @@ Area: 8 - Perimeter: 12
 - Write a class Rectangle that defines a rectangle by: (based on 3-rectangle.py)
   - repr() should return a string representation of the rectangle to be able to recreate a new instance by using eval() (see example below)
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 4-main.py
 ```
 
@@ -216,7 +219,7 @@ print(type(new_rectangle) is type(my_rectangle))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./4-main.py
 ##
 ##
@@ -255,7 +258,7 @@ True
 - Write a class Rectangle that defines a rectangle by: (based on 4-rectangle.py)
   - Print the message Bye rectangle... (... being 3 dots not ellipsis) when an instance of Rectangle is deleted
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 5-main.py
 ```
 
@@ -275,7 +278,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./5-main.py
 Area: 8 - Perimeter: 12
 Bye rectangle...
@@ -290,7 +293,7 @@ Bye rectangle...
     - Incremented during each new instance instantiation
     - Decremented during each instance deletion
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 6-main.py
 ```
 
@@ -308,7 +311,7 @@ print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./6-main.py
 2 instances of Rectangle
 Bye rectangle...
@@ -325,7 +328,7 @@ Bye rectangle...
     - Used as symbol for string representation
     - Can be any type
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 7-main.py
 ```
 
@@ -359,7 +362,7 @@ print("--")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./7-main.py
 ########
 ########
@@ -391,12 +394,12 @@ Bye rectangle...
 ### [8. Compare rectangles](./8-rectangle.py)
 
 - Write a class Rectangle that defines a rectangle by: (based on 7-rectangle.py)
-  - Static method def bigger_or_equal(rect_1, rect_2): that returns the biggest rectangle based on the area
+  - Static method `def bigger_or_equal(rect_1, rect_2)`: that returns the biggest rectangle based on the area
     - rect_1 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_1 must be an instance of Rectangle
     - rect_2 must be an instance of Rectangle, otherwise raise a TypeError exception with the message rect_2 must be an instance of Rectangle
     - Returns rect_1 if both have the same area value
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 8-main.py
 ```
 
@@ -422,7 +425,7 @@ else:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./8-main.py
 my_rectangle_1 is bigger or equal to my_rectangle_2
 my_rectangle_2 is bigger than my_rectangle_1
@@ -433,9 +436,9 @@ Bye rectangle...
 ### [9. A square is a rectangle](./9-rectangle.py)
 
 - Write a class Rectangle that defines a rectangle by: (based on 8-rectangle.py)
-  - Class method def square(cls, size=0): that returns a new Rectangle instance with width == height == size
+  - Class method `def square(cls, size=0)`: that returns a new Rectangle instance with width == height == size
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ cat 9-main.py
 ```
 
@@ -449,7 +452,7 @@ print(my_square)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x08$ ./9-main.py
 Area: 25 - Perimeter: 20
 #####
@@ -485,7 +488,7 @@ Bye rectangle...
     - You don’t have to print the solutions in a specific order
   - You are only allowed to import the sys module
 
-```sh
+```
 julien@ubuntu:~/0x08. N Queens$ ./101-nqueens.py 4
 [[0, 1], [1, 3], [2, 0], [3, 2]]
 [[0, 2], [1, 0], [2, 3], [3, 1]]
@@ -495,6 +498,8 @@ julien@ubuntu:~/0x08. N Queens$ ./101-nqueens.py 6
 [[0, 3], [1, 0], [2, 4], [3, 1], [4, 5], [5, 2]]
 [[0, 4], [1, 2], [2, 0], [3, 5], [4, 3], [5, 1]]
 ```
+
+</details>
 
 ## Author
 

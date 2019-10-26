@@ -27,13 +27,16 @@
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. cURL body size](./0-body_size.sh)
 
 - Write a Bash script that takes in a URL, sends a request to that URL, and displays the size of the body of the response
   - The size must be displayed in bytes
   - You have to use curl
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./0-body_size.sh 0.0.0.0:5000
 10
 ```
@@ -44,7 +47,7 @@ guillaume@ubuntu:~/0x10$ ./0-body_size.sh 0.0.0.0:5000
   - Display only body of a 200 status code response
   - You have to use curl
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./1-body.sh 0.0.0.0:5000/route_1 ; echo ""
 Route 2
 ```
@@ -53,7 +56,7 @@ Route 2
 
 - Write a Bash script that sends a DELETE request to the URL passed as the first argument and displays the body of the response
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./2-delete.sh 0.0.0.0:5000/route_3 ; echo ""
 I'm a DELETE request
 ```
@@ -62,7 +65,7 @@ I'm a DELETE request
 
 - Write a Bash script that takes in a URL and displays all HTTP methods the server will accept.
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./3-methods.sh 0.0.0.0:5000/route_4
 OPTIONS, HEAD, PUT
 ```
@@ -73,7 +76,7 @@ OPTIONS, HEAD, PUT
   - A header variable X-HolbertonSchool-User-Id must be sent with the value 98
   - You have to use curl
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./4-header.sh 0.0.0.0:5000/route_5 ; echo ""
 Hello Holberton School!
 ```
@@ -85,7 +88,7 @@ Hello Holberton School!
   - A variable subject must be sent with the value I will always be here for PLD
   - You have to use curl
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./5-post_params.sh 0.0.0.0:5000/route_6 ; echo ""
 POST params:
     email: hr@holbertonschool.com
@@ -95,13 +98,13 @@ POST params:
 ### [6. Find a peak](./6-peak.py)
 
 - Write a function that finds a peak in a list of unsorted integers.
-  - Prototype: def find_peak(list_of_integers):
+  - Prototype: `def find_peak(list_of_integers)`:
   - You are not allowed to import any module
   - Your algorithm must have the lowest complexity
   - 6-peak.py must contain the function
   - 6-peak.txt must contain the complexity of your algorithm: O(log(n)), O(n), O(nlog(n)) or O(n2)
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ cat 6-main.py
 ```
 
@@ -118,7 +121,7 @@ print(find_peak([-2, -4, 2, 1]))
 print(find_peak([4, 2, 1, 2, 3, 1]))
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./6-main.py
 6
 3
@@ -137,7 +140,7 @@ guillaume@ubuntu:~/0x10$ wc -l 6-peak.txt
   - You are not allowed to use ; and &&
   - You have to use curl
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./100-status_code.sh 0.0.0.0:5000 ; echo ""
 200
 guillaume@ubuntu:~/0x10$
@@ -151,7 +154,7 @@ guillaume@ubuntu:~/0x10$ ./100-status_code.sh 0.0.0.0:5000/nop ; echo ""
   - Your script must send a POST request with the contents of a file, passed with the filename as the second argument of the script, in the body of the request
   - You have to use curl
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ cat my_json_0
 {
     "name": "John Doe",
@@ -180,10 +183,12 @@ Not a valid JSON
   - You have to use curl
   - You are not allow to use echo, cat, etc. to display the final result
 
-```sh
+```
 guillaume@ubuntu:~/0x10$ ./102-catch_me.sh ; echo ""
 You got me!
 ```
+
+</details>
 
 ## Author
 

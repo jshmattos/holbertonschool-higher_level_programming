@@ -26,6 +26,9 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Who am I?](./0-answer.txt)
 
 - What function would you use to print the type of an object?
@@ -223,7 +226,7 @@ print(l1)
   - Your file should be maximum 3-line long (no documentation needed)
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x09$ cat 19-main.py
 ```
 
@@ -244,7 +247,7 @@ print(new_list is my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x09$ ./19-main.py
 [1, 2, 3]
 [1, 2, 3]
@@ -358,7 +361,7 @@ a is b
 - Write a function magic_string() that returns a string “Holberton” n times the number of the iteration (see code):
   - Your file should be maximum 4-line long (no documentation needed)
 
-```sh
+```
 guillaume@ubuntu:~/0x09$ cat 100-main.py
 ```
 
@@ -371,7 +374,7 @@ for i in range(10):
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x09$ ./100-main.py | cat -e
 Holberton$
 Holberton, Holberton$
@@ -391,7 +394,7 @@ guillaume@ubuntu:~/0x09$ wc -l 100-magic_string.py
 
 - Write a class LockedClass with no class or object attribute, that prevents the user from dynamically creating new instance attributes, except if the new instance attribute is called first_name.
 
-```sh
+```
 guillaume@ubuntu:~/0x09$ cat 101-main.py
 ```
 
@@ -408,7 +411,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x09$ ./101-main.py
 [AttributeError] 'LockedClass' object has no attribute 'last_name'
 ```
@@ -468,6 +471,8 @@ del a
 del b
 c = "HBTN"
 ```
+
+</details>
 
 ## Author
 

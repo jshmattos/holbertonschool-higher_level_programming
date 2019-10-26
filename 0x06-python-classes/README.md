@@ -32,11 +32,14 @@ Why Python programming is awesome (don’t forget to tweet today, with the hasht
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. My first square](./0-square.py)
 
 - Write an empty class Square that defines a square:
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 0-main.py
 ```
 
@@ -50,7 +53,7 @@ print(my_square.__dict__)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./0-main.py
 <class '0-square.Square'>
 {}
@@ -62,7 +65,7 @@ guillaume@ubuntu:~/0x06$ ./0-main.py
   - Private instance attribute: size
   - Instantiation with size (no type/value verification)
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 1-main.py
 ```
 
@@ -86,7 +89,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./1-main.py
 <class '1-square.Square'>
 {'_Square__size': 3}
@@ -98,11 +101,11 @@ guillaume@ubuntu:~/0x06$ ./1-main.py
 
 - Write a class Square that defines a square by: (based on 1-square.py)
   - Private instance attribute: size
-  - Instantiation with optional size: def **init**(self, size=0):
+  - Instantiation with optional size: `def __init__(self, size=0)`:
     - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
     - if size is less than 0, raise a ValueError exception with the message size must be >= 0
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 2-main.py
 ```
 
@@ -144,7 +147,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./2-main.py
 <class '2-square.Square'>
 {'_Square__size': 3}
@@ -160,12 +163,12 @@ size must be >= 0
 
 - Write a class Square that defines a square by: (based on 2-square.py)
   - Private instance attribute: size
-  - Instantiation with optional size: def **init**(self, size=0):
+  - Instantiation with optional size: `def __init__(self, size=0)`:
     - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
     - if size is less than 0, raise a ValueError exception with the message size must be >= 0
-  - Public instance method: def area(self): that returns the current square area
+  - Public instance method: `def area(self)`: that returns the current square area
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 3-main.py
 ```
 
@@ -191,7 +194,7 @@ print("Area: {}".format(my_square_2.area()))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./3-main.py
 Area: 9
 'Square' object has no attribute 'size'
@@ -203,14 +206,14 @@ Area: 25
 
 - Write a class Square that defines a square by: (based on 3-square.py)
   - Private instance attribute: size:
-  - property def size(self): to retrieve it
-  - property setter def size(self, value): to set it:
+  - property `def size(self)`: to retrieve it
+  - property setter `def size(self, value)`: to set it:
     - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
     - if size is less than 0, raise a ValueError exception with the message size must be >= 0
-  - Instantiation with optional size: def **init**(self, size=0):
-  - Public instance method: def area(self): that returns the current square area
+  - Instantiation with optional size: `def __init__(self, size=0)`:
+  - Public instance method: `def area(self)`: that returns the current square area
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 4-main.py
 ```
 
@@ -232,7 +235,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./4-main.py
 Area: 7921 for size: 89
 Area: 9 for size: 3
@@ -243,16 +246,16 @@ size must be an integer
 
 - Write a class Square that defines a square by: (based on 4-square.py)
   - Private instance attribute: size:
-    - property def size(self): to retrieve it
-    - property setter def size(self, value): to set it:
+    - property `def size(self)`: to retrieve it
+    - property setter `def size(self, value)`: to set it:
       - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
       - if size is less than 0, raise a ValueError exception with the message size must be >= 0
-  - Instantiation with optional size: def **init**(self, size=0):
-  - Public instance method: def area(self): that returns the current square area
-  - Public instance method: def my_print(self): that prints in stdout the square with the character #:
+  - Instantiation with optional size: `def __init__(self, size=0)`:
+  - Public instance method: `def area(self)`: that returns the current square area
+  - Public instance method: `def my_print(self)`: that prints in stdout the square with the character #:
     - if size is equal to 0, print an empty line
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 5-main.py
 ```
 
@@ -277,7 +280,7 @@ print("--")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./5-main.py
 ###
 ###
@@ -302,21 +305,21 @@ guillaume@ubuntu:~/0x06$ ./5-main.py
 
 - Write a class Square that defines a square by: (based on 5-square.py)
   - Private instance attribute: size:
-    - property def size(self): to retrieve it
-    - property setter def size(self, value): to set it:
+    - property `def size(self)`: to retrieve it
+    - property setter `def size(self, value)`: to set it:
       - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
       - if size is less than 0, raise a ValueError exception with the message size must be >= 0
   - Private instance attribute: position:
-    - property def position(self): to retrieve it
-    - property setter def position(self, value): to set it:
+    - property `def position(self)`: to retrieve it
+    - property setter `def position(self, value)`: to set it:
       - position must be a tuple of 2 positive integers, otherwise raise a TypeError exception with the message position must be a tuple of 2 positive integers
-  - Instantiation with optional size and optional position: def **init**(self, size=0, position=(0, 0)):
-  - Public instance method: def area(self): that returns the current square area
-  - Public instance method: def my_print(self): that prints in stdout the square with the character #:
+  - Instantiation with optional size and optional position: `def __init__(self, size=0, position=(0, 0))`:
+  - Public instance method: `def area(self)`: that returns the current square area
+  - Public instance method: `def my_print(self)`: that prints in stdout the square with the character #:
     - if size is equal to 0, print an empty line
     - position should be use by using space - Don’t fill lines by spaces when position[1] > 0
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 6-main.py
 ```
 
@@ -341,7 +344,7 @@ print("--")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./6-main.py | tr " " "_" | cat -e
 ###$
 ###$
@@ -362,23 +365,23 @@ ___###$
 
 - Write a class Node that defines a node of a singly linked list by:
   - Private instance attribute: data:
-    - property def data(self): to retrieve it
-    - property setter def data(self, value): to set it:
+    - property `def data(self)`: to retrieve it
+    - property setter `def data(self, value)`: to set it:
       - data must be an integer, otherwise raise a TypeError exception with the message data must be an integer
   - Private instance attribute: next_node:
-    - property def next_node(self): to retrieve it
-    - property setter def next_node(self, value): to set it:
+    - property `def next_node(self)`: to retrieve it
+    - property setter `def next_node(self, value)`: to set it:
       - next_node can be None or must be a Node, otherwise raise a TypeError exception with the message next_node must be a Node object
-  - Instantiation with data and next_node: def **init**(self, data, next_node=None):
+  - Instantiation with data and next_node: `def __init__(self, data, next_node=None)`:
 - And, write a class SinglyLinkedList that defines a singly linked list by:
   - Private instance attribute: head (no setter or getter)
-  - Simple instantiation: def **init**(self):
+  - Simple instantiation: `def __init__(self)`:
   - Should be printable:
     - print the entire list in stdout
     - one node number by line
-  - Public instance method: def sorted_insert(self, value): that inserts a new Node into the correct sorted position in the list (increasing order)
+  - Public instance method: `def sorted_insert(self, value)`: that inserts a new Node into the correct sorted position in the list (increasing order)
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 100-main.py
 ```
 
@@ -402,7 +405,7 @@ print(sll)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./100-main.py
 -4
 -3
@@ -421,22 +424,22 @@ guillaume@ubuntu:~/0x06$ ./100-main.py
 
 - Write a class Square that defines a square by: (based on 6-square.py)
   - Private instance attribute: size:
-    - property def size(self): to retrieve it
-    - property setter def size(self, value): to set it:
+    - property `def size(self)`: to retrieve it
+    - property setter `def size(self, value)`: to set it:
       - size must be an integer, otherwise raise a TypeError exception with the message size must be an integer
       - if size is less than 0, raise a ValueError exception with the message size must be >= 0
   - Private instance attribute: position:
-    - property def position(self): to retrieve it
-    - property setter def position(self, value): to set it:
+    - property `def position(self)`: to retrieve it
+    - property setter `def position(self, value)`: to set it:
       - position must be a tuple of 2 positive integers, otherwise raise a TypeError exception with the message position must be a tuple of positive integer
-  - Instantiation with optional size and optional position: def **init**(self, size=0, position=(0, 0)):
-  - Public instance method: def area(self): that returns the current square area
-  - Public instance method: def my_print(self): that prints in stdout the square with the character #:
+  - Instantiation with optional size and optional position: `def __init__(self, size=0, position=(0, 0))`:
+  - Public instance method: `def area(self)`: that returns the current square area
+  - Public instance method: `def my_print(self)`: that prints in stdout the square with the character #:
     - if size is equal to 0, print an empty line
     - position should be use by using space
   - Printing a Square instance should have the same behavior as my_print()
 
-```sh
+```
 #!/usr/bin/python3
 ```
 
@@ -453,7 +456,7 @@ print(my_square)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./101-main.py | tr " " "_" | cat -e
 #####$
 #####$
@@ -473,15 +476,15 @@ ____#####$
 
 - Write a class Square that defines a square by: (based on 4-square.py)
   - Private instance attribute: size:
-    - property def size(self): to retrieve it
-    - property setter def size(self, value): to set it:
+    - property `def size(self)`: to retrieve it
+    - property setter `def size(self, value)`: to set it:
       - size must be a number (float or integer), otherwise raise a TypeError exception with the message size must be a number
       - if size is less than 0, raise a ValueError exception with the message size must be >= 0
-  - Instantiation with size: def **init**(self, size=0):
-  - Public instance method: def area(self): that returns the current square area
+  - Instantiation with size: `def __init__(self, size=0)`:
+  - Public instance method: `def area(self)`: that returns the current square area
   - Square instance can answer to comparators: ==, !=, >, >=, < and <= based on the square area
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ cat 102-main.py
 ```
 
@@ -507,7 +510,7 @@ if s_5 >= s_6:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x06$ ./102-main.py
 Square 5 < Square 6
 Square 5 <= Square 6
@@ -518,7 +521,7 @@ Square 5 != Square 6
 
 - Write the Python class MagicClass that does exactly the same as the following Python bytecode:
 
-```sh
+```
 Disassembly of __init__:
  10           0 LOAD_CONST               1 (0)
               3 LOAD_FAST                0 (self)
@@ -569,6 +572,8 @@ Disassembly of circumference:
              16 BINARY_MULTIPLY
              17 RETURN_VALUE
 ```
+
+</details>
 
 ## Author
 

@@ -25,14 +25,17 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Read file](./0-read_file.py)
 
 - Write a function that reads a text file (UTF8) and prints it to stdout:
-  - Prototype: def read_file(filename=""):
+  - Prototype: `def read_file(filename="")`:
   - You must use the with statement
   - You don’t need to manage file permission or file doesn't exist exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 0-main.py
 ```
 
@@ -44,7 +47,7 @@ read_file("my_file_0.txt")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat my_file_0.txt
 Holberton School offers a truly innovative approach to education:
 focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
@@ -60,11 +63,11 @@ A school every software engineer would have dreamt of!
 ### [1. Number of lines](./1-number_of_lines.py)
 
 - Write a function that returns the number of lines of a text file:
-  - Prototype: def number_of_lines(filename=""):
+  - Prototype: `def number_of_lines(filename="")`:
   - You must use the with statement
   - You don’t need to manage file permission or file doesn't exist exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 1-main.py
 ```
 
@@ -78,7 +81,7 @@ print("{} has {:d} lines".format(filename, nb_lines))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ wc -l my_file_0.txt
 4 my_file_0.txt
 guillaume@ubuntu:~/0x0B$ ./1-main.py
@@ -88,12 +91,12 @@ my_file_0.txt has 4 lines
 ### [2. Read n lines](./2-read_lines.py)
 
 - Write a function that reads n lines of a text file (UTF8) and prints it to stdout:
-  - Prototype: def read_lines(filename="", nb_lines=0):
+  - Prototype: `def read_lines(filename="", nb_lines=0)`:
   - Read the entire file if nb_lines is lower or equal to 0 OR greater or equal to the total number of lines of the file
   - You must use the with statement
   - You don’t need to manage file permission or file doesn't exist exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 2-main.py
 ```
 
@@ -112,7 +115,7 @@ read_lines("my_file_0.txt")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat my_file_0.txt
 Holberton School offers a truly innovative approach to education:
 focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
@@ -137,13 +140,13 @@ A school every software engineer would have dreamt of!
 ### [3. Write to a file](./3-write_file.py)
 
 - Write a function that writes a string to a text file (UTF8) and returns the number of characters written:
-  - Prototype: def write_file(filename="", text=""):
+  - Prototype: `def write_file(filename="", text="")`:
   - You must use the with statement
   - You don’t need to manage file permission exceptions.
   - Your function should create the file if doesn’t exist.
   - Your function should overwrite the content of the file if it already exists.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 3-main.py
 ```
 
@@ -156,7 +159,7 @@ print(nb_characters)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./3-main.py
 29
 guillaume@ubuntu:~/0x0B$ cat my_first_file.txt
@@ -166,12 +169,12 @@ Holberton School is so cool!
 ### [4. Append to a file](./4-append_write.py)
 
 - Write a function that appends a string at the end of a text file (UTF8) and returns the number of characters added:
-  - Prototype: def append_write(filename="", text=""):
+  - Prototype: `def append_write(filename="", text="")`:
   - If the file doesn’t exist, it should be created
   - You must use the with statement
   - You don’t need to manage file permission or file doesn't exist exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 4-main.py
 ```
 
@@ -184,7 +187,7 @@ print(nb_characters_added)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat file_append.txt
 cat: file_append.txt: No such file or directory
 guillaume@ubuntu:~/0x0B$ ./4-main.py
@@ -201,9 +204,9 @@ Holberton School is so cool!
 ### [5. To JSON string](./5-to_json_string.py)
 
 - Write a function that returns the JSON representation of an object (string):
-  - Prototype: def to_json_string(my_obj):
+  - Prototype: `def to_json_string(my_obj)`:
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 5-main.py
 ```
 
@@ -240,7 +243,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./5-main.py
 [1, 2, 3]
 <class 'str'>
@@ -252,9 +255,9 @@ guillaume@ubuntu:~/0x0B$ ./5-main.py
 ### [6. From JSON string to Object](./6-from_json_string.py)
 
 - Write a function that returns an object (Python data structure) represented by a JSON string:
-  - Prototype: def from_json_string(my_str):
+  - Prototype: `def from_json_string(my_str)`:
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 6-main.py
 ```
 
@@ -287,7 +290,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./6-main.py
 [1, 2, 3]
 <class 'list'>
@@ -299,12 +302,12 @@ guillaume@ubuntu:~/0x0B$ ./6-main.py
 ### [7. Save Object to a file](./7-save_to_json_file.py)
 
 - Write a function that writes an Object to a text file, using a JSON representation:
-  - Prototype: def save_to_json_file(my_obj, filename):
+  - Prototype: `def save_to_json_file(my_obj, filename)`:
   - You must use the with statement
   - You don’t need to manage exceptions if the object can’t be serialized.
   - You don’t need to manage file permission exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 7-main.py
 ```
 
@@ -338,7 +341,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./7-main.py
 [TypeError] {3, 132} is not JSON serializable
 guillaume@ubuntu:~/0x0B$ cat my_list.json ; echo ""
@@ -351,12 +354,12 @@ guillaume@ubuntu:~/0x0B$ cat my_set.json ; echo ""
 ### [8. Create object from a JSON file](./8-load_from_json_file.py)
 
 - Write a function that creates an Object from a “JSON file”:
-  - Prototype: def load_from_json_file(filename):
+  - Prototype: `def load_from_json_file(filename)`:
   - You must use the with statement
   - You don’t need to manage exceptions if the JSON string doesn’t represent an object.
   - You don’t need to manage file permissions / exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat my_fake.json
 {"is_active": true, 12 }
 guillaume@ubuntu:~/0x0B$ cat 8-main.py
@@ -394,7 +397,7 @@ except Exception as e:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat my_list.json ; echo ""
 [1, 2, 3]
 guillaume@ubuntu:~/0x0B$ cat my_dict.json ; echo ""
@@ -419,7 +422,7 @@ guillaume@ubuntu:~/0x0B$ ./8-main.py
   - If the file doesn’t exist, it should be created
   - You don’t need to manage file permissions / exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat add_item.json
 cat: add_item.json: No such file or directory
 guillaume@ubuntu:~/0x0B$ ./9-add_item.py
@@ -436,11 +439,11 @@ guillaume@ubuntu:~/0x0B$ cat add_item.json ; echo ""
 ### [10. Class to JSON](./10-class_to_json.py)
 
 - Write a function that returns the dictionary description with simple data structure (list, dictionary, string, integer and boolean) for JSON serialization of an object:
-  - Prototype: def class_to_json(obj):
+  - Prototype: `def class_to_json(obj)`:
   - obj is an instance of a Class
   - All attributes of the obj Class are serializable: list, dictionary, string, integer and boolean
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 10-my_class.py
 ```
 
@@ -462,7 +465,7 @@ class MyClass:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 10-main.py
 ```
 
@@ -482,7 +485,7 @@ print(mj)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./10-main.py
 <class '10-my_class.MyClass'>
 [MyClass] John - 89
@@ -519,7 +522,7 @@ class MyClass:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 10-main_2.py
 ```
 
@@ -539,7 +542,7 @@ print(mj)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./10-main_2.py
 <class '10-my_class_2.MyClass'>
 [MyClass] John - 4 => 1
@@ -554,10 +557,10 @@ guillaume@ubuntu:~/0x0B$ ./10-main_2.py
     - first_name
     - last_name
     - age
-  - Instantiation with first_name, last_name and age: def **init**(self, first_name, last_name, age):
+  - Instantiation with first_name, last_name and age: `def __init__(self, first_name, last_name, age)`:
   - Public method def to_json(self): that retrieves a dictionary representation of a Student instance (same as 10-class_to_json.py)
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 11-main.py
 ```
 
@@ -577,7 +580,7 @@ for student in students:
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./11-main.py
 <class 'dict'>
 John
@@ -598,12 +601,12 @@ Bob
     - first_name
     - last_name
     - age
-  - Instantiation with first_name, last_name and age: def **init**(self, first_name, last_name, age):
+  - Instantiation with first_name, last_name and age: `def __init__(self, first_name, last_name, age)`:
   - Public method def to_json(self, attrs=None): that retrieves a dictionary representation of a Student instance (same as 10- \* class_to_json.py):
     - If attrs is a list of strings, only attribute names contained in this list must be retrieved.
   - Otherwise, all attributes must be retrieved
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 12-main.py
 ```
 
@@ -624,7 +627,7 @@ print(j_student_3)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./12-main.py
 {'age': 23, 'last_name': 'Doe', 'first_name': 'John'}
 {'age': 27, 'first_name': 'Bob'}
@@ -638,7 +641,7 @@ guillaume@ubuntu:~/0x0B$ ./12-main.py
     - first_name
     - last_name
     - age
-  - Instantiation with first_name, last_name and age: def \_\_init\_\_(self, first_name, last_name, age):
+  - Instantiation with first_name, last_name and age: `def __init__(self, first_name, last_name, age)`:
   - Public method def to_json(self, attrs=None): that retrieves a dictionary representation of a Student instance (same as 10-class_to_json.py):
     - If attrs is a list of strings, only attributes name contain in this list must be retrieved.
   - Otherwise, all attributes must be retrieved
@@ -647,7 +650,7 @@ guillaume@ubuntu:~/0x0B$ ./12-main.py
     - A dictionary key will be the public attribute name
     - A dictionary value will be the value of the public attribute
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 13-main.py
 ```
 
@@ -697,7 +700,7 @@ print("{} {} {}".format(new_student_1.first_name, new_student_1.last_name, new_s
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./13-main.py student.json
 Initial student:
 <13-student.Student object at 0x7f832826eda0>
@@ -724,7 +727,7 @@ guillaume@ubuntu:~/0x0B$ cat student.json ; echo ""
   - Returns an empty list if n <= 0
   - You can assume n will be always an integer
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 14-main.py
 ```
 
@@ -748,7 +751,7 @@ if __name__ == "__main__":
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$
 guillaume@ubuntu:~/0x0B$ ./14-main.py
 [1]
@@ -761,11 +764,11 @@ guillaume@ubuntu:~/0x0B$ ./14-main.py
 ### [15. Search and update](./100-append_after.py)
 
 - Write a function that inserts a line of text to a file, after each line containing a specific string (see example):
-  - Prototype: def append_after(filename="", search_string="", new_string=""):
+  - Prototype: `def append_after(filename="", search_string="", new_string="")`:
   - You must use the with statement
   - You don’t need to manage file permission or file doesn't exist exceptions.
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 100-main.py
 ```
 
@@ -777,7 +780,7 @@ append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat append_after_100.txt
 At Holberton School,
 Python is really important,
@@ -819,7 +822,7 @@ But it can be very hard if:
       - format: <status code>: <number>
       - status codes should be printed in ascending order
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ cat 101-generator.py
 ```
 
@@ -842,7 +845,7 @@ for i in range(10000):
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0B$ ./101-generator.py | ./101-stats.py
 File size: 5213
 200: 2
@@ -900,7 +903,7 @@ KeyboardInterrupt
   - Output: you can print whatever you think is interesting
   - On usage error, print an error message on stdout and exit with status code 1
 
----
+</details>
 
 ## Author
 

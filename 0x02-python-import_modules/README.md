@@ -19,6 +19,9 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Import a simple function from a simple file](./0-add.py)
 
 - Write a program that imports the function def add(a, b): from the file add_0.py and prints the result of the addition 1 + 2 = 3
@@ -33,7 +36,7 @@ General
   - You are not allowed to use \* for importing or **import**
   - Your code should not be executed when imported - by using **import**, like the example below
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ cat add_0.py
 ```
 
@@ -53,7 +56,7 @@ def add(a, b):
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./0-add.py
 1 + 2 = 3
 guillaume@ubuntu:~/0x02$ cat 0-import_add.py
@@ -75,7 +78,7 @@ guillaume@ubuntu:~/0x02$ python3 0-import_add.py
   - You are not allowed to use \* for importing or **import**
   - Your code should not be executed when imported
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ cat calculator_1.py
 ```
 
@@ -134,7 +137,7 @@ def div(a, b):
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./1-calculation.py
 10 + 5 = 15
 10 - 5 = 5
@@ -154,7 +157,7 @@ guillaume@ubuntu:~/0x02$ ./1-calculation.py
   - Your code should not be executed when imported
   - The number of elements of argv can be retrieved by using: len(argv)
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./2-args.py
 0 arguments.
 guillaume@ubuntu:~/0x02$ ./2-args.py Hello
@@ -177,7 +180,7 @@ guillaume@ubuntu:~/0x02$ ./2-args.py Hello Holberton School 98 Battery street
   - You can cast arguments into integers by using int() (you can assume that all arguments can be casted into integers)
   - Your code should not be executed when imported
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./3-infinite_add.py
 0
 guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 79 10
@@ -195,7 +198,7 @@ guillaume@ubuntu:~/0x02$ ./3-infinite_add.py 11111111111111111111111111111111111
   - You should print only names that do not start with \_\_
   - Your code should not be executed when imported
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ curl -Lso "hidden_4.pyc" "https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc"
 guillaume@ubuntu:~/0x02$ ./4-hidden_discovery.py | sort
 my_secret_santa
@@ -209,7 +212,7 @@ print_school
   - You are not allowed to use \* for importing or **import**
   - Your code should not be executed when imported
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ cat variable_load_5.py
 #!/usr/bin/python3
 a = 98
@@ -240,7 +243,7 @@ guillaume@ubuntu:~/0x02$ ./5-variable_load.py
   - You are not allowed to use \* for importing or **import**
   - Your code should not be executed when imported
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ cat calculator_1.py
 ```
 
@@ -299,7 +302,7 @@ def div(a, b):
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./100-my_calculator.py ; echo $?
 Requirements: ./100-my_calculator.py <a> <operator> <b>
 1
@@ -317,7 +320,7 @@ Unknown operator. Available operators: +, -, * and /
   - Your program should be maximum 2 lines long
   - You are not allowed to use print or eval or open or import sys in your file 101-easy_print.py
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./101-easy_print.py
 #pythoniscool
 ```
@@ -326,7 +329,7 @@ guillaume@ubuntu:~/0x02$ ./101-easy_print.py
 
 - Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
 
-```sh
+```
   3           0 LOAD_CONST               1 (0)
               3 LOAD_CONST               2 (('add', 'sub'))
               6 IMPORT_NAME              0 (magic_calculation_102)
@@ -387,12 +390,14 @@ guillaume@ubuntu:~/0x02$ ./101-easy_print.py
     - any string literal
     - any system calls
 
-```sh
+```
 guillaume@ubuntu:~/0x02$ ./103-fast_alphabet.py
 ABCDEFGHIJKLMNOPQRSTUVWXYZ
 guillaume@ubuntu:~/0x02$ wc -l 103-fast_alphabet.py
 3 103-fast_alphabet.py
 ```
+
+</details>
 
 ## Author
 

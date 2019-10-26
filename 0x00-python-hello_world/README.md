@@ -22,12 +22,15 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Run Python file](./0-run)
 
 - Write a Shell script that runs a Python script.
 - The Python file name will be saved in the environment variable \$PYFILE
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ cat main.py
 ```
 
@@ -36,7 +39,7 @@ guillaume@ubuntu:~/py/0x00$ cat main.py
 print("Holberton School")
 ```
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 guillaume@ubuntu:~/py/0x00$ ./0-run
 Holberton School
@@ -47,7 +50,7 @@ Holberton School
 - Write a Shell script that runs Python code.
 - The Python code will be saved in the environment variable \$PYCODE
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ export PYCODE='print("Holberton School: {}".format(88+10))'
 guillaume@ubuntu:~/py/0x00$ ./1-run_inline
 Holberton School: 98
@@ -58,7 +61,7 @@ Holberton School: 98
 - Write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.
   - Use the function print
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./2-print.py
 "Programming is like building a multilingual puzzle
 ```
@@ -74,7 +77,7 @@ guillaume@ubuntu:~/py/0x00$ ./2-print.py
   - Your code must be 3 lines long
   - You have to use the new print numbers tips (with .format(...))
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
 98 Battery street
 ```
@@ -89,7 +92,7 @@ guillaume@ubuntu:~/py/0x00$ ./3-print_number.py
   - You are not allowed to cast number to string
   - You have to use the new print formatting tips (with .format(...))
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./4-print_float.py
 Float: 3.14
 ```
@@ -106,7 +109,7 @@ Float: 3.14
   - You are not allowed to use any loops or conditional statement
   - Your program should be maximum 5 lines long
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./5-print_string.py
 Holberton SchoolHolberton SchoolHolberton School
 Holberton
@@ -120,7 +123,7 @@ Holberton
   - You have to use the variables str1 and str2 in your new line of code
   - Your program should be exactly 5 lines long
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./6-concat.py
 Welcome to Holberton School!
 guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
@@ -137,7 +140,7 @@ guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
   - word_last_2 should contain the last 2 letters of the variable word
   - middle_word should contain the value of the variable word without the first and last letters
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./7-edges.py
 First 3 letters: Hol
 Last 2 letters: on
@@ -155,7 +158,7 @@ guillaume@ubuntu:~/py/0x00$ wc -l 7-edges.py
   - You are not allowed to create new variables
   - You are not allowed to use string literals
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./8-concat_edges.py
 object-oriented programming with Python
 guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
@@ -167,7 +170,7 @@ guillaume@ubuntu:~/py/0x00$ wc -l 8-concat_edges.py
 - Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
   - Your script should be maximum 98 characters long (please check with wc -m 9-easter_egg.py)
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./9-easter_egg.py
 The Zen of Python, by Tim Peters
 
@@ -199,12 +202,12 @@ Namespaces are one honking great idea -- let's do more of those!
   - Whiteboard first
   - This task and all future technical interview prep tasks will include checks for the efficiency of your solution, i.e. is your solution’s runtime fast enough, does your solution require extra memory usage / mallocs, etc.
 - Write a function in C that checks if a singly linked list has a cycle in it.
-  - Prototype: int check_cycle(listint_t \*list);
+  - Prototype: `int check_cycle(listint_t *list)`;
   - Return: 0 if there is no cycle, 1 if there is a cycle
 - Requirements:
   - Only these functions are allowed: write, printf, putchar, puts, malloc, free
 
-```sh
+```
 carrie@ubuntu:~/0x00$ cat lists.h
 ```
 
@@ -236,7 +239,7 @@ int check_cycle(listint_t *list);
 #endif /* LISTS_H */
 ```
 
-```sh
+```
 carrie@ubuntu:~/0x00$ cat 10-linked_lists.c
 ```
 
@@ -306,7 +309,7 @@ void free_listint(listint_t *head)
 }
 ```
 
-```sh
+```
 carrie@ubuntu:~/0x00$ cat 10-main.c
 ```
 
@@ -366,7 +369,7 @@ int main(void)
 }
 ```
 
-```sh
+```
 carrie@ubuntu:~/0x00$ gcc -Wall -Werror -Wextra -pedantic 10-main.c 10-check_cycle.c 10-linked_lists.c -o cycle
 carrie@ubuntu:~/0x00$$ ./cycle
 1024
@@ -390,7 +393,7 @@ Linked list has a cycle
   - Your script should exit with the status code 1
   - (Dora Korpar was a Holberton student in Cohort 0 of San Francisco)
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ ./100-write.py
 and that piece of art is useful - Dora Korpar, 2015-10-19
 guillaume@ubuntu:~/py/0x00$ echo $?
@@ -406,7 +409,7 @@ and that piece of art is useful - Dora Korpar, 2015-10-19
   - The Python file name will be stored in the environment variable \$PYFILE
   - The output filename has to be \$PYFILEc (ex: export PYFILE=my_main.py => output filename: my_main.pyc)
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ cat main.py
 ```
 
@@ -416,7 +419,7 @@ print("Holberton School")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/py/0x00$ export PYFILE=main.py
 guillaume@ubuntu:~/py/0x00$ ./101-compile
 Compiling main.py ...
@@ -440,7 +443,7 @@ guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFE
 
 - Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
 
-```sh
+```
   3           0 LOAD_CONST               1 (98)
               3 LOAD_FAST                0 (a)
               6 LOAD_FAST                1 (b)
@@ -448,6 +451,8 @@ guillaume@ubuntu:~/py/0x00$ od -t x1 main.pyc # SYSTEM DEPENDANT => CAN BE DIFFE
              10 BINARY_ADD
              11 RETURN_VALUE
 ```
+
+</details>
 
 ## Author
 

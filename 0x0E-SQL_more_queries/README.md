@@ -17,11 +17,14 @@
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. My privileges!](./0-privileges.sql)
 
 - Write a script that lists all privileges of the MySQL users user_0d_1 and user_0d_2 on your server.
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 0-privileges.sql | mysql -hlocalhost -uroot -p
 Enter password:
 ERROR 1141 (42000) at line 4: There is no such grant defined for user 'user_0d_1' on host 'localhost'
@@ -34,7 +37,7 @@ ERROR 1141 (42000) at line 4: There is no such grant defined for user 'user_0d_1
   - The user_0d_1 password should be set to user_0d_1_pwd
   - If the user user_0d_1 already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 1-create_user.sql | mysql -hlocalhost -uroot -p
 Enter password:
 guillaume@ubuntu:~/$ cat 0-privileges.sql | mysql -hlocalhost -uroot -p
@@ -52,7 +55,7 @@ ERROR 1141 (42000) at line 4: There is no such grant defined for user 'user_0d_2
   - If the database hbtn_0d_2 already exists, your script should not fail
   - If the user user_0d_2 already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 2-create_read_user.sql | mysql -hlocalhost -uroot -p
 Enter password:
 guillaume@ubuntu:~/$ cat 0-privileges.sql | mysql -hlocalhost -uroot -p
@@ -73,7 +76,7 @@ GRANT SELECT ON `hbtn_0d_2`.* TO 'user_0d_2'@'localhost'
   - The database name will be passed as an argument of the mysql command
   - If the table force_name already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 3-force_name.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
 Enter password:
 guillaume@ubuntu:~/$ echo 'INSERT INTO force_name (id, name) VALUES (89, "Holberton School");' | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -100,7 +103,7 @@ id  name
   - The database name will be passed as an argument of the mysql command
   - If the table id_not_null already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 4-never_empty.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
 Enter password:
 guillaume@ubuntu:~/$ echo 'INSERT INTO id_not_null (id, name) VALUES (89, "Holberton School");' | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -127,7 +130,7 @@ id  name
   - The database name will be passed as an argument of the mysql command
   - If the table unique_id already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 5-unique_id.sql | mysql -hlocalhost -uroot -p hbtn_0d_2
 Enter password:
 guillaume@ubuntu:~/$ echo 'INSERT INTO unique_id (id, name) VALUES (89, "Holberton School");' | mysql -hlocalhost -uroot -p hbtn_0d_2
@@ -154,7 +157,7 @@ id  name
   - If the database hbtn_0d_usa already exists, your script should not fail
   - If the table states already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 6-states.sql | mysql -hlocalhost -uroot -p
 Enter password:
 guillaume@ubuntu:~/$ echo 'INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
@@ -177,7 +180,7 @@ id  name
   - If the database hbtn_0d_usa already exists, your script should not fail
   - If the table cities already exists, your script should not fail
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 7-cities.sql | mysql -hlocalhost -uroot -p
 Enter password:
 guillaume@ubuntu:~/$ echo 'INSERT INTO cities (state_id, name) VALUES (1, "San Francisco");' | mysql -hlocalhost -uroot -p hbtn_0d_usa
@@ -203,7 +206,7 @@ id  state_id    name
   - You are not allowed to use the JOIN keyword
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password:
 id  name
@@ -236,7 +239,7 @@ id  name
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ echo 'SELECT * FROM states;' | mysql -hlocalhost -uroot -p hbtn_0d_usa
 Enter password:
 id  name
@@ -272,7 +275,7 @@ id  name    name
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 10-genre_id_by_show.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 title   genre_id
@@ -306,7 +309,7 @@ The Last Man on Earth   5
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 11-genre_id_all_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 title   genre_id
@@ -341,7 +344,7 @@ The Last Man on Earth   5
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 12-no_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 title   genre_id
@@ -360,7 +363,7 @@ Homeland    NULL
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 13-count_shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 genre   number_of_shows
@@ -384,7 +387,7 @@ Fantasy 1
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 14-my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 name
@@ -404,7 +407,7 @@ Thriller
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 15-comedy_only.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 title
@@ -423,7 +426,7 @@ The Last Man on Earth
   - You can use only one SELECT statement \*
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 16-shows_by_genre.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 title   name
@@ -460,7 +463,7 @@ The Last Man on Earth   Drama
   - You can use a maximum of two SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 100-not_my_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 name
@@ -478,7 +481,7 @@ Fantasy
   - You can use a maximum of two SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 101-not_a_comedy.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows
 Enter password:
 title
@@ -499,7 +502,7 @@ House
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 102-rating_shows.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
 Enter password:
 title   rating
@@ -524,7 +527,7 @@ New Girl    0
   - You can use only one SELECT statement
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 103-rating_genres.sql | mysql -hlocalhost -uroot -p hbtn_0d_tvshows_rate
 Enter password:
 name    rating
@@ -537,6 +540,8 @@ Crime   40
 Suspense    40
 Thriller    40
 ```
+
+</details>
 
 ## Author
 

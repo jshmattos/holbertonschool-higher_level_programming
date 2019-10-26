@@ -24,17 +24,20 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Print a list of integers](./0-print_list_integer.py)
 
 - Write a function that prints all integers of a list.
-  - Prototype: def print_list_integer(my_list=[]):
+  - Prototype: `def print_list_integer(my_list=[])`:
   - Format: one integer per line. See example
   - You are not allowed to import any module
   - You can assume that the list only contains integers
   - You are not allowed to cast integers into strings
   - You have to use str.format() to print integers
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 0-main.py
 ```
 
@@ -47,7 +50,7 @@ print_list_integer(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./0-main.py
 1
 2
@@ -59,13 +62,13 @@ guillaume@ubuntu:~/0x03$ ./0-main.py
 ### [1. Secure access to an element in a list](./1-element_at.py)
 
 - Write a function that retrieves an element from a list like in C.
-  - Prototype: def element_at(my_list, idx):
+  - Prototype: `def element_at(my_list, idx)`:
   - If idx is negative, the function should return None
   - If idx is out of range (> of number of element in my_list), the function should return None
   - You are not allowed to import any module
   - You are not allowed to use try/except
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 1-main.py
 ```
 
@@ -79,7 +82,7 @@ print("Element at index {:d} is {}".format(idx, element_at(my_list, idx)))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./1-main.py
 Element at index 3 is 4
 ```
@@ -87,13 +90,13 @@ Element at index 3 is 4
 ### [2. Replace element](./2-replace_in_list.py)
 
 - Write a function that replaces an element of a list at a specific position (like in C).
-  - Prototype: def replace_in_list(my_list, idx, element):
+  - Prototype: `def replace_in_list(my_list, idx, element)`:
   - If idx is negative, the function should not modify anything, and returns the original list
   - If idx is out of range (> of number of element in my_list), the function should not modify anything, and returns the original list
   - You are not allowed to import any module
   - You are not allowed to use try/except
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 2-main.py
 ```
 
@@ -111,7 +114,7 @@ print(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./2-main.py
 [1, 2, 3, 9, 5]
 [1, 2, 3, 9, 5]
@@ -120,14 +123,14 @@ guillaume@ubuntu:~/0x03$ ./2-main.py
 ### [3. Print a list of integers... in reverse!](./3-print_reversed_list_integer.py)
 
 - Write a function that prints all integers of a list, in reverse order.
-  - Prototype: def print_reversed_list_integer(my_list=[]):
+  - Prototype: `def print_reversed_list_integer(my_list=[])`:
   - Format: one integer per line. See example
   - You are not allowed to import any module
   - You can assume that the list only contains integers
   - You are not allowed to cast integers into strings
   - You have to use str.format() to print integers
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 3-main.py
 ```
 
@@ -140,7 +143,7 @@ print_reversed_list_integer(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./3-main.py
 5
 4
@@ -152,13 +155,13 @@ guillaume@ubuntu:~/0x03$ ./3-main.py
 ### [4. Replace in a copy](./4-new_in_list.py)
 
 - Write a function that replaces an element in a list at a specific position without modifying the original list (like in C).
-  - Prototype: def new_in_list(my_list, idx, element):
+  - Prototype: `def new_in_list(my_list, idx, element)`:
   - If idx is negative, the function should return a copy of the original list
   - If idx is out of range (> of number of element in my_list), the function should return a copy of the original list
   - You are not allowed to import any module
   - You are not allowed to use try/except
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 4-main.py
 ```
 
@@ -176,7 +179,7 @@ print(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./4-main.py
 [1, 2, 3, 9, 5]
 [1, 2, 3, 4, 5]
@@ -185,12 +188,12 @@ guillaume@ubuntu:~/0x03$ ./4-main.py
 ### [5. Can you C me now?](./5-no_c.py)
 
 - Write a function that removes all characters c and C from a string.
-  - Prototype: def no_c(my_string):
+  - Prototype: `def no_c(my_string)`:
   - The function should return the new string
   - You are not allowed to import any module
   - You are not allowed to use str.replace()
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 5-main.py
 ```
 
@@ -204,7 +207,7 @@ print(no_c("C is fun!"))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./5-main.py
 Holberton Shool
 hiago
@@ -214,14 +217,14 @@ hiago
 ### [6. Lists of lists = Matrix](./6-print_matrix_integer.py)
 
 - Write a function that prints a matrix of integers.
-  - Prototype: def print_matrix_integer(matrix=[[]]):
+  - Prototype: `def print_matrix_integer(matrix=[[]])`:
   - Format: see example
   - You are not allowed to import any module
   - You can assume that the list only contains integers
   - You are not allowed to cast integers into strings
   - You have to use str.format() to print integers
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 6-main.py
 ```
 
@@ -241,7 +244,7 @@ print_matrix_integer()
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./6-main.py | cat -e
 1 2 3$
 4 5 6$
@@ -253,7 +256,7 @@ $
 ### [7. Tuples addition](./7-add_tuple.py)
 
 - Write a function that adds 2 tuples.
-  - Prototype: def add_tuple(tuple_a=(), tuple_b=()):
+  - Prototype: `def add_tuple(tuple_a=(), tuple_b=())`:
   - Returns a tuple with 2 integers:
     - The first element should be the addition of the first element of each argument
     - The second element should be the addition of the second element of each argument
@@ -262,7 +265,7 @@ $
   - If a tuple is smaller than 2, use the value 0 for each missing integer
   - If a tuple is bigger than 2, use only the first 2 integers
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 7-main.py
 ```
 
@@ -280,7 +283,7 @@ print(add_tuple(tuple_a, ()))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./7-main.py
 (89, 100)
 (2, 89)
@@ -290,11 +293,11 @@ guillaume@ubuntu:~/0x03$ ./7-main.py
 ### [8. More returns!](./8-multiple_returns.py)
 
 - Write a function that returns a tuple with the length of a string and its first character.
-  - Prototype: def multiple_returns(sentence):
+  - Prototype: `def multiple_returns(sentence)`:
   - If the sentence is empty, the first character should be equal to None
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 8-main.py
 ```
 
@@ -308,7 +311,7 @@ print("Length: {:d} - First character: {}".format(length, first))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./8-main.py
 Length: 32 - First character: A
 ```
@@ -316,13 +319,13 @@ Length: 32 - First character: A
 ### [9. Find the max](./9-max_integer.py)
 
 - Write a function that finds the biggest integer of a list.
-  - Prototype: def max_integer(my_list=[]):
+  - Prototype: `def max_integer(my_list=[])`:
   - If the list is empty, return None
   - You can assume that the list only contains integers
   - You are not allowed to import any module
   - You are not allowed to use the builtin max()
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 9-main.py
 ```
 
@@ -336,7 +339,7 @@ print("Max: {}".format(max_value))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./9-main.py
 Max: 90
 ```
@@ -344,12 +347,12 @@ Max: 90
 ### [10. Only by 2](./10-divisible_by_2.py)
 
 - Write a function that finds all multiples of 2 in a list.
-  - Prototype: def divisible_by_2(my_list=[]):
+  - Prototype: `def divisible_by_2(my_list=[])`:
   - Return a new list with True or False, depending on whether the integer at the same position in the original list is a multiple of 2
   - The new list should have the same size as the original list
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 10-main.py
 ```
 
@@ -367,7 +370,7 @@ while i < len(list_result):
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./10-main.py
 0 is divisible by 2
 1 is not divisible by 2
@@ -381,12 +384,12 @@ guillaume@ubuntu:~/0x03$ ./10-main.py
 ### [11. Delete at](./11-delete_at.py)
 
 - Write a function that deletes the item at a specific position in a list.
-  - Prototype: def delete_at(my_list=[], idx=0):
+  - Prototype: `def delete_at(my_list=[], idx=0)`:
   - If idx is negative or out of range, nothing change (returns the same list)
   - You are not allowed to use pop()
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ cat 11-main.py
 ```
 
@@ -402,7 +405,7 @@ print(my_list)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x03$ ./11-main.py
 [1, 2, 3, 5]
 [1, 2, 3, 5]
@@ -415,7 +418,7 @@ guillaume@ubuntu:~/0x03$ ./11-main.py
   - Your code should be inserted where the comment is (line 4)
   - Your program should be exactly 5 lines long
 
-```sh
+```
 guillaume@ubuntu:~/py/0x03$ ./12-switch.py
 a=10 - b=89
 guillaume@ubuntu:~/py/0x03$ wc -l 12-switch.py
@@ -425,11 +428,11 @@ guillaume@ubuntu:~/py/0x03$ wc -l 12-switch.py
 ### [13. Linked list palindrome](./13-is_palindrome.c)
 
 - Write a function in C that checks if a singly linked list is a palindrome.
-  - Prototype: int is_palindrome(listint_t \*\*head);
+  - Prototype: `int is_palindrome(listint_t **head)`;
   - Return: 0 if it is not a palindrome, 1 if it is a palindrome
   - An empty list is considered a palindrome
 
-```sh
+```
 carrie@ubuntu:0x03$ cat lists.h
 ```
 
@@ -460,7 +463,7 @@ int is_palindrome(listint_t **head);
 #endif /* LISTS_H */
 ```
 
-```sh
+```
 carrie@ubuntu:0x03$ cat linked_lists.c
 ```
 
@@ -541,7 +544,7 @@ void free_listint(listint_t *head)
 }
 ```
 
-```sh
+```
 carrie@ubuntu:0x03$ cat 13-main.c
 ```
 
@@ -583,7 +586,7 @@ int main(void)
 }
 ```
 
-```sh
+```
 carrie@ubuntu:0x03$ gcc -Wall -Werror -Wextra -pedantic 13-main.c linked_lists.c 13-is_palindrome.c -o palindrome
 carrie@ubuntu:0x03$ ./palindrome
 1
@@ -615,7 +618,7 @@ Linked list is a palindrome
     - Common Object Structures
     - List Objects
 
-```sh
+```
 julien@ubuntu:~/CPython$ gcc -Wall -Werror -Wextra -pedantic -std=c99 -shared -Wl,-soname,PyList -o libPyList.so -fPIC -I/usr/include/python3.4 100-print_python_list_info.c
 julien@ubuntu:~/CPython$ cat 100-test_lists.py
 ```
@@ -644,7 +647,7 @@ l.pop()
 lib.print_python_list_info(l)
 ```
 
-```sh
+```
 julien@ubuntu:~/CPython$ python3 100-test_lists.py
 [*] Size of the Python List = 2
 [*] Allocated = 2
@@ -681,6 +684,8 @@ Element 1: int
 Element 2: int
 Element 3: int
 ```
+
+</details>
 
 ## Author
 

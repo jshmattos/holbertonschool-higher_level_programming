@@ -16,6 +16,9 @@ Learning Objectives
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Readme](./0-readme.js)
 
 - Write a script that reads and prints the content of a file.
@@ -23,7 +26,7 @@ Learning Objectives
 - The content of the file must be read in utf-8
 - If an error occurred during the reading, print the error object
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./0-readme.js cisfun
 C is super fun!
 guillaume@ubuntu:~/0x14$ cat cisfun
@@ -45,7 +48,7 @@ guillaume@ubuntu:~/0x14$ ./0-readme.js doesntexist
   - The content of the file must be written in utf-8
   - If an error occurred during while writing, print the error object
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./1-writeme.js my_file.txt "Python is cool"
 guillaume@ubuntu:~/0x14$ cat my_file.txt ; echo ""
 Python is cool
@@ -58,7 +61,7 @@ Python is cool
   - The status code must be printed like this: code: <status code>
   - You must use the module request
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./2-statuscode.js https://intranet.hbtn.io/status
 code: 200
 guillaume@ubuntu:~/0x14$ ./2-statuscode.js https://intranet.hbtn.io/doesnt_exist
@@ -72,7 +75,7 @@ code: 404
   - You must use the Star wars API with the endpoint http://swapi.co/api/films/:id
   - You must use the module request
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./3-starwars_title.js 1
 A New Hope
 guillaume@ubuntu:~/0x14$ ./3-starwars_title.js 5
@@ -86,7 +89,7 @@ Attack of the Clones
   - Wedge Antilles is character ID 18
   - You must use the module request
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./4-starwars_count.js http://swapi.co/api/films
 3
 ```
@@ -99,7 +102,7 @@ guillaume@ubuntu:~/0x14$ ./4-starwars_count.js http://swapi.co/api/films
   - The file must be UTF-8 encoded
   - You must use the module request
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./5-request_store.js http://loripsum.net/api loripsum
 guillaume@ubuntu:~/0x14$ cat loripsum
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Haec quo modo conveniant, non sane intellego. Nam memini etiam quae nolo, oblivisci non possum quae volo. Te enim iudicem aequum puto, modo quae dicat ille bene noris. Terram, mihi crede, ea lanx et maria deprimet. Deinde prima illa, quae in congressu solemus: Quid tu, inquit, huc? Hoc etsi multimodis reprehendi potest, tamen accipio, quod dant. </p>
@@ -134,7 +137,7 @@ guillaume@ubuntu:~/0x14$ ./6-completed_tasks.js https://jsonplaceholder.typicode
   - You must use the Star wars API
   - You must use the module request
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./100-starwars_characters.js 3
 Darth Vader
 R2-D2
@@ -166,7 +169,7 @@ Lando Calrissian
   - You must use the Star wars API
   - You must use the module request
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./101-starwars_characters.js 3
 Luke Skywalker
 C-3PO
@@ -204,7 +207,7 @@ Bib Fortuna
   - Only these modules are allowed: request, base-64 and utf8
   - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x14$ ./102-search_twitter.js AAAAAA BBBBBB "#cisfun"
 [857232487553974300] Im not sure if uber will be around in the next couple of years
 https://t.co/ZLIvgZoC5I
@@ -249,6 +252,8 @@ https://t.co/jnIqSF8azO by Christian Agha
 
 #Cisfun by c_nov20
 ```
+
+</details>
 
 ## Author
 

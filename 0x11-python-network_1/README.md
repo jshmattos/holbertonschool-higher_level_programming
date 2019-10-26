@@ -17,6 +17,9 @@
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. What's my status? #0](./0-hbtn_status.py)
 
 - Write a Python script that fetches https://intranet.hbtn.io/status
@@ -25,7 +28,7 @@
   - The body of the response must be displayed like the following example (tabulation before -)
   - You must use a with statement
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./0-hbtn_status.py | cat -e
 Body response:$
     - type: <class 'bytes'>$
@@ -42,7 +45,7 @@ Body response:$
   - You don’t need to check arguments passed to the script (number or type)
   - You must use a with statement
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://intranet.hbtn.io
 ade2627e-41dd-4c34-b9d9-a0fa0f47b237
 guillaume@ubuntu:~/0x11$
@@ -60,7 +63,7 @@ guillaume@ubuntu:~/0x11$ ./1-hbtn_header.py https://intranet.hbtn.io
   - You don’t need to check arguments passed to the script (number or type)
   - You must use the with statement
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./2-post_email.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 Your email is: hr@holbertonschool.com
 ```
@@ -75,7 +78,7 @@ Your email is: hr@holbertonschool.com
   - You don’t need to check arguments passed to the script (number or type)
   - You must use the with statement
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./3-error_code.py http://0.0.0.0:5000
 Index
 guillaume@ubuntu:~/0x11$ ./3-error_code.py http://0.0.0.0:5000/status_401
@@ -93,7 +96,7 @@ Error code: 500
   - You are not allow to import packages other than requests
   - The body of the response must be display like the following example (tabulation before -)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./4-hbtn_status.py | cat -e
 Body response:$
     - type: <class 'str'>$
@@ -108,7 +111,7 @@ Body response:$
   - The value of this variable is different for each request
   - You don’t need to check script arguments (number and type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./5-hbtn_header.py https://intranet.hbtn.io
 5e52e160-c822-4669-8b3a-8b3bbca7b090
 guillaume@ubuntu:~/0x11$
@@ -125,7 +128,7 @@ eaceaf35-bc0f-4f74-994a-7be0728ec654
   - You are not allowed to import packages other than requests and sys
   - You don’t need to error check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./6-post_email.py http://0.0.0.0:5000/post_email hr@holbertonschool.com
 Your email is: hr@holbertonschool.com
 ```
@@ -139,7 +142,7 @@ Your email is: hr@holbertonschool.com
   - You are not allowed to import packages other than requests and sys
   - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./7-error_code.py http://0.0.0.0:5000
 Index
 guillaume@ubuntu:~/0x11$ ./7-error_code.py http://0.0.0.0:5000/status_401
@@ -162,7 +165,7 @@ Error code: 500
   - You must use the package requests and sys
   - You are not allowed to import packages other than requests and sys
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./8-json_api.py
 No result
 guillaume@ubuntu:~/0x11$ ./8-json_api.py a
@@ -186,7 +189,7 @@ guillaume@ubuntu:~/0x11$ ./8-json_api.py b
   - You don’t need to check arguments passed to the script (number or type)
   - You don’t need to manage the pagination
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./9-starwars.py r2
 Number of results: 1
 R2-D2
@@ -220,7 +223,7 @@ Adi Gallia
   - You are not allowed to import packages other than requests and sys
   - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./10-my_github.py papamuziko cisfun
 2531536
 guillaume@ubuntu:~/0x11$ ./10-my_github.py papamuziko wrong_pwd
@@ -245,7 +248,7 @@ Write a Python script that takes 2 arguments in order to solve this challenge.
 - You are not allowed to import packages other than requests and sys
 - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./100-github_commits.py rails rails
 3b5a6dfb18f33c373a89760c60d741f34206f23b: Jon Moss
 f785ad786ae49dd6f7a2f1d77c44ea17008c6656: Jon Moss
@@ -272,7 +275,7 @@ a76f5189f6cec4b3e6d9035e2b55dcda6050dfdb: Ryuta Kamizono
   - You are not allowed to import packages other than requests and sys
   - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./101-starwars.py r2
 Number of results: 1
 R2-D2
@@ -310,7 +313,7 @@ Grievous
   - You are not allowed to import packages other than requests and sys
   - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$  ./102-starwars.py r2
 Number of results: 1
 R2-D2
@@ -393,7 +396,7 @@ Grievous
   - You are not allowed to import packages other than requests, base64 and sys
   - You don’t need to check arguments passed to the script (number or type)
 
-```sh
+```
 guillaume@ubuntu:~/0x11$ ./103-search_twitter.py ABCD ABCDEFGH "#holbertonschool"
 [850600993829945345] Diving into shell project on a Friday night..#latenightcoding #holbertonschool https://t.co/7H7BPUrdgb by megha mohan
 [849877815277244416] All set to crack the shell project starting tomorrow.. #holbertonschool #cisfun https://t.co/f4Yft7JYcX by megha mohan
@@ -401,6 +404,8 @@ guillaume@ubuntu:~/0x11$ ./103-search_twitter.py ABCD ABCDEFGH "#holbertonschool
 [849208165883195392] #HolbertonSchool Mason, from Musician to Software Engineer at Docker. Read Blog: https://t.co/IpSBq2ESet by Education News
 [849208010895376384] #HolbertonSchool Hack the Virtual Memory: drawing the VM diagram. Read Blog: https://t.co/t9klptzsDX by Education News
 ```
+
+</details>
 
 ## Author
 

@@ -18,25 +18,30 @@ Learning Objectives
 - All files are created and executed on Ubuntu 14.04 LTS using Nodejs (version 10)
 - All Javascript code is linted with semistandard
 
+## Tasks
+
+<details>
+<summary>View Contents</summary>
+
 ### [0. Rectangle #0](./0-rectangle.js)
 
 - Write an empty class Rectangle that defines a rectangle:
   - You must use the class notation for defining your class
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 0-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const Rectangle = require('./0-rectangle')
+const Rectangle = require("./0-rectangle")
 
 const r1 = new Rectangle()
 console.log(r1)
 console.log(r1.constructor)
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./0-main.js
 Rectangle {}
 [Function: Rectangle]
@@ -50,13 +55,13 @@ Rectangle {}
   - Initialize the instance attribute width with the value of w
   - Initialize the instance attribute height with the value of h
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 1-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const Rectangle = require('./1-rectangle')
+const Rectangle = require("./1-rectangle")
 
 const r1 = new Rectangle(2, 3)
 console.log(r1)
@@ -74,7 +79,7 @@ console.log(r3.width)
 console.log(r3.height)
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./1-main.js
 Rectangle { width: 2, height: 3 }
 2
@@ -96,13 +101,13 @@ undefined
   - Initialize the instance attribute height with the value of h
   - If w or h is equal to 0 or not a positive integer, create an empty object
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 2-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const Rectangle = require('./2-rectangle')
+const Rectangle = require("./2-rectangle")
 
 const r1 = new Rectangle(2, 3)
 console.log(r1)
@@ -125,7 +130,7 @@ console.log(r4.width)
 console.log(r4.height)
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./2-main.js
 Rectangle { width: 2, height: 3 }
 2
@@ -151,13 +156,13 @@ undefined
   - If w or h is equal to 0 or not a positive integer, create an empty object
   - Create an instance method called print() that prints the rectangle using the character X
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 3-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const Rectangle = require('./3-rectangle')
+const Rectangle = require("./3-rectangle")
 
 const r1 = new Rectangle(2, 3)
 r1.print()
@@ -166,7 +171,7 @@ const r2 = new Rectangle(10, 5)
 r2.print()
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./3-main.js
 XX
 XX
@@ -190,7 +195,7 @@ XXXXXXXXXX
   - Create an instance method called rotate() that exchanges the width and the height of the rectangle
   - Create an instance method called double() that multiples the width and the height of the rectangle by 2
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 4-main.js
 ```
 
@@ -211,7 +216,7 @@ r1.rotate();
 r1.print();
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./4-main.js
 Normal:
 XX
@@ -238,13 +243,13 @@ XXXXXX
   - The constructor must take 1 argument: size
   - The constructor of Rectangle must be called (by using super())
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 5-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const Square = require('./5-square')
+const Square = require("./5-square")
 
 const s1 = new Square(4)
 s1.print()
@@ -252,7 +257,7 @@ s1.double()
 s1.print()
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./5-main.js
 XXXX
 XXXX
@@ -271,26 +276,27 @@ XXXXXXXX
 ### [6. Square #1](./6-square.js)
 
 - Write a class Square that defines a square and inherits from Square of 5-square.js:
+
   - You must use the class notation for defining your class and extends
   - Create an instance method called charPrint(c) that prints the rectangle using the character c
 
     - If c is undefined, use the character X
 
-```sg
+```
 guillaume@ubuntu:~/0x13$ cat 6-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const Square = require('./6-square')
+const Square = require("./6-square")
 
 const s1 = new Square(4)
 s1.charPrint()
 
-s1.charPrint('C')
+s1.charPrint("C")
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./6-main.js
 XXXX
 XXXX
@@ -313,14 +319,14 @@ guillaume@ubuntu:~/0x13$ cat 7-main.js
 
 ```javascript
 #!/usr/bin/node
-const nbOccurences = require('./7-occurrences').nbOccurences
+const nbOccurences = require("./7-occurrences").nbOccurences
 
 console.log(nbOccurences([1, 2, 3, 4, 5, 6], 3))
 console.log(nbOccurences([3, 2, 3, 4, 5, 3, 3], 3))
-console.log(nbOccurences(['H', 12, 'c', 'H', 'Holberton', 8], 'H'))
+console.log(nbOccurences(["H", 12, "c", "H", "Holberton", 8], "H"))
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./7-main.js
 1
 4
@@ -333,19 +339,19 @@ guillaume@ubuntu:~/0x13$ ./7-main.js
   - Prototype: `exports.esrever = function (list)`
   - You are not allow to use the built-in method reverse
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 8-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const esrever = require('./8-esrever').esrever
+const esrever = require("./8-esrever").esrever
 
 console.log(esrever([1, 2, 3, 4, 5]))
-console.log(esrever(['Holberton', 89, { id: 12 }, 'String']))
+console.log(esrever(["Holberton", 89, { id: 12 }, "String"]))
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./8-main.js
 [ 5, 4, 3, 2, 1 ]
 [ 'String', { id: 12 }, 89, 'Holberton' ]
@@ -357,20 +363,20 @@ guillaume@ubuntu:~/0x13$ ./8-main.js
   - Prototype: `exports.logMe = function (item)`
   - Output format: `<number arguments already printed>: <current argument value>`
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 9-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const logMe = require('./9-logme').logMe
+const logMe = require("./9-logme").logMe
 
-logMe('Hello')
-logMe('Holberton')
-logMe('School')
+logMe("Hello")
+logMe("Holberton")
+logMe("School")
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./9-main.js
 0: Hello
 1: Holberton
@@ -384,13 +390,13 @@ guillaume@ubuntu:~/0x13$ ./9-main.js
   - You are not allowed to import any file
   - You are not allowed to declare any new variable (var, let, etc..)
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 10-main.js
 ```
 
 ```javascript
 #!/usr/bin/node
-const converter = require('./10-converter').converter
+const converter = require("./10-converter").converter
 
 let myConverter = converter(10)
 
@@ -405,7 +411,7 @@ console.log(myConverter(12))
 console.log(myConverter(89))
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./10-main.js
 2
 12
@@ -424,7 +430,7 @@ c
   - A new list must be created with each value equal to the value of the initial list, multipled by the index in the list
   - Print both the initial list and the new list
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 100-data.js
 ```
 
@@ -433,7 +439,7 @@ guillaume@ubuntu:~/0x13$ cat 100-data.js
 exports.list = [1, 2, 3, 4, 5]
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./100-map.js
 [ 1, 2, 3, 4, 5 ]
 [ 0, 2, 6, 12, 20 ]
@@ -448,7 +454,7 @@ guillaume@ubuntu:~/0x13$ ./100-map.js
     - A value is the list of user ids
   - Print the new dictionary at the end
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat 101-data.js
 ```
 
@@ -464,7 +470,7 @@ exports.dict = {
 }
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ ./101-sorted.js
 { '1': [ '89', '91', '93' ], '2': [ '90', '94' ], '3': [ '92' ] }
 ```
@@ -476,7 +482,7 @@ guillaume@ubuntu:~/0x13$ ./101-sorted.js
   - The second argument is the file path of the second source file
   - The third argument is the file path of the destination
 
-```sh
+```
 guillaume@ubuntu:~/0x13$ cat fileA
 C is fun!
 guillaume@ubuntu:~/0x13$ cat fileB
@@ -486,6 +492,8 @@ guillaume@ubuntu:~/0x13$ cat fileC
 C is fun!
 Python is Cool!!!
 ```
+
+</details>
 
 ## Author
 

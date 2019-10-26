@@ -14,13 +14,16 @@
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Get all states](./0-select_states.py)
 
 - Write a script that lists all states from the database hbtn_0e_0_usa:
   - Results must be sorted in ascending order by states.id
   - Results must be displayed as they are in the example below
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql
 ```
 
@@ -36,7 +39,7 @@ CREATE TABLE IF NOT EXISTS states (
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./0-select_states.py root root hbtn_0e_0_usa
@@ -53,7 +56,7 @@ guillaume@ubuntu:~/0x0F$ ./0-select_states.py root root hbtn_0e_0_usa
   - Results must be sorted in ascending order by states.id
   - Results must be displayed as they are in the example below
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql
 ```
 
@@ -69,7 +72,7 @@ CREATE TABLE IF NOT EXISTS states (
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./1-filter_states.py root root hbtn_0e_0_usa
@@ -82,7 +85,7 @@ guillaume@ubuntu:~/0x0F$ ./1-filter_states.py root root hbtn_0e_0_usa
 - Write a script that takes in an argument and displays all values in the states table of hbtn_0e_0_usa where name matches the argument.
   - Results must be sorted in ascending order by states.id
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql
 ```
 
@@ -98,7 +101,7 @@ CREATE TABLE IF NOT EXISTS states (
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./2-my_filter_states.py root root hbtn_0e_0_usa 'Arizona'
@@ -110,7 +113,7 @@ guillaume@ubuntu:~/0x0F$ ./2-my_filter_states.py root root hbtn_0e_0_usa 'Arizon
 - Wait, do you remember the previous task? Did you test "Arizona'; TRUNCATE TABLE states ; SELECT \* FROM states WHERE name = '" as an input?
   - Results must be sorted in ascending order by states.id
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql
 ```
 
@@ -126,7 +129,7 @@ CREATE TABLE IF NOT EXISTS states (
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 0-select_states.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./3-my_safe_filter_states.py root root hbtn_0e_0_usa 'Arizona'
@@ -139,7 +142,7 @@ guillaume@ubuntu:~/0x0F$ ./3-my_safe_filter_states.py root root hbtn_0e_0_usa 'A
   - Results must be sorted in ascending order by cities.id
   - You can use only execute() once
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 4-cities_by_state.sql
 ```
 
@@ -168,7 +171,7 @@ INSERT INTO cities (state_id, name) VALUES (4, "New York");
 INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 4-cities_by_state.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./4-cities_by_state.py root root hbtn_0e_4_usa
@@ -195,7 +198,7 @@ guillaume@ubuntu:~/0x0F$ ./4-cities_by_state.py root root hbtn_0e_4_usa
   - Results must be sorted in ascending order by cities.id
   - You can use only execute() once
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 4-cities_by_state.sql
 ```
 
@@ -224,7 +227,7 @@ INSERT INTO cities (state_id, name) VALUES (4, "New York");
 INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 4-cities_by_state.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./5-filter_cities.py root root hbtn_0e_4_usa Texas
@@ -261,7 +264,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./6-model_state.py root root hbtn_0e_6_usa
 guillaume@ubuntu:~/0x0F$ cat 6-model_state.sql | mysql -uroot -p
 Enter password:
@@ -274,7 +277,7 @@ states  CREATE TABLE `states` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `nam
 - Write a script that lists all State objects from the database hbtn_0e_6_usa
   - Results must be sorted in ascending order by states.id
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 7-model_state_fetch_all.sql
 ```
 
@@ -283,7 +286,7 @@ guillaume@ubuntu:~/0x0F$ cat 7-model_state_fetch_all.sql
 INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 7-model_state_fetch_all.sql | mysql -uroot -p hbtn_0e_6_usa
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
@@ -310,7 +313,7 @@ guillaume@ubuntu:~/0x0F$ ./8-model_state_fetch_first.py root root hbtn_0e_6_usa
 - Write a script that lists all State objects that contain the letter a from the database hbtn_0e_6_usa
   - Results must be sorted in ascending order by states.id
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./9-model_state_filter_a.py root root hbtn_0e_6_usa
 1: California
 2: Arizona
@@ -325,7 +328,7 @@ guillaume@ubuntu:~/0x0F$ ./9-model_state_filter_a.py root root hbtn_0e_6_usa
   - Results must display the states.id
   - If no state has the name you searched for, display Not found
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Texas
 3
 guillaume@ubuntu:~/0x0F$ ./10-model_state_my_get.py root root hbtn_0e_6_usa Illinois
@@ -337,7 +340,7 @@ Not found
 - Write a script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
   - Print the new states.id after creation
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./11-model_state_insert.py root root hbtn_0e_6_usa
 6
 guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
@@ -354,7 +357,7 @@ guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 - Write a script that changes the name of a State object from the database hbtn_0e_6_usa
   - Change the name of the State where id = 2 to New Mexico
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./12-model_state_update_id_2.py root root hbtn_0e_6_usa
 guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 1: California
@@ -369,7 +372,7 @@ guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 
 - Write a script that deletes all State objects with a name containing the letter a from the database hbtn_0e_6_usa
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./13-model_state_delete_a.py root root hbtn_0e_6_usa
 guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 2: New Mexico
@@ -390,7 +393,7 @@ guillaume@ubuntu:~/0x0F$ ./7-model_state_fetch_all.py root root hbtn_0e_6_usa
 - Results must be sorted in ascending order by cities.id
 - Results must be display as they are in the example below (<state name>: (<city id>) <city name>)
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 14-model_city_fetch_by_state.sql
 ```
 
@@ -420,7 +423,7 @@ INSERT INTO cities (state_id, name) VALUES (4, "New York");
 INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 14-model_city_fetch_by_state.sql | mysql -uroot -p
 Enter password:
 guillaume@ubuntu:~/0x0F$ ./14-model_city_fetch_by_state.py root root hbtn_0e_14_usa
@@ -454,7 +457,7 @@ Nevada: (15) Carson City
 
   - You must use the cities relationship for all State objects
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql
 ```
 
@@ -467,7 +470,7 @@ SELECT * FROM states;
 SELECT * FROM cities;
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 100-relationship_states_cities.sql | mysql -uroot -p
 Enter password:
 ERROR 1146 (42S02) at line 5: Table 'hbtn_0e_100_usa.states' doesn't exist
@@ -486,7 +489,7 @@ id  name    state_id
   - You must use the cities relationship for all State objects
   - Results must be sorted in ascending order by states.id and cities.id
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 101-relationship_states_cities_list.sql
 ```
 
@@ -515,7 +518,7 @@ INSERT INTO cities (state_id, name) VALUES (4, "New York");
 INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ cat 101-relationship_states_cities_list.sql | mysql -uroot -p
 guillaume@ubuntu:~/0x0F$ ./101-relationship_states_cities_list.py root root hbtn_0e_101_usa
 1: California
@@ -547,7 +550,7 @@ guillaume@ubuntu:~/0x0F$ ./101-relationship_states_cities_list.py root root hbtn
   - You must use the state relationship to access to the State object linked to the City object
   - Results must be sorted in ascending order by cities.id
 
-```sh
+```
 guillaume@ubuntu:~/0x0F$ ./102-relationship_cities_states_list.py root root hbtn_0e_101_usa
 1: San Francisco -> California
 2: San Jose -> California
@@ -565,6 +568,8 @@ guillaume@ubuntu:~/0x0F$ ./102-relationship_cities_states_list.py root root hbtn
 14: Henderson -> Nevada
 15: Carson City -> Nevada
 ```
+
+</details>
 
 ## Author
 

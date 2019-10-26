@@ -28,6 +28,9 @@ General
 
 ## Tasks
 
+<details>
+<summary>View Contents</summary>
+
 ### [0. Positive anything is better than negative nothing](./0-positive_or_negative.py)
 
 - This program will assign a random signed number to the variable number each time it is executed. Complete the source code in order to print whether the number stored in the variable number is positive or negative.
@@ -41,7 +44,7 @@ General
       - if the number is less than 0: is negative
     - followed by a new line
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
 -4 is negative
 guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
@@ -77,7 +80,7 @@ guillaume@ubuntu:~/0x01$ ./0-positive_or_negative.py
       - if the last digit is less than 6 and not 0: the string and is less than 6 and not 0
     - followed by a new line
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./1-last_digit.py
 Last digit of 4205 is 5 and is less than 6 and not 0
 guillaume@ubuntu:~/0x01$ ./1-last_digit.py
@@ -110,7 +113,7 @@ Last digit of 5169 is 9 and is greater than 5
   - You are not allowed to store characters in a variable
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./2-print_alphabet.py
 ```
 
@@ -123,7 +126,7 @@ guillaume@ubuntu:~/0x01$ ./2-print_alphabet.py
   - You are not allowed to store characters in a variable
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./3-print_alphabt.py
 ```
 
@@ -135,7 +138,7 @@ guillaume@ubuntu:~/0x01$ ./3-print_alphabt.py
   - You are not allowed to store numbers or strings in a variable
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./4-print_hexa.py
 0 = 0x0
 1 = 0x1
@@ -173,7 +176,7 @@ guillaume@ubuntu:~/0x01$ ./4-print_hexa.py
   - You are not allowed to store numbers or strings in a variable
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./5-print_comb2.py
 00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99
 ```
@@ -192,7 +195,7 @@ guillaume@ubuntu:~/0x01$ ./5-print_comb2.py
   - You are not allowed to store numbers or strings in a variable
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./6-print_comb3.py
 01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89
 ```
@@ -200,13 +203,13 @@ guillaume@ubuntu:~/0x01$ ./6-print_comb3.py
 ### [7. islower](./7-islower.py)
 
 - Write a function that checks for lowercase character.
-  - Prototype: def islower(c):
+  - Prototype: `def islower(c)`:
   - Returns True if c is lowercase
   - Returns False otherwise
   - You are not allowed to import any module
   - You are not allowed to use str.upper() and str.isupper()
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 7-main.py
 ```
 
@@ -222,7 +225,7 @@ print("g is {}".format("lower" if islower("g") else "upper"))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./7-main.py
 a is lower
 H is upper
@@ -234,13 +237,13 @@ g is lower
 ### [8. To uppercase](./8-uppercase.py)
 
 - Write a function that prints a string in uppercase followed by a new line.
-  - Prototype: def uppercase(str):
+  - Prototype: `def uppercase(str)`:
   - You can only use no more than 2 print functions with string format
   - You can only use one loop in your code
   - You are not allowed to import any module
   - You are not allowed to use str.upper() and str.isupper()
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 8-main.py
 ```
 
@@ -253,7 +256,7 @@ uppercase("Holberton School 98 Battery street")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./8-main.py
 HOLBERTON
 HOLBERTON SCHOOL 98 BATTERY STREET
@@ -262,11 +265,11 @@ HOLBERTON SCHOOL 98 BATTERY STREET
 ### [9. There are only 3 colors, 10 digits, and 7 notes; it's what we do with them that's important](./9-print_last_digit.py)
 
 - Write a function that prints the last digit of a number.
-  - Prototype: def print_last_digit(number):
+  - Prototype: `def print_last_digit(number)`:
   - Returns the value of the last digit
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 9-main.py
 ```
 
@@ -281,7 +284,7 @@ print(r)
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./9-main.py
 8044
 ```
@@ -289,11 +292,11 @@ guillaume@ubuntu:~/0x01$ ./9-main.py
 ### [10. a + b](./10-add.py)
 
 - Write a function that adds two integers and returns the result.
-  - Prototype: def add(a, b):
+  - Prototype: `def add(a, b)`:
   - Returns the value of a + b
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 10-main.py
 ```
 
@@ -307,7 +310,7 @@ print(add(100, -2))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./10-main.py
 3
 98
@@ -317,11 +320,11 @@ guillaume@ubuntu:~/0x01$ ./10-main.py
 ### [11. a ^ b](./11-pow.py)
 
 - Write a function that computes a to the power of b and return the value.
-  - Prototype: def pow(a, b):
+  - Prototype: `def pow(a, b)`:
   - Returns the value of a ^ b
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 11-main.py
 ```
 
@@ -337,7 +340,7 @@ print(pow(-4, 5))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./11-main.py
 4
 9604
@@ -351,11 +354,11 @@ guillaume@ubuntu:~/0x01$ ./11-main.py
 - Write a function that prints the numbers from 1 to 100 separated by a space.
   - For multiples of three print Fizz instead of the number and for multiples of five print Buzz.
   - For numbers which are multiples of both three and five print FizzBuzz.
-  - Prototype: def fizzbuzz():
+  - Prototype: `def fizzbuzz()`:
   - Each element should be followed by a space
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 12-main.py
 ```
 
@@ -368,7 +371,7 @@ print("")
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./12-main.py | cat -e
 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz $
 ```
@@ -376,10 +379,10 @@ guillaume@ubuntu:~/0x01$ ./12-main.py | cat -e
 ### [13. Insert in sorted linked list](./13-insert_number.c)
 
 - Write a function in C that inserts a number into a sorted singly linked list.
-  - Prototype: listint_t \*insert_node(listint_t \*\*head, int number);
+  - Prototype: `listint_t *insert_node(listint_t **head, int number)`;
   - Return: the address of the new node, or NULL if it failed
 
-```sh
+```
 carrie@ubuntu:0x01$ cat lists.h
 ```
 
@@ -410,7 +413,7 @@ listint_t *insert_node(listint_t **head, int number);
 #endif /* LISTS_H */
 ```
 
-```sh
+```
 carrie@ubuntu:0x01$ cat linked_lists.c
 ```
 
@@ -491,7 +494,7 @@ void free_listint(listint_t *head)
 }
 ```
 
-```sh
+```
 carrie@ubuntu:0x01$ cat 13-main.c
 ```
 
@@ -533,7 +536,7 @@ int main(void)
 }
 ```
 
-```sh
+```
 carrie@ubuntu:0x01$ gcc -Wall -Werror -Wextra -pedantic 13-main.c linked_lists.c 13-insert_number.c -o insert
 carrie@ubuntu:0x01$ ./insert
 0
@@ -565,7 +568,7 @@ carrie@ubuntu:0x01$
   - You are not allowed to store characters in a variable
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./100-print_tebahpla.py
 zYxWvUtSrQpOnMlKjIhGfEdCbAguillaume@ubuntu:~/0x01$
 ```
@@ -573,10 +576,10 @@ zYxWvUtSrQpOnMlKjIhGfEdCbAguillaume@ubuntu:~/0x01$
 ### [15. Remove at position](./101-remove_char_at.py)
 
 - Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”).
-  - Prototype: def remove_char_at(str, n):
+  - Prototype: `def remove_char_at(str, n)`:
   - You are not allowed to import any module
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ cat 101-main.py
 ```
 
@@ -592,7 +595,7 @@ print(remove_char_at("Python", -2))
 
 ```
 
-```sh
+```
 guillaume@ubuntu:~/0x01$ ./101-main.py
 Holerton School
 Chcago
@@ -605,7 +608,7 @@ Python
 
 - Write the Python function def magic_calculation(a, b, c): that does exactly the same as the following Python bytecode:
 
-```sh
+```
   3           0 LOAD_FAST                0 (a)
               3 LOAD_FAST                1 (b)
               6 COMPARE_OP               0 (<)
@@ -631,6 +634,8 @@ Python
              46 BINARY_SUBTRACT
              47 RETURN_VALUE
 ```
+
+</details>
 
 ## Author
 

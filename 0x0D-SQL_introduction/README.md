@@ -20,11 +20,16 @@ General
 
 - All files are created and executed on Ubuntu 14.04 LTS using MySQL 5.7 (version 5.7.8-rc)
 
+## Tasks
+
+<details>
+<summary>View Contents</summary>
+
 ### [0. List databases](./0-list_databases.sql)
 
 - Write a script that lists all databases of your MySQL server.
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
 Enter password:
 Database
@@ -40,7 +45,7 @@ performance_schema
   - If the database hbtn_0c_0 already exists, your script should not fail
   - You are not allowed to use the SELECT or SHOW statements
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 1-create_database_if_missing.sql | mysql -hlocalhost -uroot -p
 Enter password:
 guillaume@ubuntu:~/$ cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
@@ -61,7 +66,7 @@ Enter password:
   - If the database hbtn_0c_0 doesn’t exist, your script should not fail
   - You are not allowed to use the SELECT or SHOW statements
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
 Enter password:
 Database
@@ -85,7 +90,7 @@ performance_schema
 
   - The database name will be passed as argument of mysql command (in the following example: mysql is the name of the database)
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 3-list_tables.sql | mysql -hlocalhost -uroot -p mysql
 Enter password:
 Tables_in_mysql
@@ -126,7 +131,7 @@ user
   - If the table first_table already exists, your script should not fail
   - You are not allowed to use the SELECT or SHOW statements
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 4-first_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 guillaume@ubuntu:~/$ cat 3-list_tables.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
@@ -142,7 +147,7 @@ first_table
   - The database name will be passed as an argument of the mysql command
   - You are not allowed to use the DESCRIBE or EXPLAIN statements
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 Table   Create Table
@@ -155,7 +160,7 @@ first_table CREATE TABLE `first_table` (\n  `id` int(11) DEFAULT NULL,\n  `name`
   - All fields should be printed
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 ```
@@ -168,7 +173,7 @@ Enter password:
     - name = Holberton School
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 guillaume@ubuntu:~/$ cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
@@ -192,7 +197,7 @@ id  name
 - Write a script that displays the number of records with id = 89 in the table first_table of the database hbtn_0c_0 in your MySQL server.
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 8-count_89.sql | mysql -hlocalhost -uroot -p hbtn_0c_0 | tail -1
 Enter password:
 3
@@ -214,7 +219,7 @@ Enter password:
     - id = 3, name = “Bob”, score = 14
     - id = 4, name = “George”, score = 8
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 9-full_creation.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 ```
@@ -226,7 +231,7 @@ Enter password:
   - Records should be ordered by score (top first)
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 score   name
@@ -243,7 +248,7 @@ score   name
   - Records should be ordered by score (top first)
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 11-best_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 score   name
@@ -258,7 +263,7 @@ score   name
   - You are not allowed to use Bob’s id value, only the name field
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 12-no_cheating.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 guillaume@ubuntu:~/$ cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
@@ -276,7 +281,7 @@ score   name
 
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 13-change_class.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 guillaume@ubuntu:~/$ cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
@@ -293,7 +298,7 @@ score   name
   - The result column name should be average
   - The database name will be passed as an argument of the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 14-average.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 average
@@ -309,7 +314,7 @@ average
   - The list should be sorted by the number of records (descending)
   - The database name will be passed as an argument to the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 15-groups.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 score   number
@@ -326,7 +331,7 @@ score   number
   - Records should be listed by descending score
   - The database name will be passed as an argument to the mysql command
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 16-no_link.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 score   name
@@ -344,7 +349,7 @@ score   name
   - Table first_table
   - Field name in first_table
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 100-move_to_utf8.sql | mysql -hlocalhost -uroot -p
 Enter password:
 guillaume@ubuntu:~/$ cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
@@ -357,7 +362,7 @@ first_table CREATE TABLE `first_table` (\n  `id` int(11) DEFAULT NULL,\n  `name`
 
 - Write a script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 101-avg_temperatures.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 city    avg_temp
@@ -386,7 +391,7 @@ Peoria  66.5392
 
 - Write a script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 102-top_city.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 city    avg_temp
@@ -399,7 +404,7 @@ Sunnyvale   73.2353
 
 - Write a script that displays the max temperature of each state (ordered by State name).
 
-```sh
+```
 guillaume@ubuntu:~/$ cat 103-max_state.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 Enter password:
 state   max_temp
@@ -407,6 +412,8 @@ AZ  110
 CA  110
 IL  110
 ```
+
+</details>
 
 ## Author
 
